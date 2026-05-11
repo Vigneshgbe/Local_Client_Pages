@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selvakumar Pani Puri Stall</title>
+<link rel="icon" type="image/x-icon" href="https://content.jdmagicbox.com/v2/comp/hyderabad/q4/040pxx40.xx40.240604021120.m6q4/catalogue/pani-puri-hub-kukatpally-hyderabad-pani-puri-centres-056nna3541.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #FF6B00;
+  --saffron-dark: #D95A00;
+  --green: #2E7D32;
+  --bg: #FFF8F0;
+  --card: #FFFFFF;
+  --text: #1A1A1A;
+  --muted: #777;
+  --border: #F0DCC8;
+  --red: #C62828;
+  --blue: #1565C0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Hind',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+
+/* HEADER */
+.header { background:linear-gradient(135deg,var(--saffron) 0%,#FF8C00 100%); color:white; padding:14px 16px 10px; position:sticky; top:0; z-index:100; box-shadow:0 3px 12px rgba(255,107,0,.35); }
+.header-top { display:flex; align-items:center; justify-content:space-between; }
+.stall-name { font-family:'Baloo 2',cursive; font-size:1.45rem; font-weight:800; line-height:1.1; text-shadow:0 1px 3px rgba(0,0,0,.2); }
+.stall-sub { font-size:.73rem; opacity:.9; margin-top:1px; }
+.lang-btn { background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4); color:white; border-radius:20px; padding:4px 12px; font-size:.78rem; font-weight:600; cursor:pointer; }
+.fb-status { font-size:.7rem; display:flex; align-items:center; margin-top:3px; opacity:.85; }
+.status-dot { width:8px; height:8px; border-radius:50%; background:#ccc; display:inline-block; margin-right:5px; }
+.status-dot.green { background:#4CAF50; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+/* NAV */
+.nav { display:flex; background:white; border-bottom:2px solid var(--border); overflow-x:auto; }
+.nav-tab { flex:1; min-width:60px; padding:11px 6px; text-align:center; font-size:.78rem; font-weight:600; color:var(--muted); cursor:pointer; border-bottom:3px solid transparent; transition:all .2s; white-space:nowrap; }
+.nav-tab.active { color:var(--saffron); border-bottom-color:var(--saffron); }
+
+/* SCREENS */
+.screen { display:none; padding:14px 14px 80px; max-width:480px; margin:0 auto; }
+.screen.active { display:block; }
+
+/* CLOSED FULL SCREEN */
+#screen-closed { display:none; flex-direction:column; align-items:center; justify-content:center; min-height:72vh; padding:30px 20px; text-align:center; max-width:480px; margin:0 auto; }
+#screen-closed.active { display:flex !important; }
+.closed-emoji { font-size:5.5rem; margin-bottom:16px; animation:sway 3s ease-in-out infinite; }
+@keyframes sway { 0%,100%{transform:rotate(-6deg)} 50%{transform:rotate(6deg)} }
+.closed-title { font-family:'Baloo 2',cursive; font-size:1.9rem; font-weight:800; color:var(--red); margin-bottom:8px; }
+.closed-sub { color:var(--muted); font-size:.95rem; line-height:1.7; max-width:270px; }
+.closed-badge { margin-top:18px; background:var(--red); color:white; padding:8px 22px; border-radius:20px; font-size:.85rem; font-weight:700; }
+
+/* SECTION TITLE */
+.section-title { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:700; color:var(--saffron-dark); margin-bottom:10px; }
+
+/* ── ORDER TYPE TOGGLE ── */
+.order-type-bar {
+  display:flex; gap:8px; margin-bottom:14px;
+  background:white; border:1.5px solid var(--border);
+  border-radius:12px; padding:5px;
+}
+.ot-btn {
+  flex:1; padding:9px 6px; border:none; border-radius:9px;
+  font-size:.85rem; font-weight:700; cursor:pointer;
+  font-family:'Hind',sans-serif; transition:all .2s;
+  background:transparent; color:var(--muted);
+  display:flex; align-items:center; justify-content:center; gap:5px;
+}
+.ot-btn.active {
+  background:var(--saffron); color:white;
+  box-shadow:0 2px 8px rgba(255,107,0,.3);
+}
+.ot-btn.parcel-active {
+  background:var(--blue); color:white;
+  box-shadow:0 2px 8px rgba(21,101,192,.3);
+}
+
+/* MENU GRID */
+.menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+.menu-card { background:var(--card); border:1.5px solid var(--border); border-radius:14px; overflow:hidden; transition:transform .15s; }
+.menu-card:active { transform:scale(.97); }
+.menu-card.in-cart { border-color:var(--saffron); box-shadow:0 0 0 2px rgba(255,107,0,.2); }
+.menu-card.in-cart.parcel { border-color:var(--blue); box-shadow:0 0 0 2px rgba(21,101,192,.2); }
+.menu-img { width:100%; aspect-ratio:4/3; background:linear-gradient(135deg,#FFE0B2 0%,#FFCC80 100%); display:flex; align-items:center; justify-content:center; font-size:3rem; overflow:hidden; position:relative; }
+.menu-info { padding:9px 10px 10px; }
+.menu-name { font-family:'Baloo 2',cursive; font-size:.95rem; font-weight:700; line-height:1.2; }
+.menu-name-ta { font-size:.82rem; color:var(--muted); }
+/* price row shows eat / parcel prices */
+.price-row { display:flex; gap:8px; align-items:center; margin-top:5px; flex-wrap:wrap; }
+.price-eat { font-size:.8rem; font-weight:600; color:var(--green); }
+.price-parcel { font-size:.8rem; font-weight:600; color:var(--blue); }
+.price-active-tag { font-size:.72rem; font-weight:700; padding:1px 6px; border-radius:8px; }
+.price-active-eat    { background:#E8F5E9; color:var(--green); }
+.price-active-parcel { background:#E3F2FD; color:var(--blue); }
+.menu-qty { display:flex; align-items:center; gap:6px; margin-top:7px; }
+.qty-btn { width:28px; height:28px; border-radius:50%; border:1.5px solid var(--saffron); background:white; color:var(--saffron); font-size:1.1rem; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.qty-btn.parcel-mode { border-color:var(--blue); color:var(--blue); }
+.qty-btn:active { background:var(--saffron); color:white; }
+.qty-btn.parcel-mode:active { background:var(--blue); color:white; }
+.qty-val { font-weight:700; font-size:.9rem; min-width:18px; text-align:center; }
+.add-btn { width:100%; color:white; border:none; border-radius:7px; padding:7px; font-size:.82rem; font-weight:600; cursor:pointer; margin-top:6px; font-family:'Hind',sans-serif; }
+.add-btn-eat    { background:var(--saffron); }
+.add-btn-parcel { background:var(--blue); }
+
+/* ORDER TYPE BADGE in checkout / orders */
+.otype-badge {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 10px; border-radius:20px; font-size:.78rem; font-weight:700;
+  margin-bottom:8px;
+}
+.otype-eat    { background:#E8F5E9; color:var(--green); }
+.otype-parcel { background:#E3F2FD; color:var(--blue); }
+
+/* CART BAR */
+#cart-bar { position:fixed; bottom:0; left:0; right:0; color:white; padding:12px 16px; display:none; align-items:center; justify-content:space-between; z-index:200; box-shadow:0 -3px 12px rgba(0,0,0,.15); background:var(--saffron); }
+#cart-bar.visible { display:flex !important; }
+#cart-bar.parcel-bar { background:var(--blue); }
+.cart-info { font-size:.88rem; }
+.cart-info strong { font-size:1rem; font-weight:700; }
+.cart-checkout-btn { background:white; border:none; border-radius:8px; padding:8px 18px; font-weight:700; font-size:.88rem; cursor:pointer; font-family:'Hind',sans-serif; }
+.cart-checkout-btn.eat-btn    { color:var(--saffron); }
+.cart-checkout-btn.parcel-btn { color:var(--blue); }
+
+/* FORMS */
+.form-group { margin-bottom:12px; }
+.form-label { font-size:.82rem; font-weight:600; display:block; margin-bottom:4px; }
+.form-input { width:100%; border:1.5px solid var(--border); border-radius:9px; padding:10px 12px; font-size:.9rem; font-family:'Hind',sans-serif; background:white; outline:none; transition:border-color .2s; }
+.form-input:focus { border-color:var(--saffron); }
+.order-summary { background:#FFF3E0; border:1.5px solid var(--border); border-radius:11px; padding:12px; margin-bottom:14px; }
+.order-row { display:flex; justify-content:space-between; font-size:.88rem; padding:3px 0; }
+.order-total { border-top:1.5px solid var(--border); margin-top:6px; padding-top:6px; font-weight:700; font-size:.95rem; display:flex; justify-content:space-between; }
+.place-btn { width:100%; background:var(--green); color:white; border:none; border-radius:10px; padding:13px; font-size:1rem; font-weight:700; cursor:pointer; font-family:'Baloo 2',cursive; }
+.back-btn { background:none; border:none; color:var(--saffron); font-size:.88rem; font-weight:600; cursor:pointer; padding:0 0 10px; display:flex; align-items:center; gap:4px; }
+
+/* TOKEN SCREEN */
+.token-card { background:white; border:2.5px solid var(--saffron); border-radius:18px; padding:24px; text-align:center; margin-bottom:14px; }
+.token-number { font-family:'Baloo 2',cursive; font-size:4rem; font-weight:800; color:var(--saffron); line-height:1; }
+.token-label { font-size:.82rem; color:var(--muted); margin-top:4px; }
+.token-name-txt { font-size:1.05rem; font-weight:700; margin-top:10px; }
+.token-hint { font-size:.8rem; color:var(--muted); background:var(--bg); border-radius:8px; padding:8px 12px; margin-top:10px; }
+
+/* ORDER STATUS */
+.order-status-card { background:white; border:1.5px solid var(--border); border-radius:14px; padding:14px; margin-bottom:10px; }
+.status-badge { display:inline-block; padding:3px 10px; border-radius:20px; font-size:.75rem; font-weight:700; }
+.status-pending  { background:#FFF8E1; color:#F57F17; }
+.status-accepted { background:#E8F5E9; color:var(--green); }
+.status-ready    { background:#E3F2FD; color:var(--blue); }
+.status-done     { background:#F5F5F5; color:#888; }
+
+/* SELLER */
+.seller-login { background:white; border:1.5px solid var(--border); border-radius:14px; padding:20px; margin-top:20px; }
+.seller-title { font-family:'Baloo 2',cursive; font-size:1.2rem; font-weight:700; text-align:center; margin-bottom:14px; color:var(--saffron-dark); }
+.toggle-row { display:flex; align-items:center; justify-content:space-between; background:var(--bg); border-radius:10px; padding:10px 14px; margin-bottom:10px; }
+.toggle-label { font-size:.88rem; font-weight:600; }
+.toggle { position:relative; display:inline-block; width:44px; height:24px; }
+.toggle input { opacity:0; width:0; height:0; }
+.slider { position:absolute; cursor:pointer; top:0;left:0;right:0;bottom:0; background:#ccc; border-radius:24px; transition:.3s; }
+.slider:before { position:absolute; content:""; height:18px; width:18px; left:3px; bottom:3px; background:white; border-radius:50%; transition:.3s; }
+input:checked + .slider { background:var(--green); }
+input:checked + .slider:before { transform:translateX(20px); }
+
+/* SELLER ORDER CARDS */
+.seller-order-card { background:white; border:1.5px solid var(--border); border-radius:12px; padding:12px; margin-bottom:10px; }
+.seller-order-card.parcel-card { border-left:4px solid var(--blue); }
+.token-badge { background:var(--saffron); color:white; font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:800; padding:3px 12px; border-radius:8px; display:inline-block; }
+.seller-order-header { margin-bottom:8px; }
+.customer-name { font-weight:700; font-size:.95rem; }
+.order-items { font-size:.85rem; color:var(--muted); margin:4px 0 8px; }
+.seller-actions { display:flex; gap:8px; }
+.accept-btn,.ready-btn,.done-btn { flex:1; border:none; border-radius:7px; padding:8px; font-size:.8rem; font-weight:700; cursor:pointer; font-family:'Hind',sans-serif; }
+.accept-btn { background:var(--green); color:white; }
+.ready-btn  { background:var(--blue); color:white; }
+.done-btn   { background:#888; color:white; }
+
+/* parcel badge on seller card */
+.parcel-flag { background:var(--blue); color:white; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:6px; display:inline-block; }
+.eat-flag    { background:#E8F5E9; color:var(--green); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:6px; display:inline-block; }
+
+/* SALES */
+.sales-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:12px; }
+.sales-card { background:white; border:1.5px solid var(--border); border-radius:12px; padding:12px; margin-bottom:10px; }
+.sales-number { font-family:'Baloo 2',cursive; font-size:1.8rem; font-weight:800; color:var(--saffron); }
+.sales-label  { font-size:.8rem; color:var(--muted); margin-top:2px; }
+.item-sales-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid var(--border); font-size:.88rem; }
+.item-sales-row:last-child { border-bottom:none; }
+
+/* MENU MANAGEMENT */
+.manage-item-card { background:white; border:1.5px solid var(--border); border-radius:12px; padding:10px 12px; margin-bottom:8px; display:flex; gap:10px; flex-direction:column; }
+.manage-emoji { font-size:2rem; flex-shrink:0; }
+.manage-info  { flex:1; min-width:0; }
+.manage-name  { font-weight:700; font-size:.9rem; }
+.manage-price { font-size:.78rem; color:var(--muted); }
+.inactive-tag { font-size:.7rem; background:#FFE0B2; color:#E65100; padding:1px 6px; border-radius:8px; margin-left:5px; font-weight:600; }
+.add-menu-form { background:white; border:1.5px solid var(--border); border-radius:12px; padding:14px; margin-top:10px; }
+.small-input { border:1.5px solid var(--border); border-radius:8px; padding:8px 10px; font-size:.88rem; font-family:'Hind',sans-serif; outline:none; width:100%; margin-bottom:8px; }
+.small-input:focus { border-color:var(--saffron); }
+.emoji-row { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-bottom:10px; }
+.emoji-opt { font-size:1.6rem; padding:5px; border-radius:8px; cursor:pointer; text-align:center; border:2px solid transparent; background:var(--bg); }
+.emoji-opt.selected { border-color:var(--saffron); background:#FFF3E0; }
+.add-item-btn { width:100%; background:var(--saffron); color:white; border:none; border-radius:8px; padding:10px; font-size:.88rem; font-weight:700; cursor:pointer; font-family:'Hind',sans-serif; }
+.price-hint { font-size:.75rem; color:var(--muted); margin:-4px 0 8px; display:block; }
+
+/* INLINE EDIT PANEL */
+.edit-panel { display:none; margin-top:10px; padding-top:10px; border-top:1px solid var(--border); }
+.edit-panel.open { display:block; }
+.edit-row { display:flex; gap:6px; align-items:center; margin-bottom:7px; flex-wrap:wrap; }
+.edit-label { font-size:.75rem; font-weight:600; color:var(--muted); min-width:44px; }
+.edit-input { flex:1; border:1.5px solid var(--border); border-radius:7px; padding:6px 9px; font-size:.85rem; font-family:'Hind',sans-serif; outline:none; min-width:0; }
+.edit-input:focus { border-color:var(--saffron); }
+.save-btn { background:var(--green); color:white; border:none; border-radius:7px; padding:6px 14px; font-size:.8rem; font-weight:700; cursor:pointer; font-family:'Hind',sans-serif; }
+.edit-btn { background:#F3F4F6; color:var(--text); border:none; border-radius:7px; padding:5px 9px; font-size:.75rem; font-weight:700; cursor:pointer; }
+
+/* MISC */
+.divider { border:none; border-top:1px solid var(--border); margin:12px 0; }
+.logout-btn { background:none; border:1px solid var(--border); border-radius:7px; padding:5px 12px; font-size:.78rem; color:var(--muted); cursor:pointer; }
+.empty-state { text-align:center; padding:26px 0; color:var(--muted); font-size:.9rem; line-height:1.7; }
+.empty-icon  { font-size:2.5rem; margin-bottom:6px; }
+#toast { position:fixed; bottom:80px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,.82); color:white; padding:9px 18px; border-radius:20px; font-size:.85rem; opacity:0; transition:opacity .3s; pointer-events:none; white-space:nowrap; z-index:999; }
+#toast.show { opacity:1; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="stall-name" id="h-stallname">Selvakumar Pani Puri</div>
+      <div class="stall-sub"  id="h-stallsub">Fresh & Spicy • Order Here</div>
+      <div class="fb-status"><span class="status-dot" id="fb-dot"></span><span id="fb-txt">Connecting…</span></div>
+    </div>
+    <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">தமிழ்</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-tab active" id="tab-menu"   onclick="showScreen('menu')"   data-t="navMenu">Menu</div>
+  <div class="nav-tab"        id="tab-orders" onclick="showScreen('orders')" data-t="navOrders">My Orders</div>
+  <div class="nav-tab"        id="tab-seller" onclick="showScreen('seller')" data-t="navSeller">Seller</div>
+</div>
+
+<!-- ══ CLOSED SCREEN ══ -->
+<div id="screen-closed">
+  <div class="closed-emoji">🔒</div>
+  <div class="closed-title" data-t="closedTitle">Shop Closed</div>
+  <div class="closed-sub"   data-t="closedSub">We're closed today. Come back tomorrow — fresh & spicy! 🙏</div>
+  <div class="closed-badge" data-t="closedBadge">Holiday Today</div>
+</div>
+
+<!-- ══ MENU SCREEN ══ -->
+<div class="screen active" id="screen-menu">
+
+  <!-- ORDER TYPE TOGGLE -->
+  <div class="order-type-bar" id="order-type-bar">
+    <button class="ot-btn active" id="btn-eat" onclick="setOrderType('eat')">
+      🍽️ <span data-t="eatHere">Eat Here</span>
+    </button>
+    <button class="ot-btn" id="btn-parcel" onclick="setOrderType('parcel')">
+      📦 <span data-t="parcel">Parcel</span>
+    </button>
+  </div>
+
+  <p class="section-title" style="margin-top:0" data-t="menuTitle">Today's Menu</p>
+  <div class="menu-grid" id="menu-grid"></div>
+</div>
+
+<!-- ══ CHECKOUT SCREEN ══ -->
+<div class="screen" id="screen-checkout">
+  <button class="back-btn" onclick="showScreen('menu')">← <span data-t="backMenu">Back to Menu</span></button>
+  <p class="section-title" data-t="yourOrder">Your Order</p>
+  <!-- order type badge shown here -->
+  <div id="checkout-otype"></div>
+  <div class="order-summary" id="checkout-summary"></div>
+  <div class="form-group">
+    <label class="form-label" data-t="labelName">Your Name</label>
+    <input class="form-input" id="cust-name" type="text" placeholder="e.g. Vignesh G" data-t-ph="phName">
+  </div>
+  <button class="place-btn" id="place-btn" onclick="placeOrder()" data-t="placeOrder">Place Order ✓</button>
+</div>
+
+<!-- ══ TOKEN SCREEN ══ -->
+<div class="screen" id="screen-token">
+  <p class="section-title" data-t="tokenTitle">Order Placed! 🎉</p>
+  <div class="token-card" id="token-card">
+    <div class="token-label" data-t="yourToken">Your Token Number</div>
+    <div class="token-number" id="token-display">–</div>
+    <div class="token-name-txt" id="token-name-display"></div>
+    <!-- order type shown here too -->
+    <div id="token-otype" style="margin-top:8px"></div>
+    <div class="token-hint" data-t="tokenHint">📢 Show this number to the seller when called</div>
+  </div>
+  <div class="order-summary" id="token-order-summary"></div>
+  <button class="place-btn" onclick="showScreen('orders')" data-t="trackOrder">Track My Order →</button>
+</div>
+
+<!-- ══ ORDERS SCREEN ══ -->
+<div class="screen" id="screen-orders">
+  <p class="section-title" data-t="myOrdersTitle">My Orders</p>
+  <div id="orders-list"></div>
+</div>
+
+<!-- ══ SELLER SCREEN ══ -->
+<div class="screen" id="screen-seller">
+  <div id="seller-login-panel" class="seller-login">
+    <div class="seller-title" data-t="sellerLogin">🔐 Seller Login</div>
+    <div class="form-group">
+      <label class="form-label" data-t="labelPass">Password</label>
+      <input class="form-input" id="seller-pass" type="password" placeholder="Enter password" data-t-ph="phPass">
+    </div>
+    <button class="place-btn" onclick="sellerLogin()" data-t="loginBtn">Login</button>
+  </div>
+
+  <div id="seller-dashboard" style="display:none">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <p class="section-title" style="margin:0" data-t="dashTitle">Dashboard</p>
+      <button class="logout-btn" onclick="sellerLogout()" data-t="logoutBtn">Logout</button>
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label" data-t="shopOpen">Shop Open</div>
+        <div style="font-size:.72rem;color:var(--muted)" data-t="shopOpenHint">Turn off = customers see closed page</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="open-toggle" checked onchange="toggleShopStatus()">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <hr class="divider">
+    <p class="section-title" data-t="newOrders">New Orders</p>
+    <div id="new-orders-list"></div>
+
+    <hr class="divider">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+      <p class="section-title" style="margin:0" data-t="todaySales">Today's Sales</p>
+      <button onclick="renderSales()" style="background:none;border:none;color:var(--saffron);font-size:.85rem;cursor:pointer">↻</button>
+    </div>
+    <div class="sales-grid" id="sales-grid"></div>
+    <div class="sales-card">
+      <p class="section-title" style="margin-bottom:8px" data-t="itemBreakdown">Item Breakdown</p>
+      <div id="item-breakdown"></div>
+    </div>
+
+    <hr class="divider">
+    <p class="section-title" data-t="manageMenu">Manage Menu</p>
+    <div id="menu-manage-list"></div>
+
+    <div class="add-menu-form">
+      <p style="font-weight:700;font-size:.88rem;margin-bottom:8px" data-t="addNewItem">+ Add New Item</p>
+      <div class="emoji-row" id="emoji-picker">
+        <div class="emoji-opt selected" data-emoji="🫧" onclick="pickEmoji(this)">🫧</div>
+        <div class="emoji-opt" data-emoji="🌮" onclick="pickEmoji(this)">🌮</div>
+        <div class="emoji-opt" data-emoji="🫙" onclick="pickEmoji(this)">🫙</div>
+        <div class="emoji-opt" data-emoji="🍄" onclick="pickEmoji(this)">🍄</div>
+        <div class="emoji-opt" data-emoji="🌯" onclick="pickEmoji(this)">🌯</div>
+        <div class="emoji-opt" data-emoji="🥙" onclick="pickEmoji(this)">🥙</div>
+        <div class="emoji-opt" data-emoji="🍢" onclick="pickEmoji(this)">🍢</div>
+        <div class="emoji-opt" data-emoji="🥗" onclick="pickEmoji(this)">🥗</div>
+        <div class="emoji-opt" data-emoji="🍲" onclick="pickEmoji(this)">🍲</div>
+        <div class="emoji-opt" data-emoji="🫕" onclick="pickEmoji(this)">🫕</div>
+        <div class="emoji-opt" data-emoji="🥤" onclick="pickEmoji(this)">🥤</div>
+        <div class="emoji-opt" data-emoji="🍹" onclick="pickEmoji(this)">🍹</div>
+      </div>
+      <div style="margin-bottom:8px">
+        <input class="small-input" id="new-img-url" placeholder="Or paste image URL (optional — overrides emoji)" style="margin-bottom:4px" oninput="previewImg()">
+        <div id="img-preview" style="display:none;margin-bottom:6px">
+          <img id="img-preview-el" src="" style="width:60px;height:60px;object-fit:cover;border-radius:10px;border:2px solid var(--saffron)">
+          <span style="font-size:.75rem;color:var(--green);margin-left:8px;font-weight:600">✓ Image looks good</span>
+        </div>
+      </div>
+      <input class="small-input" id="new-name-en" placeholder="Name (English) e.g. Masala Puri">
+      <input class="small-input" id="new-name-ta" placeholder="பெயர் (Tamil) e.g. மசால பூரி">
+      <input class="small-input" id="new-price" type="number" placeholder="Eat Here Price ₹ e.g. 30">
+      <input class="small-input" id="new-parcel-price" type="number" placeholder="Parcel Price ₹ (leave blank = same as eat here)">
+      <button class="add-item-btn" onclick="addMenuItem()" data-t="addBtn">Add to Menu</button>
+    </div>
+  </div>
+</div>
+
+<!-- CART BAR -->
+<div id="cart-bar">
+  <div class="cart-info">
+    <div id="cart-count-txt"></div>
+    <strong id="cart-total-txt">₹0</strong>
+  </div>
+  <button class="cart-checkout-btn eat-btn" id="cart-checkout-btn" onclick="goCheckout()" data-t="viewOrder">View Order →</button>
+</div>
+
+<div id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore, collection, doc,
+  addDoc, updateDoc, deleteDoc,
+  onSnapshot, query, orderBy,
+  serverTimestamp, setDoc, getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyDl04ZVWUCiJFwKXO5MENcihVdb0HuF3Rs",
+  authDomain: "startup-dbs-1.firebaseapp.com",
+  databaseURL: "https://startup-dbs-1-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "startup-dbs-1",
+  storageBucket: "startup-dbs-1.firebasestorage.app",
+  messagingSenderId: "70939047801",
+  appId: "1:70939047801:web:f0c57df06b4bbae89261a8",
+  measurementId: "G-NV8E4RH5D6"
+});
+const db = getFirestore(app);
+const ROOT        = "PaniPuriStall";
+const ordersCol   = () => collection(db, ROOT, "data", "orders");
+const menuCol     = () => collection(db, ROOT, "data", "menuItems");
+const settingsRef = () => doc(db, ROOT, "settings");
+const counterRef  = () => doc(db, ROOT, "tokenCounter");
+
+const DEFAULT_MENU = [
+  { emoji:"https://t3.ftcdn.net/jpg/05/02/07/24/360_F_502072465_mKZMIbb4gw0Ay9YfUdnTBsbauCpZC5p9.jpg", nameEn:"Pani Puri",  nameTa:"பாணி பூரி", price:30, parcelPrice:30, active:true, order:1 },
+  { emoji:"https://static.vecteezy.com/system/resources/thumbnails/068/204/537/small/pani-puri-indian-food-isolated-on-transparent-backgroun-png.png", nameEn:"Rasa Puri",  nameTa:"ரச பூரி",   price:35, parcelPrice:35, active:true, order:2 },
+  { emoji:"https://thumbs.dreamstime.com/b/mirchi-bajji-isolated-white-background-spicy-deep-fried-mirchi-bajji-stuffed-flavorful-filling-isolated-white-366376577.jpg", nameEn:"Bajji",      nameTa:"பஜ்ஜி",        price:40, parcelPrice:40, active:true, order:3 },
+  { emoji:"https://i.ytimg.com/vi/9ZxxFWXh9yw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC2WG2iVjJnoh1Nxn7f_IQ2QWR9fw", nameEn:"Kaalaan",    nameTa:"காளான்",     price:50, parcelPrice:50, active:true, order:4 },
+];
+const SELLER_PASS = "selva@123";
+
+let cart        = {};          // { itemId: qty }
+let orderType   = 'eat';       // 'eat' | 'parcel'
+let myOrderIds  = JSON.parse(localStorage.getItem('pp_my_orders') || '[]');
+let lang        = localStorage.getItem('pp_lang') || 'en';
+let shopOpen    = true;
+let sellerLoggedIn = false;
+let allOrders   = [];
+let menuItems   = [];
+let selectedEmoji = '🫧';
+let currentScreen = 'menu';
+
+// ── Translations ──
+const T = {
+  en:{
+    stallName:"Selvakumar Pani Puri", stallSub:"Fresh & Spicy • Order Here",
+    closedTitle:"Shop Closed Today", closedSub:"We're closed today. Come back tomorrow — fresh & spicy as always! 🙏", closedBadge:"Holiday Today",
+    navMenu:"Menu", navOrders:"My Orders", navSeller:"Seller",
+    menuTitle:"Today's Menu",
+    eatHere:"Eat Here", parcel:"Parcel",
+    eatPrice:"Eat Here", parcelPrice:"Parcel",
+    backMenu:"Back to Menu", yourOrder:"Your Order",
+    labelName:"Your Name", phName:"e.g. Vignesh G",
+    placeOrder:"Place Order ✓",
+    tokenTitle:"Order Placed! 🎉", yourToken:"Your Token Number",
+    tokenHint:"📢 Show this number to the seller when called",
+    trackOrder:"Track My Order →",
+    myOrdersTitle:"My Orders",
+    sellerLogin:"🔐 Seller Login", labelPass:"Password", phPass:"Enter password", loginBtn:"Login",
+    dashTitle:"Dashboard", logoutBtn:"Logout",
+    shopOpen:"Shop Open", shopOpenHint:"Turn off = customers see closed page",
+    newOrders:"New Orders", todaySales:"Today's Sales",
+    itemBreakdown:"Item Breakdown",
+    manageMenu:"Manage Menu", addNewItem:"+ Add New Item", addBtn:"Add to Menu",
+    parcelPriceHint:"Parcel price (leave empty = same as eat here)",
+    viewOrder:"View Order →",
+    cartItems:"items", cartItem:"item",
+    statusPending:"Pending 🕐", statusAccepted:"Accepted ✅", statusReady:"Ready! 🎉", statusDone:"Done ✓",
+    accept:"Accept", ready:"Ready!", done:"Done",
+    token:"Token",
+    noOrders:"No orders yet.\nGo to Menu and order!",
+    noNewOrders:"No pending orders right now.",
+    totalRevenue:"Revenue", totalOrders:"Orders", avgOrder:"Avg",
+    wrongPass:"Wrong password!", fillName:"Please enter your name",
+    closedMsg:"Shop is closed today. Come back tomorrow!",
+    fbConnected:"Live ✓", fbError:"Connection error",
+    deactivate:"Hide", activate:"Show",
+    noMenuItems:"No items yet. Add below!",
+    itemAdded:"Item added! ✓", fillAll:"Fill all fields first.",
+    total:"Total",
+    eatLabel:"🍽️ Eat Here", parcelLabel:"📦 Parcel",
+  },
+  ta:{
+    stallName:"செல்வகுமார் பாணி பூரி", stallSub:"புதினா • காரம் • ஆர்டர் இங்கே",
+    closedTitle:"இன்று கடை மூடியது", closedSub:"இன்று விடுமுறை. நாளை வாருங்கள் — காரமாக, புதிதாக! 🙏", closedBadge:"இன்று விடுமுறை",
+    navMenu:"மெனு", navOrders:"என் ஆர்டர்", navSeller:"விற்பனை",
+    menuTitle:"இன்றைய மெனு",
+    eatHere:"இங்கே சாப்பிட", parcel:"பார்சல்",
+    eatPrice:"இங்கே", parcelPrice:"பார்சல்",
+    backMenu:"மெனுவிற்கு திரும்பு", yourOrder:"உங்கள் ஆர்டர்",
+    labelName:"உங்கள் பெயர்", phName:"எ.கா. கோ.விக்னேஷ்",
+    placeOrder:"ஆர்டர் கொடு ✓",
+    tokenTitle:"ஆர்டர் வைக்கப்பட்டது! 🎉", yourToken:"உங்கள் டோக்கன் எண்",
+    tokenHint:"📢 விற்பனையாளர் அழைக்கும்போது இந்த எண்ணை காட்டவும்",
+    trackOrder:"என் ஆர்டர் பார் →",
+    myOrdersTitle:"என் ஆர்டர்கள்",
+    sellerLogin:"🔐 விற்பனையாளர் உள்நுழைவு", labelPass:"கடவுச்சொல்", phPass:"கடவுச்சொல் உள்ளிடவும்", loginBtn:"உள்நுழை",
+    dashTitle:"டாஷ்போர்டு", logoutBtn:"வெளியேறு",
+    shopOpen:"கடை திறந்துள்ளது", shopOpenHint:"அணைத்தால் மூடிய பக்கம் காட்டும்",
+    newOrders:"புதிய ஆர்டர்கள்", todaySales:"இன்றைய விற்பனை",
+    itemBreakdown:"பொருட்கள் விவரம்",
+    manageMenu:"மெனு மேலாண்மை", addNewItem:"+ புதிய பொருள் சேர்", addBtn:"மெனுவில் சேர்",
+    parcelPriceHint:"பார்சல் விலை (காலி = இங்கே சாப்பிட விலையே)",
+    viewOrder:"ஆர்டர் பார் →",
+    cartItems:"பொருட்கள்", cartItem:"பொருள்",
+    statusPending:"காத்திருக்கிறது 🕐", statusAccepted:"ஏற்கப்பட்டது ✅", statusReady:"தயார்! 🎉", statusDone:"முடிந்தது ✓",
+    accept:"ஏற்கவும்", ready:"தயார்!", done:"முடிந்தது",
+    token:"டோக்கன்",
+    noOrders:"ஆர்டர் இல்லை.\nமெனுவில் ஆர்டர் செய்யவும்!",
+    noNewOrders:"இப்போது ஆர்டர்கள் இல்லை.",
+    totalRevenue:"வருவாய்", totalOrders:"ஆர்டர்கள்", avgOrder:"சராசரி",
+    wrongPass:"தவறான கடவுச்சொல்!", fillName:"உங்கள் பெயரை உள்ளிடவும்",
+    closedMsg:"இன்று கடை மூடியது. நாளை வாருங்கள்!",
+    fbConnected:"நேரலை ✓", fbError:"இணைப்பு பிழை",
+    deactivate:"மறை", activate:"காட்டு",
+    noMenuItems:"இன்னும் பொருட்கள் இல்லை. கீழே சேர்க்கவும்!",
+    itemAdded:"பொருள் சேர்க்கப்பட்டது! ✓", fillAll:"அனைத்து தகவல்களையும் நிரப்பவும்.",
+    total:"மொத்தம்",
+    eatLabel:"🍽️ இங்கே சாப்பிட", parcelLabel:"📦 பார்சல்",
+  }
+};
+
+const t = k => T[lang][k] || k;
+const today = () => new Date().toISOString().split('T')[0];
+const toast = (msg, dur=2400) => {
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), dur);
+};
+
+// ── Get effective price based on order type ──
+function itemPrice(item, otype) {
+  const type = otype || orderType;
+  if (type === 'parcel') {
+    // parcelPrice may not exist on old items — fall back to price
+    return (item.parcelPrice != null) ? item.parcelPrice : item.price;
+  }
+  return item.price;
+}
+
+// ── Order Type Toggle ──
+window.setOrderType = (type) => {
+  orderType = type;
+  const btnEat    = document.getElementById('btn-eat');
+  const btnParcel = document.getElementById('btn-parcel');
+  btnEat.className    = 'ot-btn' + (type==='eat' ? ' active' : '');
+  btnParcel.className = 'ot-btn' + (type==='parcel' ? ' parcel-active' : '');
+  const bar = document.getElementById('cart-bar');
+  const chkBtn = document.getElementById('cart-checkout-btn');
+  if (type==='parcel') {
+    bar.classList.add('parcel-bar');
+    chkBtn.className = 'cart-checkout-btn parcel-btn';
+  } else {
+    bar.classList.remove('parcel-bar');
+    chkBtn.className = 'cart-checkout-btn eat-btn';
+  }
+  renderMenu();
+  renderCart();
+};
+
+// ── Language ──
+window.toggleLang = () => {
+  lang = lang==='en'?'ta':'en';
+  localStorage.setItem('pp_lang', lang);
+  document.getElementById('lang-toggle').textContent = lang==='en'?'தமிழ்':'English';
+  applyTranslations(); renderMenu(); renderCart();
+};
+function applyTranslations() {
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k=el.getAttribute('data-t'); if(T[lang][k]) el.textContent=T[lang][k];
+  });
+  document.querySelectorAll('[data-t-ph]').forEach(el=>{
+    const k=el.getAttribute('data-t-ph'); if(T[lang][k]) el.placeholder=T[lang][k];
+  });
+  document.getElementById('h-stallname').textContent=t('stallName');
+  document.getElementById('h-stallsub').textContent=t('stallSub');
+}
+
+// ── Screen Navigation ──
+window.showScreen = (name) => {
+  if (!shopOpen && ['menu','checkout','token'].includes(name)) name='closed';
+  currentScreen = name;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-closed').style.display='none';
+  document.querySelectorAll('.nav-tab').forEach(tb=>tb.classList.remove('active'));
+  if (name==='closed') {
+    document.getElementById('screen-closed').style.display='flex';
+    document.getElementById('tab-menu').classList.add('active');
+    document.getElementById('cart-bar').classList.remove('visible');
+  } else {
+    document.getElementById('screen-'+name).classList.add('active');
+    const tab = document.getElementById('tab-'+name);
+    if (tab) tab.classList.add('active');
+  }
+  if (name==='orders') renderMyOrders();
+};
+
+// ── Render Menu ──
+function renderMenu() {
+  const active = menuItems.filter(m=>m.active!==false);
+  const grid   = document.getElementById('menu-grid');
+  const isParcel = orderType === 'parcel';
+  if (!active.length) {
+    grid.innerHTML=`<div style="grid-column:1/-1" class="empty-state"><div class="empty-icon">🍽️</div>${lang==='ta'?'மெனு இல்லை':'No items available'}</div>`;
+    return;
+  }
+  grid.innerHTML = active.map(item=>{
+    const qty  = cart[item.id] || 0;
+    return `<div class="menu-card ${qty>0?'in-cart'+(isParcel?' parcel':''):''}">
+      <div class="menu-img">${item.emoji&&item.emoji.startsWith('http')?`<img src="${item.emoji}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='🍽️'">`:item.emoji||'🍽️'}</div>
+      <div class="menu-info">
+        <div class="menu-name">${lang==='ta'?item.nameTa:item.nameEn}</div>
+        <div class="menu-name-ta">${lang==='ta'?item.nameEn:item.nameTa}</div>
+        <div class="menu-price" style="color:${isParcel?'var(--blue)':'var(--saffron)'}">₹${itemPrice(item)}</div>
+        ${qty===0
+          ? `<button class="add-btn ${isParcel?'add-btn-parcel':'add-btn-eat'}" onclick="addItem('${item.id}')">${lang==='ta'?'சேர்':'Add'}</button>`
+          : `<div class="menu-qty">
+               <button class="qty-btn ${isParcel?'parcel-mode':''}" onclick="changeQty('${item.id}',-1)">−</button>
+               <span class="qty-val">${qty}</span>
+               <button class="qty-btn ${isParcel?'parcel-mode':''}" onclick="changeQty('${item.id}',1)">+</button>
+             </div>`}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+window.addItem = id => { cart[id]=1; renderMenu(); renderCart(); };
+window.changeQty = (id,delta) => {
+  cart[id]=(cart[id]||0)+delta;
+  if(cart[id]<=0) delete cart[id];
+  renderMenu(); renderCart();
+};
+function renderCart() {
+  const bar=document.getElementById('cart-bar');
+  const count=Object.values(cart).reduce((a,b)=>a+b,0);
+  if(count===0||!shopOpen){bar.classList.remove('visible');return;}
+  bar.classList.add('visible');
+  document.getElementById('cart-count-txt').textContent=`${count} ${count===1?t('cartItem'):t('cartItems')}`;
+  document.getElementById('cart-total-txt').textContent=`₹${cartTotal()}`;
+}
+function cartTotal(){
+  return Object.entries(cart).reduce((s,[id,qty])=>{
+    const item=menuItems.find(m=>m.id===id);
+    return s+(item?itemPrice(item)*qty:0);
+  },0);
+}
+
+// ── Order type badge HTML helper ──
+function otypeBadgeHtml(otype) {
+  return otype === 'parcel'
+    ? `<span class="otype-badge otype-parcel">📦 ${t('parcel')}</span>`
+    : `<span class="otype-badge otype-eat">🍽️ ${t('eatHere')}</span>`;
+}
+
+window.goCheckout = () => {
+  // Show order type badge
+  document.getElementById('checkout-otype').innerHTML = otypeBadgeHtml(orderType);
+  const rows=Object.entries(cart).map(([id,qty])=>{
+    const item=menuItems.find(m=>m.id===id);
+    const nm=lang==='ta'?item.nameTa:item.nameEn;
+    const p=itemPrice(item);
+    return `<div class="order-row"><span>${nm} × ${qty}</span><span>₹${p*qty}</span></div>`;
+  }).join('');
+  document.getElementById('checkout-summary').innerHTML=
+    rows+`<div class="order-total"><span>${t('total')}</span><span>₹${cartTotal()}</span></div>`;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-checkout').classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(tb=>tb.classList.remove('active'));
+  currentScreen='checkout';
+};
+
+// ── Token Generator ──
+async function getNextToken() {
+  const snap=await getDoc(counterRef());
+  let next=1;
+  if(snap.exists()){
+    const d=snap.data();
+    next=d.date===today()?(d.count||0)+1:1;
+  }
+  await setDoc(counterRef(),{count:next,date:today()});
+  return next;
+}
+
+// ── Place Order ──
+window.placeOrder = async () => {
+  const name=document.getElementById('cust-name').value.trim();
+  if(!name){toast(t('fillName'));return;}
+  const items=Object.entries(cart).map(([id,qty])=>{
+    const item=menuItems.find(m=>m.id===id);
+    const p=itemPrice(item);
+    return {id, nameEn:item.nameEn, nameTa:item.nameTa, qty, price:p};
+  });
+  const total=cartTotal();
+  try {
+    const token=await getNextToken();
+    const ref=await addDoc(ordersCol(),{
+      customerName:name, token, items, total,
+      orderType,          // ← 'eat' or 'parcel' stored in Firebase
+      status:'pending', date:today(), createdAt:serverTimestamp()
+    });
+    myOrderIds.push(ref.id);
+    localStorage.setItem('pp_my_orders',JSON.stringify(myOrderIds));
+
+    // Token screen
+    document.getElementById('token-display').textContent=token;
+    document.getElementById('token-name-display').textContent=name;
+    document.getElementById('token-otype').innerHTML=otypeBadgeHtml(orderType);
+    // Colour token card border for parcel
+    document.getElementById('token-card').style.borderColor =
+      orderType==='parcel' ? 'var(--blue)' : 'var(--saffron)';
+    document.getElementById('token-display').style.color =
+      orderType==='parcel' ? 'var(--blue)' : 'var(--saffron)';
+
+    const summaryRows=items.map(i=>
+      `<div class="order-row"><span>${lang==='ta'?i.nameTa:i.nameEn} × ${i.qty}</span><span>₹${i.price*i.qty}</span></div>`
+    ).join('');
+    document.getElementById('token-order-summary').innerHTML=
+      summaryRows+`<div class="order-total"><span>${t('total')}</span><span>₹${total}</span></div>`;
+
+    cart={}; orderType='eat';
+    setOrderType('eat');  // reset toggle visually
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(tb=>tb.classList.remove('active'));
+    document.getElementById('screen-token').classList.add('active');
+    document.getElementById('tab-orders').classList.add('active');
+    currentScreen='token';
+    document.getElementById('cust-name').value='';
+  } catch(e){toast('Error: '+e.message);}
+};
+
+// ── My Orders ──
+function renderMyOrders() {
+  const el=document.getElementById('orders-list');
+  if(!myOrderIds.length){
+    el.innerHTML=`<div class="empty-state"><div class="empty-icon">🍽️</div>${t('noOrders')}</div>`;return;
+  }
+  const mine=allOrders.filter(o=>myOrderIds.includes(o.id)).slice().reverse();
+  if(!mine.length){
+    el.innerHTML=`<div class="empty-state"><div class="empty-icon">🍽️</div>${t('noOrders')}</div>`;return;
+  }
+  el.innerHTML=mine.map(o=>{
+    const sk='status'+o.status.charAt(0).toUpperCase()+o.status.slice(1);
+    const il=o.items.map(i=>`${lang==='ta'?i.nameTa:i.nameEn} ×${i.qty}`).join(', ');
+    const ot = o.orderType || 'eat';
+    return `<div class="order-status-card">
+      <div style="display:flex;justify-content:space-between;align-items:start">
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <span style="font-weight:700">${o.customerName}</span>
+            <span style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:1px 8px;font-size:.78rem;font-weight:700;color:var(--saffron)">${t('token')} #${o.token||'–'}</span>
+            ${otypeBadgeHtml(ot)}
+          </div>
+          <div style="font-size:.82rem;color:var(--muted);margin-top:3px">${il}</div>
+          <div style="font-weight:600;margin-top:3px;font-size:.85rem">₹${o.total}</div>
+        </div>
+        <span class="status-badge status-${o.status}">${t(sk)}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Seller ──
+window.sellerLogin = () => {
+  if(document.getElementById('seller-pass').value!==SELLER_PASS){toast(t('wrongPass'));return;}
+  sellerLoggedIn=true;
+  document.getElementById('seller-login-panel').style.display='none';
+  document.getElementById('seller-dashboard').style.display='block';
+  renderSellerOrders(); renderSales(); renderMenuManage();
+};
+window.sellerLogout = () => {
+  sellerLoggedIn=false;
+  document.getElementById('seller-login-panel').style.display='block';
+  document.getElementById('seller-dashboard').style.display='none';
+  document.getElementById('seller-pass').value='';
+};
+window.toggleShopStatus = async () => {
+  shopOpen=document.getElementById('open-toggle').checked;
+  await setDoc(settingsRef(),{shopOpen},{merge:true});
+};
+window.updateOrderStatus = async (id,status) => {
+  await updateDoc(doc(db,ROOT,"data","orders",id),{status});
+};
+
+function renderSellerOrders() {
+  const el=document.getElementById('new-orders-list');
+  const active=allOrders.filter(o=>o.date===today()&&['pending','accepted'].includes(o.status));
+  if(!active.length){el.innerHTML=`<div class="empty-state">${t('noNewOrders')}</div>`;return;}
+  el.innerHTML=active.map(o=>{
+    const il=o.items.map(i=>`${lang==='ta'?i.nameTa:i.nameEn} ×${i.qty}`).join(', ');
+    const ot = o.orderType || 'eat';
+    const isParcel = ot === 'parcel';
+    // Parcel card gets blue left border
+    return `<div class="seller-order-card ${isParcel?'parcel-card':''}">
+      <div class="seller-order-header">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="token-badge" style="${isParcel?'background:var(--blue)':''}">#${o.token||'–'}</span>
+            <span class="customer-name">${o.customerName}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <!-- BIG VISIBLE TYPE FLAG -->
+            <span class="${isParcel?'parcel-flag':'eat-flag'}">${isParcel?'📦 '+t('parcel'):'🍽️ '+t('eatHere')}</span>
+            <span class="status-badge status-${o.status}">${o.status==='pending'?t('statusPending'):t('statusAccepted')}</span>
+          </div>
+        </div>
+        <div class="order-items" style="margin-top:6px">${il}</div>
+        <div style="font-weight:700;color:${isParcel?'var(--blue)':'var(--saffron)'}">₹${o.total}</div>
+      </div>
+      <div class="seller-actions">
+        ${o.status==='pending'?`<button class="accept-btn" onclick="updateOrderStatus('${o.id}','accepted')">${t('accept')}</button>`:''}
+        ${o.status==='accepted'?`<button class="ready-btn" onclick="updateOrderStatus('${o.id}','ready')">${t('ready')}</button>`:''}
+        <button class="done-btn" onclick="updateOrderStatus('${o.id}','done')">${t('done')}</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderSales() {
+  const day=allOrders.filter(o=>o.date===today());
+  const rev=day.reduce((s,o)=>s+o.total,0);
+  const cnt=day.length;
+  const avg=cnt?Math.round(rev/cnt):0;
+  const parcelCnt = day.filter(o=>o.orderType==='parcel').length;
+  const eatCnt    = cnt - parcelCnt;
+  document.getElementById('sales-grid').innerHTML=`
+    <div class="sales-card" style="text-align:center;margin-bottom:0"><div class="sales-number">₹${rev}</div><div class="sales-label">${t('totalRevenue')}</div></div>
+    <div class="sales-card" style="text-align:center;margin-bottom:0"><div class="sales-number" style="color:var(--green)">${eatCnt}</div><div class="sales-label">🍽️ ${t('eatHere')}</div></div>
+    <div class="sales-card" style="text-align:center;margin-bottom:0"><div class="sales-number" style="color:var(--blue)">${parcelCnt}</div><div class="sales-label">📦 ${t('parcel')}</div></div>`;
+  const bd={};
+  day.forEach(o=>o.items.forEach(i=>{
+    if(!bd[i.id]) bd[i.id]={name:i.nameEn,nameTa:i.nameTa,qty:0,rev:0};
+    bd[i.id].qty+=i.qty; bd[i.id].rev+=i.price*i.qty;
+  }));
+  const rows=Object.values(bd).sort((a,b)=>b.rev-a.rev);
+  document.getElementById('item-breakdown').innerHTML=rows.length
+    ?rows.map(r=>`<div class="item-sales-row"><span>${lang==='ta'?r.nameTa:r.name}</span><span>${r.qty} pcs = <strong>₹${r.rev}</strong></span></div>`).join('')
+    :`<div style="color:var(--muted);text-align:center;padding:10px;font-size:.85rem">${lang==='ta'?'இன்று விற்பனை இல்லை':'No sales today'}</div>`;
+}
+
+// ── Menu Manage ──
+function renderMenuManage() {
+  const el=document.getElementById('menu-manage-list');
+  if(!menuItems.length){el.innerHTML=`<div class="empty-state">${t('noMenuItems')}</div>`;return;}
+  el.innerHTML=menuItems.map(item=>`
+    <div class="manage-item-card" style="flex-direction:column;align-items:stretch" id="mic-${item.id}">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="manage-emoji">${item.emoji&&item.emoji.startsWith('http')?`<img src="${item.emoji}" style="width:40px;height:40px;object-fit:cover;border-radius:8px;" onerror="this.outerHTML='🍽️'">`:item.emoji||'🍽️'}</div>
+        <div class="manage-info">
+          <div class="manage-name">${item.nameEn}${!item.active?`<span class="inactive-tag">Hidden</span>`:''}</div>
+          <div class="manage-price">🍽️ ₹${item.price} 📦 ₹${item.parcelPrice!=null?item.parcelPrice:item.price} • ${item.nameTa}</div>
+        </div>
+        <div style="display:flex;gap:5px;flex-shrink:0">
+          <button class="edit-btn" onclick="toggleEditPanel('${item.id}')">✏️</button>
+          <button onclick="toggleMenuItem('${item.id}',${!item.active})"
+            style="background:${item.active?'#FFF3E0':'#E8F5E9'};color:${item.active?'#E65100':'var(--green)'};border:none;border-radius:7px;padding:5px 9px;font-size:.75rem;font-weight:700;cursor:pointer">
+            ${item.active?t('deactivate'):t('activate')}
+          </button>
+          <button onclick="removeMenuItem('${item.id}')"
+            style="background:#FFEBEE;color:var(--red);border:none;border-radius:7px;padding:5px 9px;font-size:.75rem;font-weight:700;cursor:pointer">✕</button>
+        </div>
+      </div>
+      <!-- INLINE EDIT PANEL -->
+      <div class="edit-panel" id="ep-${item.id}">
+        <div class="edit-row">
+          <span class="edit-label">Name</span>
+          <input class="edit-input" id="en-en-${item.id}" value="${item.nameEn}" placeholder="English name">
+          <input class="edit-input" id="en-ta-${item.id}" value="${item.nameTa}" placeholder="Tamil name">
+        </div>
+        <div class="edit-row">
+          <span class="edit-label">🍽️ ₹</span>
+          <input class="edit-input" id="ep-pr-${item.id}" type="number" value="${item.price}" placeholder="Eat price" style="max-width:90px">
+          <span class="edit-label" style="min-width:auto">📦 ₹</span>
+          <input class="edit-input" id="ep-pp-${item.id}" type="number" value="${item.parcelPrice!=null?item.parcelPrice:item.price}" placeholder="Parcel price" style="max-width:90px">
+        </div>
+        <div style="display:flex;gap:6px">
+          <button class="save-btn" onclick="saveItemEdit('${item.id}')">Save ✓</button>
+          <button class="edit-btn" onclick="toggleEditPanel('${item.id}')">Cancel</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+window.toggleEditPanel = (id) => {
+  const ep = document.getElementById('ep-'+id);
+  ep.classList.toggle('open');
+};
+window.saveItemEdit = async (id) => {
+  const nameEn    = document.getElementById('en-en-'+id).value.trim();
+  const nameTa    = document.getElementById('en-ta-'+id).value.trim();
+  const price     = parseInt(document.getElementById('ep-pr-'+id).value);
+  const ppRaw     = parseInt(document.getElementById('ep-pp-'+id).value);
+  const parcelPrice = (!isNaN(ppRaw) && ppRaw > 0) ? ppRaw : price;
+  if(!nameEn||!nameTa||!price){ toast(t('fillAll')); return; }
+  await updateDoc(doc(db,ROOT,"data","menuItems",id),{nameEn,nameTa,price,parcelPrice});
+  toast('Saved ✓');
+  document.getElementById('ep-'+id).classList.remove('open');
+};
+
+window.toggleMenuItem = async (id,newActive) => {
+  await updateDoc(doc(db,ROOT,"data","menuItems",id),{active:newActive});
+};
+window.removeMenuItem = async (id) => {
+  if(!confirm('Remove this item?')) return;
+  await deleteDoc(doc(db,ROOT,"data","menuItems",id));
+};
+window.pickEmoji = (el) => {
+  document.querySelectorAll('.emoji-opt').forEach(e=>e.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedEmoji=el.getAttribute('data-emoji');
+};
+window.previewImg = () => {
+  const url=document.getElementById('new-img-url').value.trim();
+  const preview=document.getElementById('img-preview');
+  const img=document.getElementById('img-preview-el');
+  if(url.startsWith('http')){
+    img.src=url;
+    img.onload=()=>{ preview.style.display='flex'; preview.style.alignItems='center'; };
+    img.onerror=()=>preview.style.display='none';
+  } else { preview.style.display='none'; }
+};
+window.addMenuItem = async () => {
+  const nameEn=document.getElementById('new-name-en').value.trim();
+  const nameTa=document.getElementById('new-name-ta').value.trim();
+  const price=parseInt(document.getElementById('new-price').value);
+  if(!nameEn||!nameTa||!price){toast(t('fillAll'));return;}
+  const imgUrl=document.getElementById('new-img-url').value.trim();
+  const emojiOrUrl=(imgUrl.startsWith('http'))?imgUrl:selectedEmoji;
+  const parcelRaw = parseInt(document.getElementById('new-parcel-price').value);
+  const parcelPrice = (!isNaN(parcelRaw) && parcelRaw > 0) ? parcelRaw : price;
+  await addDoc(menuCol(),{emoji:emojiOrUrl,nameEn,nameTa,price,parcelPrice,active:true,order:Date.now()});
+  document.getElementById('new-name-en').value='';
+  document.getElementById('new-name-ta').value='';
+  document.getElementById('new-price').value='';
+  document.getElementById('new-parcel-price').value='';
+  document.getElementById('new-img-url').value='';
+  document.getElementById('img-preview').style.display='none';
+  toast(t('itemAdded'));
+};
+
+// ── Seed defaults if menu is empty ──
+async function seedMenuIfEmpty() {
+  return new Promise(resolve => {
+    let done=false;
+    const unsub=onSnapshot(menuCol(), async snap=>{
+      if(!done && snap.empty){
+        done=true; unsub();
+        for(const item of DEFAULT_MENU) await addDoc(menuCol(),item);
+      } else if(!done){
+        done=true; unsub();
+      }
+      resolve();
+    });
+  });
+}
+
+// ── Firebase Listeners ──
+function startListeners() {
+  onSnapshot(query(menuCol(),orderBy('order','asc')), snap=>{
+    menuItems=snap.docs.map(d=>({id:d.id,...d.data()}));
+    renderMenu();
+    if(sellerLoggedIn) renderMenuManage();
+  });
+  onSnapshot(query(ordersCol(),orderBy('createdAt','desc')), snap=>{
+    allOrders=snap.docs.map(d=>({id:d.id,...d.data()}));
+    if(sellerLoggedIn){renderSellerOrders();renderSales();}
+    if(currentScreen==='orders') renderMyOrders();
+    document.getElementById('fb-dot').classList.add('green');
+    document.getElementById('fb-txt').textContent=t('fbConnected');
+  },()=>{ document.getElementById('fb-txt').textContent=t('fbError'); });
+  onSnapshot(settingsRef(), snap=>{
+    if(snap.exists()){
+      const data=snap.data();
+      shopOpen=data.shopOpen!==false;
+      document.getElementById('open-toggle').checked=shopOpen;
+      if(!shopOpen && ['menu','checkout','token'].includes(currentScreen)){
+        showScreen('closed');
+      } else if(shopOpen && currentScreen==='closed'){
+        showScreen('menu');
+      }
+      renderCart();
+    }
+  });
+}
+
+// ── Boot ──
+(async()=>{
+  document.getElementById('lang-toggle').textContent=lang==='en'?'தமிழ்':'English';
+  applyTranslations();
+  try {
+    await seedMenuIfEmpty();
+    startListeners();
+  } catch(e){
+    document.getElementById('fb-txt').textContent=t('fbError');
+  }
+})();
+</script>
+</body>
+</html>
