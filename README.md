@@ -5,8 +5,8 @@ Free websites built for local clients in [Your Town], Tamil Nadu.
 
 | Client | Live Site | Description |
 |--------|-----------|-------------|
-| Sree Bakery | [View](https://yourname.github.io/community-sites/sree-bakery/) | Home bakery, Chromepet |
-| Ganesh Temple | [View](https://yourname.github.io/community-sites/ganesh-temple/) | Temple trust, Tambaram |
-| Village School | [View](https://yourname.github.io/community-sites/village-school/) | Govt. primary school |
+| Masi Saloon | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Masi_Saloon_Site/) | Punjai Sangenthi |
+| Selva Pani Puri | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Selva_PaniPuri_Stall/) | Punjai Sangenthi |
+| Village School | [View](https://Vigneshgbe.github.io/Local_Client_Pages/village-school/) | Punjai Sangenthi |
 
 > All sites built as a social service — no charge to clients.
