@@ -5,8 +5,8 @@ Free websites built for local clients in [Your Town], Tamil Nadu.
 
 | Client | Live Site | Description |
 |--------|-----------|-------------|
-| Masi Saloon | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Masi_Saloon_Site/) | Punjai Sangenthi |
-| Selva Pani Puri | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Selva_PaniPuri_Stall/) | Punjai Sangenthi |
-| Village School | [View](https://Vigneshgbe.github.io/Local_Client_Pages/village-school/) | Punjai Sangenthi |
+| Masi Saloon | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Masi_Saloon_Site/) | Sangenthi, IN |
+| Selva Pani Puri | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Selva_PaniPuri_Stall/) | Sangenthi, IN |
+| Ikraam Milkshake | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Ikraam_Milkshake/) | Colombo, SL |
 
 > All sites built as a social service — no charge to clients.
