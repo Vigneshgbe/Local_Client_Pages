@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MILKSHAKE — Made For You</title>
+<meta name="description" content="MILKSHAKE — a premium shake brand. Sip. Blend. Enjoy.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0908;
+    --black-2:#141210;
+    --cream:#f5efe4;
+    --cream-dim:#cfc6b6;
+    --choc:#3d2417;
+    --choc-2:#5a3520;
+    --caramel:#c9884b;
+    --caramel-bright:#e3a866;
+    --line: rgba(245,239,228,0.14);
+    --ease: cubic-bezier(.22,.9,.28,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--caramel);color:var(--black);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .display{font-family:'Bebas Neue',sans-serif; letter-spacing:0.02em;}
+  .serif{font-family:'Fraunces',serif;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  /* ============ scrollbar / focus ============ */
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--black);}
+  ::-webkit-scrollbar-thumb{background:var(--choc-2);border-radius:10px;}
+  a:focus-visible, button:focus-visible, .card:focus-visible{
+    outline:2px solid var(--caramel-bright); outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ============ grain overlay ============ */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:200; opacity:0.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============ nav ============ */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 40px; transition:background .4s var(--ease), padding .4s var(--ease), border-color .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(10,9,8,0.86); backdrop-filter:blur(14px); padding:14px 40px; border-color:var(--line);
+  }
+  @media(max-width:640px){header, header.scrolled{padding:16px 20px;}}
+  .logo{display:flex; align-items:baseline; gap:8px; cursor:pointer;}
+  .logo-mark{font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:0.08em;}
+  .logo-tag{font-family:'Fraunces',serif; font-style:italic; font-size:12px; color:var(--caramel-bright); display:none;}
+  @media(min-width:560px){.logo-tag{display:inline;}}
+  nav.links{display:none; gap:36px; font-size:14px; letter-spacing:0.03em; text-transform:uppercase;}
+  @media(min-width:860px){nav.links{display:flex;}}
+  nav.links a{position:relative; padding-bottom:4px; opacity:0.85; transition:opacity .25s;}
+  nav.links a:hover{opacity:1;}
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--caramel-bright);
+    transition:width .3s var(--ease);
+  }
+  nav.links a:hover::after{width:100%;}
+  .nav-right{display:flex; align-items:center; gap:18px;}
+  .cart-btn{
+    position:relative; width:40px; height:40px; border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; background:transparent;
+    transition:border-color .25s, transform .25s;
+  }
+  .cart-btn:hover{border-color:var(--caramel-bright); transform:scale(1.06);}
+  .cart-btn svg{width:18px; height:18px; stroke:var(--cream);}
+  .cart-count{
+    position:absolute; top:-6px; right:-6px; background:var(--caramel); color:var(--black);
+    font-size:10px; font-weight:700; width:18px; height:18px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; transform:scale(0); transition:transform .3s var(--ease);
+  }
+  .cart-count.show{transform:scale(1);}
+  .menu-toggle{display:flex; width:40px; height:40px; align-items:center; justify-content:center; cursor:pointer; background:none; border:none;}
+  @media(min-width:860px){.menu-toggle{display:none;}}
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{display:none;}
+  .burger{width:20px; height:14px; position:relative;}
+  .burger i{position:absolute; left:0; width:100%; height:1.5px; background:var(--cream); transition:all .3s var(--ease);}
+  .burger i:nth-child(1){top:0;}
+  .burger i:nth-child(2){top:6px;}
+  .burger i:nth-child(3){top:12px;}
+  .menu-toggle.open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .menu-toggle.open .burger i:nth-child(2){opacity:0;}
+  .menu-toggle.open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  .mobile-panel{
+    position:fixed; inset:0; z-index:90; background:var(--black);
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:26px; padding:0 32px;
+    transform:translateY(-100%); transition:transform .5s var(--ease);
+  }
+  .mobile-panel.open{transform:translateY(0);}
+  .mobile-panel a{font-family:'Bebas Neue',sans-serif; font-size:42px; letter-spacing:0.03em;}
+
+  /* ============ hero ============ */
+  .hero{
+    min-height:100svh; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:140px 24px 80px; overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute; top:50%; left:50%; width:900px; height:900px; transform:translate(-50%,-55%);
+    background:radial-gradient(circle, rgba(201,136,75,0.16) 0%, rgba(201,136,75,0.05) 40%, transparent 70%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-size:12px; letter-spacing:0.35em; text-transform:uppercase; color:var(--caramel-bright);
+    margin-bottom:22px; opacity:0; animation:fadeUp .9s var(--ease) 0.15s forwards;
+  }
+  .hero h1{
+    font-family:'Bebas Neue',sans-serif; font-size:clamp(64px,15vw,168px); line-height:0.88; letter-spacing:0.01em;
+    opacity:0; animation:fadeUp 1s var(--ease) 0.3s forwards;
+  }
+  .hero .tagline{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:clamp(18px,3vw,26px);
+    color:var(--cream-dim); margin-top:18px; opacity:0; animation:fadeUp 1s var(--ease) 0.5s forwards;
+  }
+  .hero .sbe{
+    margin-top:34px; display:flex; gap:18px; align-items:center; font-size:13px; letter-spacing:0.3em; text-transform:uppercase;
+    color:var(--cream-dim); opacity:0; animation:fadeUp 1s var(--ease) 0.65s forwards;
+  }
+  .hero .sbe span.dot{width:4px; height:4px; border-radius:50%; background:var(--caramel-bright); display:inline-block;}
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(26px);} to{opacity:1; transform:translateY(0);} }
+
+  .hero-glass-wrap{ margin-top:56px; opacity:0; animation:fadeUp 1.1s var(--ease) 0.8s forwards; }
+
+  .cta-primary{
+    margin-top:52px; display:inline-flex; align-items:center; gap:12px;
+    background:var(--cream); color:var(--black); font-weight:700; font-size:14px; letter-spacing:0.12em; text-transform:uppercase;
+    padding:18px 34px; border-radius:100px; border:none; cursor:pointer;
+    transition:transform .3s var(--ease), background .3s, box-shadow .3s;
+    opacity:0; animation:fadeUp 1s var(--ease) 1s forwards;
+  }
+  .cta-primary:hover{ transform:translateY(-3px); background:var(--caramel-bright); box-shadow:0 16px 40px rgba(201,136,75,0.28); }
+  .cta-primary:active{ transform:translateY(-1px) scale(0.98); }
+  .cta-primary svg{width:16px; height:16px;}
+
+  .scroll-cue{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px; font-size:10px; letter-spacing:0.25em;
+    text-transform:uppercase; color:var(--cream-dim); opacity:0; animation:fadeUp 1s var(--ease) 1.3s forwards;
+  }
+  .scroll-cue .line{width:1px; height:34px; background:linear-gradient(var(--cream-dim), transparent); animation:pulseLine 2s ease-in-out infinite;}
+  @keyframes pulseLine{ 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+
+  /* glass illustration */
+  .glass-svg{ width:min(46vw,220px); height:auto; }
+  .cream-fill{ transform-origin:bottom; }
+  .drip{ opacity:0; }
+  .hero-photo{
+    width:min(60vw,320px); max-height:56vh; object-fit:cover; border-radius:20px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.55); border:1px solid var(--line);
+  }
+
+  /* ============ section shell ============ */
+  section{ position:relative; padding:130px 0; }
+  @media(max-width:768px){ section{padding:90px 0;} }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-eyebrow{
+    font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:var(--caramel-bright); margin-bottom:16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .section-eyebrow::before{ content:''; width:24px; height:1px; background:var(--caramel-bright); }
+  .section-head h2{ font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,6vw,64px); line-height:1; margin-bottom:16px;}
+  .section-head p{ color:var(--cream-dim); font-size:16px; line-height:1.6; max-width:520px;}
+
+  .reveal{ opacity:0; transform:translateY(36px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ============ manifesto strip ============ */
+  .manifesto{
+    padding:70px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .manifesto .wrap{ display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between; align-items:center; }
+  .manifesto p{
+    font-family:'Fraunces',serif; font-size:clamp(24px,3.4vw,38px); font-weight:500; line-height:1.25; max-width:820px;
+  }
+  .manifesto em{ font-style:italic; color:var(--caramel-bright); }
+
+  /* ============ menu ============ */
+  .filter-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:48px; }
+  .filter-btn{
+    font-family:'Inter'; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 18px;
+    border:1px solid var(--line); background:transparent; color:var(--cream-dim); border-radius:100px; cursor:pointer;
+    transition:all .25s var(--ease);
+  }
+  .filter-btn:hover{ border-color:var(--caramel-bright); color:var(--cream); }
+  .filter-btn.active{ background:var(--cream); color:var(--black); border-color:var(--cream); }
+
+  .menu-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:28px; }
+  .card{
+    position:relative; border:1px solid var(--line); border-radius:20px; overflow:hidden; background:var(--black-2);
+    cursor:pointer; transition:transform .45s var(--ease), border-color .4s; display:flex; flex-direction:column;
+  }
+  .card:hover{ transform:translateY(-8px); border-color:rgba(227,168,102,0.4); }
+  .card-media{
+    position:relative; aspect-ratio:4/3.3; overflow:hidden; background:linear-gradient(160deg, var(--choc-2), var(--black-2));
+  }
+  .card-media img{
+    width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);
+  }
+  .card:hover .card-media img{ transform:scale(1.08); }
+  .card-media.img-missing img{ display:none; }
+  .card-media.img-missing::after{
+    content:'Add image: images/' attr(data-slug) '.jpg';
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:20px; font-size:11.5px; letter-spacing:0.05em; color:var(--cream-dim); background:linear-gradient(160deg, var(--choc-2), var(--black-2));
+  }
+  .card-body{ padding:22px 22px 26px; display:flex; flex-direction:column; flex:1; }
+  .card-body .cname{ font-family:'Fraunces',serif; font-weight:600; font-size:20px; margin-bottom:6px; }
+  .card-body .cdesc{ font-size:13.5px; color:var(--cream-dim); line-height:1.55; flex:1; margin-bottom:18px; }
+  .card-foot{ display:flex; align-items:center; justify-content:space-between; }
+  .cprice{ font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.03em; color:var(--caramel-bright); }
+  .add-btn{
+    display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--line); color:var(--cream); padding:10px 16px; border-radius:100px;
+    cursor:pointer; transition:all .3s var(--ease); font-family:'Inter'; font-weight:600;
+  }
+  .add-btn:hover{ background:var(--cream); color:var(--black); border-color:var(--cream); }
+  .add-btn.added{ background:var(--caramel-bright); color:var(--black); border-color:var(--caramel-bright); }
+  .tag-badge{
+    position:absolute; top:14px; left:14px; font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
+    background:rgba(10,9,8,0.72); backdrop-filter:blur(6px); padding:6px 12px; border-radius:100px; border:1px solid var(--line); z-index:2;
+  }
+
+  /* ============ journey / how it works ============ */
+  .journey{ display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
+  @media(max-width:860px){ .journey{ grid-template-columns:1fr; } }
+  .jstep{ background:var(--black); padding:44px 32px; position:relative; }
+  .jstep .jnum{ font-family:'Bebas Neue',sans-serif; font-size:52px; color:rgba(245,239,228,0.12); line-height:1; margin-bottom:18px; }
+  .jstep h3{ font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin-bottom:10px; }
+  .jstep p{ font-size:13.5px; color:var(--cream-dim); line-height:1.55; }
+
+  /* ============ CTA blend button showcase ============ */
+  .blend-cta{
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:28px;
+    padding:100px 32px; border-radius:28px; position:relative; overflow:hidden;
+    background:radial-gradient(circle at 50% 0%, rgba(201,136,75,0.14), transparent 60%), var(--black-2);
+    border:1px solid var(--line);
+  }
+  .blend-cta h2{ font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,6vw,64px); max-width:720px; line-height:1.02; }
+  .blend-btn{
+    position:relative; font-family:'Bebas Neue',sans-serif; letter-spacing:0.04em; font-size:20px;
+    padding:22px 46px; border-radius:100px; border:none; cursor:pointer; background:var(--caramel-bright); color:var(--black);
+    display:inline-flex; align-items:center; gap:12px; overflow:hidden; transition:transform .3s var(--ease);
+  }
+  .blend-btn:hover{ transform:scale(1.045); }
+  .blend-btn:active{ transform:scale(0.97); }
+  .blend-btn .ring{
+    position:absolute; inset:-2px; border-radius:100px; border:2px solid var(--caramel-bright); opacity:0; 
+  }
+  .blend-btn.blending .ring{ animation:ringPulse 0.6s var(--ease); }
+  @keyframes ringPulse{ from{opacity:0.8; transform:scale(1);} to{opacity:0; transform:scale(1.5);} }
+
+  /* ============ while you wait teaser ============ */
+  .wait-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center; }
+  @media(max-width:860px){ .wait-grid{ grid-template-columns:1fr; gap:44px; } }
+  .wait-card{
+    background:var(--black-2); border:1px solid var(--line); border-radius:24px; padding:40px;
+    display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center;
+  }
+  #catch-canvas{ width:100%; aspect-ratio:4/3; background:linear-gradient(180deg, var(--choc) 0%, var(--black) 100%); border-radius:16px; touch-action:none; }
+  .wait-score{ font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.05em; }
+  .wait-hint{ font-size:12.5px; color:var(--cream-dim); }
+  .game-btn{
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; background:var(--cream); color:var(--black);
+    border:none; border-radius:100px; padding:12px 22px; cursor:pointer; transition:transform .3s var(--ease), background .3s;
+  }
+  .game-btn:hover{ transform:translateY(-2px); background:var(--caramel-bright); }
+
+  /* ============ story ============ */
+  .story-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  @media(max-width:860px){ .story-grid{ grid-template-columns:1fr; gap:44px; } }
+  .story-visual{ position:relative; aspect-ratio:1/1; border-radius:24px; background:linear-gradient(160deg, var(--choc-2), var(--black-2)); overflow:hidden; }
+  .story-photo{ width:100%; height:100%; object-fit:cover; }
+  .story-visual svg{ position:absolute; inset:0; margin:auto; width:60%; }
+  .story-text p{ color:var(--cream-dim); font-size:16px; line-height:1.75; margin-bottom:18px; }
+  .story-text p:first-of-type{ font-family:'Fraunces',serif; font-size:22px; font-style:italic; color:var(--cream); }
+
+  /* ============ footer ============ */
+  footer{ border-top:1px solid var(--line); padding:80px 0 32px; }
+  .footer-top{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:70px; }
+  @media(max-width:760px){ .footer-top{ grid-template-columns:1fr 1fr; row-gap:44px; } }
+  .footer-brand .display{ font-size:32px; }
+  .footer-brand p{ color:var(--cream-dim); font-size:14px; margin-top:14px; max-width:260px; line-height:1.6; }
+  .fcol h4{ font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--cream-dim); margin-bottom:18px; }
+  .fcol a{ display:block; font-size:14.5px; margin-bottom:12px; color:var(--cream); opacity:0.85; transition:opacity .2s; }
+  .fcol a:hover{ opacity:1; color:var(--caramel-bright); }
+  .footer-bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; font-size:12.5px; color:var(--cream-dim); padding-top:28px; border-top:1px solid var(--line); }
+
+  /* ============ cart drawer ============ */
+  .overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(3px); z-index:150; opacity:0; pointer-events:none; transition:opacity .35s var(--ease); }
+  .overlay.open{ opacity:1; pointer-events:auto; }
+  .drawer{
+    position:fixed; top:0; right:0; height:100%; width:min(420px,92vw); background:var(--black-2); z-index:151;
+    transform:translateX(100%); transition:transform .45s var(--ease); display:flex; flex-direction:column; border-left:1px solid var(--line);
+  }
+  .drawer.open{ transform:translateX(0); }
+  .drawer-head{ display:flex; align-items:center; justify-content:space-between; padding:26px 26px 20px; border-bottom:1px solid var(--line); }
+  .drawer-head h3{ font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:0.03em; }
+  .close-btn{ background:none; border:none; cursor:pointer; width:34px; height:34px; display:flex; align-items:center; justify-content:center; }
+  .close-btn svg{ width:18px; height:18px; stroke:var(--cream); }
+  .drawer-body{ flex:1; overflow-y:auto; padding:20px 26px; display:flex; flex-direction:column; gap:18px; }
+  .empty-cart{ color:var(--cream-dim); font-size:14px; text-align:center; margin-top:60px; }
+  .cart-item{ display:flex; gap:14px; align-items:center; padding-bottom:18px; border-bottom:1px solid var(--line); }
+  .cart-item .ci-icon{ width:52px; height:52px; border-radius:12px; background:var(--black); overflow:hidden; flex-shrink:0; }
+  .cart-item .ci-icon img{ width:100%; height:100%; object-fit:cover; }
+  .ci-info{ flex:1; }
+  .ci-info .ci-name{ font-family:'Fraunces',serif; font-weight:600; font-size:14.5px; }
+  .ci-info .ci-price{ font-size:12.5px; color:var(--cream-dim); margin-top:2px; }
+  .ci-qty{ display:flex; align-items:center; gap:10px; }
+  .ci-qty button{ width:24px; height:24px; border-radius:50%; border:1px solid var(--line); background:none; color:var(--cream); cursor:pointer; font-size:13px; line-height:1; }
+  .ci-qty button:hover{ border-color:var(--caramel-bright); }
+  .drawer-foot{ padding:22px 26px 28px; border-top:1px solid var(--line); }
+  .subtotal-row{ display:flex; justify-content:space-between; font-size:14px; margin-bottom:18px; }
+  .subtotal-row .amt{ font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--caramel-bright); }
+  .checkout-btn{
+    width:100%; padding:16px; border-radius:100px; border:none; background:var(--cream); color:var(--black);
+    font-weight:700; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; transition:background .3s, transform .3s;
+  }
+  .checkout-btn:hover:not(:disabled){ background:var(--caramel-bright); transform:translateY(-2px); }
+  .checkout-btn:disabled{ opacity:0.4; cursor:not-allowed; }
+
+  /* ============ toast ============ */
+  .toast{
+    position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); z-index:160;
+    background:var(--cream); color:var(--black); padding:14px 24px; border-radius:100px; font-size:13.5px; font-weight:600;
+    display:flex; align-items:center; gap:10px; opacity:0; pointer-events:none; transition:all .4s var(--ease);
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .toast svg{ width:16px; height:16px; }
+
+  /* ============ checkout modal ============ */
+  .modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.72); backdrop-filter:blur(5px); z-index:170; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .35s var(--ease); padding:20px; }
+  .modal-overlay.open{ opacity:1; pointer-events:auto; }
+  .modal{
+    background:var(--black-2); border:1px solid var(--line); border-radius:24px; padding:44px 36px; max-width:440px; width:100%;
+    text-align:center; transform:scale(0.92) translateY(10px); transition:transform .4s var(--ease); max-height:90vh; overflow-y:auto;
+  }
+  .modal-overlay.open .modal{ transform:scale(1) translateY(0); }
+  .modal .stage{ display:none; }
+  .modal .stage.active{ display:block; }
+  .blend-loader{ width:80px; height:80px; margin:0 auto 24px; }
+  .modal h3{ font-family:'Bebas Neue',sans-serif; font-size:32px; margin-bottom:12px; letter-spacing:0.02em; }
+  .modal p{ color:var(--cream-dim); font-size:14.5px; line-height:1.6; margin-bottom:22px; }
+  .modal .order-num{ font-family:'Fraunces',serif; font-style:italic; color:var(--caramel-bright); font-size:18px; margin-bottom:20px; }
+  .modal-close-btn{ background:var(--cream); color:var(--black); border:none; padding:14px 28px; border-radius:100px; font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:background .3s, transform .3s; }
+  .modal-close-btn:hover{ background:var(--caramel-bright); transform:translateY(-2px); }
+
+  .progress-ring{ width:90px; height:90px; margin:0 auto 26px; }
+  .progress-ring circle{ fill:none; stroke-width:5; }
+  .progress-ring .bg{ stroke:rgba(245,239,228,0.12); }
+  .progress-ring .fg{ stroke:var(--caramel-bright); stroke-linecap:round; transform:rotate(-90deg); transform-origin:50% 50%; transition:stroke-dashoffset 1.6s var(--ease); }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ===================== NAV ===================== -->
+<header id="siteHeader">
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <span class="logo-mark display">MILKSHAKE</span>
+    <span class="logo-tag serif">Made For You</span>
+  </div>
+  <nav class="links">
+    <a href="#menu">Menu</a>
+    <a href="#journey">How It Works</a>
+    <a href="#wait">While You Wait</a>
+    <a href="#story">Our Story</a>
+  </nav>
+  <div class="nav-right">
+    <button class="cart-btn" id="cartOpenBtn" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><div class="burger"><i></i><i></i><i></i></div></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#menu" class="mnav">Menu</a>
+  <a href="#journey" class="mnav">How It Works</a>
+  <a href="#wait" class="mnav">While You Wait</a>
+  <a href="#story" class="mnav">Our Story</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="eyebrow">Colombo's Creamery</div>
+  <h1 class="display">MILKSHAKE</h1>
+  <p class="tagline serif">Made For You.</p>
+  <div class="sbe"><span>Sip</span><span class="dot"></span><span>Blend</span><span class="dot"></span><span>Enjoy</span></div>
+
+  <div class="hero-glass-wrap" id="heroGlassWrap">
+    <img src="images/hero-shake.jpg" alt="MILKSHAKE — a thick, creamy caramel milkshake topped with whipped cream" class="hero-photo" loading="eager" onerror="this.style.display='none'; document.getElementById('heroGlassFallback').style.display='block';">
+    <svg class="glass-svg" id="heroGlassFallback" viewBox="0 0 200 260" style="display:none;">
+      <defs>
+        <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f5efe4" stop-opacity="0.06"/>
+          <stop offset="100%" stop-color="#f5efe4" stop-opacity="0.02"/>
+        </linearGradient>
+        <linearGradient id="creamGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e3a866"/>
+          <stop offset="100%" stop-color="#c9884b"/>
+        </linearGradient>
+        <clipPath id="glassClip"><path d="M46 40 L154 40 L138 230 Q100 244 62 230 Z"/></clipPath>
+      </defs>
+      <path d="M46 40 L154 40 L138 230 Q100 244 62 230 Z" fill="url(#glassGrad)" stroke="#f5efe4" stroke-opacity="0.35" stroke-width="2"/>
+      <g clip-path="url(#glassClip)">
+        <rect class="cream-fill" id="heroCream" x="40" y="230" width="120" height="0" fill="url(#creamGrad)"/>
+      </g>
+      <path d="M46 40 L154 40 L138 230 Q100 244 62 230 Z" fill="none" stroke="#f5efe4" stroke-opacity="0.35" stroke-width="2"/>
+      <ellipse cx="100" cy="34" rx="14" ry="18" fill="#f5efe4" opacity="0.92"/>
+      <ellipse cx="88" cy="24" rx="10" ry="13" fill="#f5efe4" opacity="0.85"/>
+      <ellipse cx="112" cy="20" rx="9" ry="11" fill="#f5efe4" opacity="0.8"/>
+      <rect x="96" y="4" width="7" height="34" rx="3.5" fill="#f5efe4" opacity="0.9" transform="rotate(10 100 20)"/>
+      <circle class="drip" cx="70" cy="52" r="3.5" fill="#c9884b"/>
+      <circle class="drip" cx="128" cy="56" r="3" fill="#c9884b"/>
+      <circle class="drip" cx="100" cy="48" r="2.5" fill="#c9884b"/>
+    </svg>
+  </div>
+
+  <button class="cta-primary" id="heroCta">
+    Tap to Blend Your Milkshake
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- ===================== MANIFESTO ===================== -->
+<section class="manifesto">
+  <div class="wrap">
+    <p>We didn't set out to make <em>another</em> milkshake shop. We set out to make the shake you think about <em>all day</em> — thick, cold, dripping, and made the moment you order it.</p>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">The Lineup</div>
+      <h2 class="display">Signature Shakes</h2>
+      <p>Twenty recipes. One obsession: thick enough to need a spoon, cold enough to need a minute.</p>
+    </div>
+
+    <div class="filter-row reveal">
+      <button class="filter-btn active" data-filter="all">All Shakes</button>
+      <button class="filter-btn" data-filter="chocolate">Chocolate</button>
+      <button class="filter-btn" data-filter="classic">Classic</button>
+      <button class="filter-btn" data-filter="signature">Signature</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== JOURNEY ===================== -->
+<section id="journey">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">The Process</div>
+      <h2 class="display">Choose. Blend. Sip.</h2>
+      <p>No menus to decode, no confusion at the counter. Just a shake, made your way, in four steps.</p>
+    </div>
+    <div class="journey reveal">
+      <div class="jstep">
+        <div class="jnum display">01</div>
+        <h3>Choose Your Shake</h3>
+        <p>Browse the lineup and pick the flavor that's calling your name.</p>
+      </div>
+      <div class="jstep">
+        <div class="jnum display">02</div>
+        <h3>Add To Cart</h3>
+        <p>One tap and it's yours — adjust quantity anytime before checkout.</p>
+      </div>
+      <div class="jstep">
+        <div class="jnum display">03</div>
+        <h3>Tap To Blend</h3>
+        <p>Confirm your order and we start blending it fresh, right away.</p>
+      </div>
+      <div class="jstep">
+        <div class="jnum display">04</div>
+        <h3>Your Shake Is Ready</h3>
+        <p>A cold, thick, dripping shake - made for you, and only you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BLEND CTA ===================== -->
+<section>
+  <div class="wrap">
+    <div class="blend-cta reveal">
+      <div class="section-eyebrow">Ready When You Are</div>
+      <h2>Your perfect shake is three taps away.</h2>
+      <button class="blend-btn" id="midCta">
+        <span class="ring"></span>
+        Tap to Blend Your Milkshake 🥤
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHILE YOU WAIT ===================== -->
+<section id="wait">
+  <div class="wrap wait-grid">
+    <div class="reveal">
+      <div class="section-eyebrow">While You Wait</div>
+      <h2 class="display" style="font-size:clamp(34px,5vw,54px); margin-bottom:18px;">Catch The Toppings</h2>
+      <p style="color:var(--cream-dim); font-size:16px; line-height:1.7; max-width:460px; margin-bottom:20px;">
+        Your shake takes a minute to blend - so does this game. Catch the falling chocolate chips and cherries before they hit the floor. Miss the melty stuff.
+      </p>
+      <p style="color:var(--cream-dim); font-size:14px;">Move your mouse (or finger) left and right over the glass to catch toppings. Simple, quick, made for the wait - not essential to ordering.</p>
+    </div>
+    <div class="wait-card reveal">
+      <canvas id="catch-canvas" width="400" height="300"></canvas>
+      <div class="wait-score display" id="waitScore">SCORE 0</div>
+      <div class="wait-hint">Move to catch • avoid the melt drops</div>
+      <button class="game-btn" id="gameStartBtn">Play While You Wait</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="story-visual reveal" id="storyVisual">
+      <img src="images/story-shake.jpg" alt="MILKSHAKE - behind the blend, a fresh milkshake being made" class="story-photo" loading="lazy" onerror="this.style.display='none'; document.getElementById('storyFallback').style.display='block';">
+      <svg id="storyFallback" viewBox="0 0 200 220" style="display:none;">
+        <circle cx="100" cy="110" r="90" fill="none" stroke="#c9884b" stroke-opacity="0.25" stroke-width="1.5"/>
+        <path d="M60 60 L140 60 L128 190 Q100 202 72 190 Z" fill="none" stroke="#f5efe4" stroke-opacity="0.5" stroke-width="2"/>
+        <ellipse cx="100" cy="54" rx="12" ry="15" fill="#f5efe4" opacity="0.85"/>
+      </svg>
+    </div>
+    <div class="story-text reveal">
+      <div class="section-eyebrow">Our Story</div>
+      <p>It started with one question: why does a milkshake have to look boring on a menu?</p>
+      <p>MILKSHAKE was built on a simple belief - dessert should feel like an event, not an afterthought. Every recipe on this menu is designed the same way we designed this website: bold, unapologetic, and made to be craved before it's tasted.</p>
+      <p>We're based out of Colombo, blending small-batch, and growing one shake at a time. No shortcuts, no artificial theatrics - just thick, cold, honest milkshakes made the moment you order them.</p>
+      <p>- Ikraam (Founder)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="display">MILKSHAKE</span>
+        <p>A premium shake brand made in Colombo. Sip. Blend. Enjoy - made for you, every single time.</p>
+      </div>
+      <div class="fcol">
+        <h4>Explore</h4>
+        <a href="#menu">Menu</a>
+        <a href="#journey">How It Works</a>
+        <a href="#wait">While You Wait</a>
+        <a href="#story">Our Story</a>
+      </div>
+      <div class="fcol">
+        <h4>Visit</h4>
+        <a href="#">Colombo, Sri Lanka</a>
+        <a href="#">Open 11 AM – 11 PM</a>
+        <a href="#">hello@milkshake.lk</a>
+      </div>
+      <div class="fcol">
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MILKSHAKE. Made For You.</span>
+      <span>Sip • Blend • Enjoy</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3 class="display">Your Cart</h3>
+    <button class="close-btn" id="cartCloseBtn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer-body" id="cartBody">
+    <p class="empty-cart">Your cart is empty. Go on, blend something.</p>
+  </div>
+  <div class="drawer-foot">
+    <div class="subtotal-row"><span>Subtotal</span><span class="amt display" id="subtotalAmt">Rs. 0</span></div>
+    <button class="checkout-btn" id="checkoutBtn" disabled>Tap to Blend Your Milkshake</button>
+  </div>
+</div>
+
+<!-- ===================== TOAST ===================== -->
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">Added to cart</span></div>
+
+<!-- ===================== CHECKOUT MODAL ===================== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="stage active" id="stageBlending">
+      <svg class="progress-ring" viewBox="0 0 100 100">
+        <circle class="bg" cx="50" cy="50" r="42"/>
+        <circle class="fg" id="progFg" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"/>
+      </svg>
+      <h3>Blending Your Shake</h3>
+      <p>Hang tight — we're bringing your order to life.</p>
+    </div>
+    <div class="stage" id="stageReady">
+      <h3>Your Shake Is Ready 🥤❤️</h3>
+      <p class="order-num" id="orderNumText">Order #MS-0000</p>
+      <p>Cold, thick, and made just for you. Thanks for blending with us — see you again soon.</p>
+      <button class="modal-close-btn" id="modalCloseBtn">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- data ---------------- */
+  const menuItems = [
+    {id:1,name:"Cream Craze",slug:"cream-craze",cat:"classic",price:850,desc:"Vanilla bean base, whipped cream crown, a snowfall of milk crumb."},
+    {id:2,name:"Velvet Sip",slug:"velvet-sip",cat:"chocolate",price:920,desc:"Dark cocoa blend finished with a slow ribbon of chocolate drip."},
+    {id:3,name:"Milky Magic",slug:"milky-magic",cat:"classic",price:790,desc:"Classic malted milk, extra thick, topped with soft cream swirl."},
+    {id:4,name:"Sip Heaven",slug:"sip-heaven",cat:"signature",price:990,desc:"Caramel-forward blend with a salted biscuit crumble finish."},
+    {id:5,name:"Froth & Chill",slug:"froth-chill",cat:"classic",price:830,desc:"Cold-brew coffee folded into a vanilla shake base, lightly frothed."},
+    {id:6,name:"Cocoa & Cream",slug:"cocoa-cream",cat:"chocolate",price:940,desc:"Double chocolate blend layered with fresh whipped cream."},
+    {id:7,name:"Choco Vanilla Bar",slug:"choco-vanilla-bar",cat:"chocolate",price:900,desc:"Half chocolate, half vanilla — swirled, never mixed."},
+    {id:8,name:"Sweet Swirl Station",slug:"sweet-swirl-station",cat:"signature",price:970,desc:"Caramel and chocolate swirled through a vanilla base."},
+    {id:9,name:"Vanilla Velvet",slug:"vanilla-velvet",cat:"classic",price:770,desc:"Madagascar vanilla, extra creamy, kept beautifully simple."},
+    {id:10,name:"Creamy Delight Hub",slug:"creamy-delight-hub",cat:"signature",price:960,desc:"Cookie crumble folded into a rich condensed-milk blend."},
+    {id:11,name:"Sip Society",slug:"sip-society",cat:"signature",price:1010,desc:"Pistachio and white chocolate, our most requested signature."},
+    {id:12,name:"The Shake Club",slug:"the-shake-club",cat:"classic",price:860,desc:"Strawberry and cream, blended cold, topped with a fresh drizzle."},
+    {id:13,name:"Drip & Sip",slug:"drip-sip",cat:"chocolate",price:930,desc:"Triple chocolate with a caramel drip cascading down the glass."},
+    {id:14,name:"Milk Mood",slug:"milk-mood",cat:"classic",price:800,desc:"Honey and oat milk base, light, smooth, quietly addictive."},
+    {id:15,name:"Blend Theory",slug:"blend-theory",cat:"signature",price:1050,desc:"Espresso, dark chocolate and cream — for the serious shake lover."},
+    {id:16,name:"Colombo Creamery",slug:"colombo-creamery",cat:"signature",price:980,desc:"Cardamom and condensed milk, our tribute to the city."},
+    {id:17,name:"Milk Kade",slug:"milk-kade",cat:"classic",price:750,desc:"The original — full cream milk, sugar, and nothing else needed."},
+    {id:18,name:"Creamy Kade",slug:"creamy-kade",cat:"classic",price:820,desc:"Butterscotch swirl through a thick full-cream milk base."},
+    {id:19,name:"Street Sip Lanka",slug:"street-sip-lanka",cat:"signature",price:940,desc:"Jaggery caramel and roasted cashew, a local twist on a classic."},
+    {id:20,name:"Chill Kade",slug:"chill-kade",cat:"chocolate",price:910,desc:"Mint chocolate chip, extra cold, extra refreshing."}
+  ];
+
+  const menuGrid = document.getElementById('menuGrid');
+
+  function renderMenu(filter){
+    const items = filter==='all' ? menuItems : menuItems.filter(m=>m.cat===filter);
+    menuGrid.innerHTML = items.map(item=>`
+      <div class="card" data-cat="${item.cat}" tabindex="0">
+        <div class="card-media" data-slug="${item.slug}">
+          <span class="tag-badge">${item.cat}</span>
+          <img src="images/${item.slug}.jpg" alt="${item.name} milkshake" loading="lazy" onerror="this.closest('.card-media').classList.add('img-missing')">
+        </div>
+        <div class="card-body">
+          <div class="cname">${item.name}</div>
+          <div class="cdesc">${item.desc}</div>
+          <div class="card-foot">
+            <span class="cprice">Rs. ${item.price}</span>
+            <button class="add-btn" data-id="${item.id}">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  renderMenu('all');
+
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMenu(btn.dataset.filter);
+      attachAddListeners();
+    });
+  });
+
+  /* ---------------- cart ---------------- */
+  let cart = [];
+
+  function attachAddListeners(){
+    document.querySelectorAll('.add-btn').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        const id = parseInt(btn.dataset.id);
+        const item = menuItems.find(m=>m.id===id);
+        addToCart(item);
+        btn.textContent = 'Added ✓';
+        btn.classList.add('added');
+        setTimeout(()=>{ btn.textContent='Add to Cart'; btn.classList.remove('added'); }, 1200);
+        showToast(`${item.name} added to cart`);
+      });
+    });
+  }
+  attachAddListeners();
+
+  function addToCart(item){
+    const existing = cart.find(c=>c.id===item.id);
+    if(existing){ existing.qty++; } else { cart.push({...item, qty:1}); }
+    updateCartUI();
+  }
+  function changeQty(id, delta){
+    const item = cart.find(c=>c.id===id);
+    if(!item) return;
+    item.qty += delta;
+    if(item.qty<=0){ cart = cart.filter(c=>c.id!==id); }
+    updateCartUI();
+  }
+
+  const cartBody = document.getElementById('cartBody');
+  const cartCount = document.getElementById('cartCount');
+  const subtotalAmt = document.getElementById('subtotalAmt');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  function updateCartUI(){
+    const totalQty = cart.reduce((s,c)=>s+c.qty,0);
+    cartCount.textContent = totalQty;
+    cartCount.classList.toggle('show', totalQty>0);
+    checkoutBtn.disabled = totalQty===0;
+
+    if(cart.length===0){
+      cartBody.innerHTML = '<p class="empty-cart">Your cart is empty. Go on, blend something.</p>';
+    } else {
+      cartBody.innerHTML = cart.map(c=>`
+        <div class="cart-item">
+          <div class="ci-icon"><img src="images/${c.slug}.jpg" alt="${c.name}" loading="lazy"></div>
+          <div class="ci-info">
+            <div class="ci-name">${c.name}</div>
+            <div class="ci-price">Rs. ${c.price} × ${c.qty}</div>
+          </div>
+          <div class="ci-qty">
+            <button aria-label="Decrease" data-id="${c.id}" data-d="-1">−</button>
+            <span>${c.qty}</span>
+            <button aria-label="Increase" data-id="${c.id}" data-d="1">+</button>
+          </div>
+        </div>
+      `).join('');
+      cartBody.querySelectorAll('.ci-qty button').forEach(b=>{
+        b.addEventListener('click', ()=>changeQty(parseInt(b.dataset.id), parseInt(b.dataset.d)));
+      });
+    }
+    const subtotal = cart.reduce((s,c)=>s+c.price*c.qty,0);
+    subtotalAmt.textContent = 'Rs. ' + subtotal.toLocaleString();
+  }
+  updateCartUI();
+
+  /* ---------------- toast ---------------- */
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  let toastTimer;
+  function showToast(msg){
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>toast.classList.remove('show'), 2200);
+  }
+
+  /* ---------------- drawer open/close ---------------- */
+  const overlay = document.getElementById('overlay');
+  const drawer = document.getElementById('cartDrawer');
+  function openDrawer(){ overlay.classList.add('open'); drawer.classList.add('open'); }
+  function closeDrawer(){ overlay.classList.remove('open'); drawer.classList.remove('open'); }
+  document.getElementById('cartOpenBtn').addEventListener('click', openDrawer);
+  document.getElementById('cartCloseBtn').addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  /* ---------------- checkout modal / blend flow ---------------- */
+  const modalOverlay = document.getElementById('modalOverlay');
+  const stageBlending = document.getElementById('stageBlending');
+  const stageReady = document.getElementById('stageReady');
+  const progFg = document.getElementById('progFg');
+  const orderNumText = document.getElementById('orderNumText');
+
+  function runBlendFlow(){
+    closeDrawer();
+    stageBlending.classList.add('active');
+    stageReady.classList.remove('active');
+    progFg.style.strokeDashoffset = 264;
+    modalOverlay.classList.add('open');
+    requestAnimationFrame(()=>{ progFg.style.strokeDashoffset = 0; });
+    setTimeout(()=>{
+      stageBlending.classList.remove('active');
+      stageReady.classList.add('active');
+      const orderNum = 'MS-' + Math.floor(1000+Math.random()*9000);
+      orderNumText.textContent = 'Order #' + orderNum;
+      cart = [];
+      updateCartUI();
+    }, 1900);
+  }
+
+  checkoutBtn.addEventListener('click', ()=>{
+    if(checkoutBtn.disabled) return;
+    runBlendFlow();
+  });
+  document.getElementById('modalCloseBtn').addEventListener('click', ()=>{
+    modalOverlay.classList.remove('open');
+  });
+  modalOverlay.addEventListener('click', (e)=>{
+    if(e.target===modalOverlay) modalOverlay.classList.remove('open');
+  });
+
+  /* hero / mid CTA scroll to menu with a little blend pulse */
+  function ctaScroll(btn){
+    btn.classList.add('blending');
+    setTimeout(()=>btn.classList.remove('blending'), 650);
+    document.getElementById('menu').scrollIntoView({behavior:'smooth'});
+  }
+  document.getElementById('heroCta').addEventListener('click', function(){
+    document.getElementById('menu').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('midCta').addEventListener('click', function(){ ctaScroll(this); });
+
+  /* ---------------- mobile nav ---------------- */
+  const menuToggle = document.getElementById('menuToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+  menuToggle.addEventListener('click', ()=>{
+    menuToggle.classList.toggle('open');
+    mobilePanel.classList.toggle('open');
+  });
+  document.querySelectorAll('.mnav').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      menuToggle.classList.remove('open');
+      mobilePanel.classList.remove('open');
+    });
+  });
+
+  /* ---------------- header scroll state ---------------- */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  /* ---------------- hero glass fill on load (fallback SVG only) ---------------- */
+  window.addEventListener('load', ()=>{
+    const fallbackSvg = document.getElementById('heroGlassFallback');
+    const cream = document.getElementById('heroCream');
+    if(!fallbackSvg || fallbackSvg.style.display === 'none') return;
+    setTimeout(()=>{
+      cream.style.transition = 'height 1.6s cubic-bezier(.22,.9,.28,1), y 1.6s cubic-bezier(.22,.9,.28,1)';
+      cream.setAttribute('height', 150);
+      cream.setAttribute('y', 80);
+      fallbackSvg.querySelectorAll('.drip').forEach((d,i)=>{
+        setTimeout(()=>{ d.style.transition='opacity .5s'; d.style.opacity='1'; }, 1600 + i*150);
+      });
+    }, 300);
+  });
+
+  /* ---------------- reveal on scroll ---------------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  /* ---------------- While You Wait: catch game ---------------- */
+  const canvas = document.getElementById('catch-canvas');
+  const ctx = canvas.getContext('2d');
+  let gameRunning = false, score = 0, basketX = 200, drops = [], animId;
+  const waitScoreEl = document.getElementById('waitScore');
+  const gameStartBtn = document.getElementById('gameStartBtn');
+
+  function resizeCanvas(){
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * devicePixelRatio;
+    canvas.height = rect.height * devicePixelRatio;
+    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  }
+  window.addEventListener('resize', resizeCanvas);
+
+  function spawnDrop(){
+    const w = canvas.getBoundingClientRect().width;
+    const good = Math.random() > 0.28;
+    drops.push({
+      x: Math.random()*(w-20)+10,
+      y: -10,
+      r: good ? 8 : 7,
+      speed: 1.6 + Math.random()*1.8,
+      good
+    });
+  }
+  let spawnTimer=0;
+
+  function drawGame(){
+    const rect = canvas.getBoundingClientRect();
+    const w = rect.width, h = rect.height;
+    ctx.clearRect(0,0,w,h);
+
+    // basket (the glass) at bottom
+    ctx.save();
+    ctx.strokeStyle = 'rgba(245,239,228,0.6)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(basketX-28, h-22);
+    ctx.lineTo(basketX+28, h-22);
+    ctx.lineTo(basketX+20, h-4);
+    ctx.lineTo(basketX-20, h-4);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+
+    spawnTimer++;
+    if(spawnTimer > 45){ spawnDrop(); spawnTimer = 0; }
+
+    drops.forEach(d=>{
+      d.y += d.speed;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
+      ctx.fillStyle = d.good ? '#e3a866' : '#5a3520';
+      ctx.fill();
+    });
+
+    // collision with basket top edge
+    drops = drops.filter(d=>{
+      if(d.y > h-26 && d.y < h-6 && d.x > basketX-26 && d.x < basketX+26){
+        if(d.good){ score += 1; } else { score = Math.max(0, score-1); }
+        waitScoreEl.textContent = 'SCORE ' + score;
+        return false;
+      }
+      return d.y < h+15;
+    });
+
+    if(gameRunning) animId = requestAnimationFrame(drawGame);
+  }
+
+  function pointerMove(clientX){
+    const rect = canvas.getBoundingClientRect();
+    basketX = Math.min(Math.max(clientX - rect.left, 24), rect.width-24);
+  }
+  canvas.addEventListener('mousemove', e=>pointerMove(e.clientX));
+  canvas.addEventListener('touchmove', e=>{ pointerMove(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
+
+  gameStartBtn.addEventListener('click', ()=>{
+    resizeCanvas();
+    score = 0; drops = []; spawnTimer = 0;
+    waitScoreEl.textContent = 'SCORE 0';
+    gameRunning = true;
+    gameStartBtn.textContent = 'Restart Game';
+    cancelAnimationFrame(animId);
+    drawGame();
+  });
+
+  // lazy-init canvas sizing when section is visible
+  const waitSection = document.getElementById('wait');
+  const waitIo = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ resizeCanvas(); waitIo.unobserve(en.target); } });
+  }, {threshold:0.2});
+  waitIo.observe(waitSection);
+
+})();
+</script>
+</body>
+</html>
