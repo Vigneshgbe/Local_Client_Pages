@@ -230,6 +230,7 @@
   }
   .card-body{ padding:22px 22px 26px; display:flex; flex-direction:column; flex:1; }
   .card-body .cname{ font-family:'Fraunces',serif; font-weight:600; font-size:20px; margin-bottom:6px; }
+  .card-body .ctag{ font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--caramel-bright); margin-bottom:10px; font-weight:600; }
   .card-body .cdesc{ font-size:13.5px; color:var(--cream-dim); line-height:1.55; flex:1; margin-bottom:18px; }
   .card-foot{ display:flex; align-items:center; justify-content:space-between; }
   .cprice{ font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.03em; color:var(--caramel-bright); }
@@ -506,7 +507,7 @@
       <div class="jstep">
         <div class="jnum display">04</div>
         <h3>Your Shake Is Ready</h3>
-        <p>A cold, thick, dripping shake - made for you, and only you.</p>
+        <p>A cold, thick, dripping shake — made for you, and only you.</p>
       </div>
     </div>
   </div>
@@ -533,9 +534,9 @@
       <div class="section-eyebrow">While You Wait</div>
       <h2 class="display" style="font-size:clamp(34px,5vw,54px); margin-bottom:18px;">Catch The Toppings</h2>
       <p style="color:var(--cream-dim); font-size:16px; line-height:1.7; max-width:460px; margin-bottom:20px;">
-        Your shake takes a minute to blend - so does this game. Catch the falling chocolate chips and cherries before they hit the floor. Miss the melty stuff.
+        Your shake takes a minute to blend — so does this game. Catch the falling chocolate chips and cherries before they hit the floor. Miss the melty stuff.
       </p>
-      <p style="color:var(--cream-dim); font-size:14px;">Move your mouse (or finger) left and right over the glass to catch toppings. Simple, quick, made for the wait - not essential to ordering.</p>
+      <p style="color:var(--cream-dim); font-size:14px;">Move your mouse (or finger) left and right over the glass to catch toppings. Simple, quick, made for the wait — not essential to ordering.</p>
     </div>
     <div class="wait-card reveal">
       <canvas id="catch-canvas" width="400" height="300"></canvas>
@@ -550,7 +551,7 @@
 <section id="story">
   <div class="wrap story-grid">
     <div class="story-visual reveal" id="storyVisual">
-      <img src="images/story-shake.jpg" alt="MILKSHAKE - behind the blend, a fresh milkshake being made" class="story-photo" loading="lazy" onerror="this.style.display='none'; document.getElementById('storyFallback').style.display='block';">
+      <img src="images/story-shake.jpg" alt="MILKSHAKE — behind the blend, a fresh milkshake being made" class="story-photo" loading="lazy" onerror="this.style.display='none'; document.getElementById('storyFallback').style.display='block';">
       <svg id="storyFallback" viewBox="0 0 200 220" style="display:none;">
         <circle cx="100" cy="110" r="90" fill="none" stroke="#c9884b" stroke-opacity="0.25" stroke-width="1.5"/>
         <path d="M60 60 L140 60 L128 190 Q100 202 72 190 Z" fill="none" stroke="#f5efe4" stroke-opacity="0.5" stroke-width="2"/>
@@ -560,9 +561,8 @@
     <div class="story-text reveal">
       <div class="section-eyebrow">Our Story</div>
       <p>It started with one question: why does a milkshake have to look boring on a menu?</p>
-      <p>MILKSHAKE was built on a simple belief - dessert should feel like an event, not an afterthought. Every recipe on this menu is designed the same way we designed this website: bold, unapologetic, and made to be craved before it's tasted.</p>
-      <p>We're based out of Colombo, blending small-batch, and growing one shake at a time. No shortcuts, no artificial theatrics - just thick, cold, honest milkshakes made the moment you order them.</p>
-      <p>- Ikraam (Founder)</p>
+      <p>MILKSHAKE was built on a simple belief — dessert should feel like an event, not an afterthought. Every recipe on this menu is designed the same way we designed this website: bold, unapologetic, and made to be craved before it's tasted.</p>
+      <p>We're based out of Colombo, blending small-batch, and growing one shake at a time. No shortcuts, no artificial theatrics — just thick, cold, honest milkshakes made the moment you order them.</p>
     </div>
   </div>
 </section>
@@ -573,7 +573,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="display">MILKSHAKE</span>
-        <p>A premium shake brand made in Colombo. Sip. Blend. Enjoy - made for you, every single time.</p>
+        <p>A premium shake brand made in Colombo. Sip. Blend. Enjoy — made for you, every single time.</p>
       </div>
       <div class="fcol">
         <h4>Explore</h4>
@@ -647,26 +647,29 @@
 
   /* ---------------- data ---------------- */
   const menuItems = [
-    {id:1,name:"Cream Craze",slug:"cream-craze",cat:"classic",price:850,desc:"Vanilla bean base, whipped cream crown, a snowfall of milk crumb."},
-    {id:2,name:"Velvet Sip",slug:"velvet-sip",cat:"chocolate",price:920,desc:"Dark cocoa blend finished with a slow ribbon of chocolate drip."},
-    {id:3,name:"Milky Magic",slug:"milky-magic",cat:"classic",price:790,desc:"Classic malted milk, extra thick, topped with soft cream swirl."},
-    {id:4,name:"Sip Heaven",slug:"sip-heaven",cat:"signature",price:990,desc:"Caramel-forward blend with a salted biscuit crumble finish."},
-    {id:5,name:"Froth & Chill",slug:"froth-chill",cat:"classic",price:830,desc:"Cold-brew coffee folded into a vanilla shake base, lightly frothed."},
-    {id:6,name:"Cocoa & Cream",slug:"cocoa-cream",cat:"chocolate",price:940,desc:"Double chocolate blend layered with fresh whipped cream."},
-    {id:7,name:"Choco Vanilla Bar",slug:"choco-vanilla-bar",cat:"chocolate",price:900,desc:"Half chocolate, half vanilla — swirled, never mixed."},
-    {id:8,name:"Sweet Swirl Station",slug:"sweet-swirl-station",cat:"signature",price:970,desc:"Caramel and chocolate swirled through a vanilla base."},
-    {id:9,name:"Vanilla Velvet",slug:"vanilla-velvet",cat:"classic",price:770,desc:"Madagascar vanilla, extra creamy, kept beautifully simple."},
-    {id:10,name:"Creamy Delight Hub",slug:"creamy-delight-hub",cat:"signature",price:960,desc:"Cookie crumble folded into a rich condensed-milk blend."},
-    {id:11,name:"Sip Society",slug:"sip-society",cat:"signature",price:1010,desc:"Pistachio and white chocolate, our most requested signature."},
-    {id:12,name:"The Shake Club",slug:"the-shake-club",cat:"classic",price:860,desc:"Strawberry and cream, blended cold, topped with a fresh drizzle."},
-    {id:13,name:"Drip & Sip",slug:"drip-sip",cat:"chocolate",price:930,desc:"Triple chocolate with a caramel drip cascading down the glass."},
-    {id:14,name:"Milk Mood",slug:"milk-mood",cat:"classic",price:800,desc:"Honey and oat milk base, light, smooth, quietly addictive."},
-    {id:15,name:"Blend Theory",slug:"blend-theory",cat:"signature",price:1050,desc:"Espresso, dark chocolate and cream — for the serious shake lover."},
-    {id:16,name:"Colombo Creamery",slug:"colombo-creamery",cat:"signature",price:980,desc:"Cardamom and condensed milk, our tribute to the city."},
-    {id:17,name:"Milk Kade",slug:"milk-kade",cat:"classic",price:750,desc:"The original — full cream milk, sugar, and nothing else needed."},
-    {id:18,name:"Creamy Kade",slug:"creamy-kade",cat:"classic",price:820,desc:"Butterscotch swirl through a thick full-cream milk base."},
-    {id:19,name:"Street Sip Lanka",slug:"street-sip-lanka",cat:"signature",price:940,desc:"Jaggery caramel and roasted cashew, a local twist on a classic."},
-    {id:20,name:"Chill Kade",slug:"chill-kade",cat:"chocolate",price:910,desc:"Mint chocolate chip, extra cold, extra refreshing."}
+    {id:1,name:"Milky Magic",slug:"milky-magic",cat:"classic",price:440,tag:"Classic Sweet Milk Shake",desc:"A smooth, creamy classic milk shake with a naturally sweet milky flavour. Simple, comforting and easy to love."},
+    {id:2,name:"Milk Mood",slug:"milk-mood",cat:"classic",price:440,tag:"Classic Vanilla Milk Shake",desc:"A smooth and creamy vanilla milk shake with a soft, sweet flavour made for an easy, refreshing treat."},
+    {id:3,name:"Vanilla Velvet",slug:"vanilla-velvet",cat:"classic",price:440,tag:"Premium Vanilla Smooth Shake",desc:"A silky-smooth vanilla shake with a rich creamy texture and a gentle vanilla finish in every sip."},
+    {id:4,name:"Chill Kade",slug:"chill-kade",cat:"classic",price:490,tag:"Iced Milk Coffee Shake",desc:"A chilled, creamy milk-and-coffee blend with a refreshing coffee kick and a smooth, satisfying finish."},
+    {id:5,name:"Milk Kade",slug:"milk-kade",cat:"classic",price:490,tag:"Traditional Sweet Milk Shake",desc:"A comforting traditional-style milk shake with a rich milky taste, gentle sweetness and nostalgic Sri Lankan feel."},
+
+    {id:6,name:"Cream Craze",slug:"cream-craze",cat:"classic",price:590,tag:"Rich Creamy Vanilla Shake",desc:"A rich vanilla base topped with a creamy crown and a generous snowfall of milk crumb for a soft, indulgent finish."},
+    {id:7,name:"Sip Haven",slug:"sip-heaven",cat:"classic",price:590,tag:"Vanilla Caramel Cream Shake",desc:"A creamy vanilla shake layered with smooth caramel sweetness for a rich, buttery and irresistible sip."},
+    {id:8,name:"Froth & Chill",slug:"froth-chill",cat:"classic",price:590,tag:"Cold Coffee Milk Shake",desc:"A chilled coffee milk shake with a creamy froth, smooth coffee flavour and a refreshing café-style finish."},
+    {id:9,name:"Cocoa & Cream",slug:"cocoa-cream",cat:"chocolate",price:640,tag:"Chocolate Creamy Shake",desc:"A thick chocolate shake blended with creamy richness for a deep cocoa flavour and an indulgent finish."},
+    {id:10,name:"Sweet Swirl Station",slug:"sweet-swirl-station",cat:"signature",price:640,tag:"Caramel Swirl Milk Shake",desc:"A creamy milk shake finished with luscious caramel swirls for a smooth, sweet and craveable caramel hit."},
+    {id:11,name:"Creamy Delight Hub",slug:"creamy-delight-hub",cat:"signature",price:640,tag:"Rich Milk Cream Shake",desc:"A luxuriously creamy milk shake with a rich, velvety texture and a satisfying milky sweetness."},
+    {id:12,name:"Colombo Creamery",slug:"colombo-creamery",cat:"signature",price:640,tag:"Signature Creamy Milk Shake",desc:"Our signature creamy milk shake — thick, smooth and indulgent, created to deliver a memorable MILKSHAKE experience."},
+
+    {id:13,name:"Velvet Sip",slug:"velvet-sip",cat:"chocolate",price:690,tag:"Smooth Chocolate Cream Shake",desc:"A smooth chocolate cream shake with a velvety texture, rich cocoa flavour and a deliciously soft finish."},
+    {id:14,name:"Choco Vanilla Bar",slug:"choco-vanilla-bar",cat:"chocolate",price:690,tag:"Chocolate Vanilla Fusion Shake",desc:"A delicious fusion of rich chocolate and smooth vanilla, blended together for a balanced, creamy and indulgent sip."},
+    {id:15,name:"Drip & Sip",slug:"drip-sip",cat:"chocolate",price:740,tag:"Chocolate Drip Cream Shake",desc:"A creamy chocolate shake finished with dramatic chocolate drips for a rich, messy-in-the-best-way indulgence."},
+    {id:16,name:"Sip Society",slug:"sip-society",cat:"chocolate",price:740,tag:"Chocolate Oreo Crush Shake",desc:"A creamy chocolate shake packed with crushed Oreo-style cookie goodness for a crunchy, chocolatey treat."},
+    {id:17,name:"Blend Theory",slug:"blend-theory",cat:"chocolate",price:740,tag:"Coffee Chocolate Blend Shake",desc:"A bold blend of chilled coffee and rich chocolate, bringing together a smooth coffee kick and deep cocoa flavour."},
+
+    {id:18,name:"The Shake Club",slug:"the-shake-club",cat:"signature",price:820,tag:"Loaded Chocolate Oreo Shake",desc:"A loaded chocolate-and-cookie shake piled with indulgent toppings for a big, bold and seriously craveable experience."},
+    {id:19,name:"Street Sip Lanka",slug:"street-sip-lanka",cat:"signature",price:820,tag:"Chocolate Street Style Shake",desc:"A bold street-style chocolate shake with a thick creamy body and indulgent toppings inspired by Sri Lankan snack culture."},
+    {id:20,name:"Creamy Kade",slug:"creamy-kade",cat:"signature",price:760,tag:"Thick Creamy Vanilla Shake",desc:"A seriously thick vanilla shake with a rich creamy body, generous topping and the comforting character of a local kade favourite."}
   ];
 
   const menuGrid = document.getElementById('menuGrid');
@@ -681,6 +684,7 @@
         </div>
         <div class="card-body">
           <div class="cname">${item.name}</div>
+          <div class="ctag">${item.tag}</div>
           <div class="cdesc">${item.desc}</div>
           <div class="card-foot">
             <span class="cprice">Rs. ${item.price}</span>
