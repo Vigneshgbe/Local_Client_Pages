@@ -70,6 +70,7 @@
   @media(max-width:640px){header, header.scrolled{padding:16px 20px;}}
   .logo{display:flex; align-items:baseline; gap:8px; cursor:pointer;}
   .logo-mark{font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:0.08em;}
+  .logo-img{ height:28px; width:auto; }
   .logo-tag{font-family:'Fraunces',serif; font-style:italic; font-size:12px; color:var(--caramel-bright); display:none;}
   @media(min-width:560px){.logo-tag{display:inline;}}
   nav.links{display:none; gap:36px; font-size:14px; letter-spacing:0.03em; text-transform:uppercase;}
@@ -129,9 +130,12 @@
     font-size:12px; letter-spacing:0.35em; text-transform:uppercase; color:var(--caramel-bright);
     margin-bottom:22px; opacity:0; animation:fadeUp .9s var(--ease) 0.15s forwards;
   }
-  .hero h1{
+  .hero-wordmark-wrap{
+    margin:0; opacity:0; animation:fadeUp 1s var(--ease) 0.3s forwards;
+  }
+  .hero-wordmark{ width:min(90vw,720px); height:auto; }
+  .hero-wordmark-fallback{
     font-family:'Bebas Neue',sans-serif; font-size:clamp(64px,15vw,168px); line-height:0.88; letter-spacing:0.01em;
-    opacity:0; animation:fadeUp 1s var(--ease) 0.3s forwards;
   }
   .hero .tagline{
     font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:clamp(18px,3vw,26px);
@@ -383,7 +387,8 @@
 <!-- ===================== NAV ===================== -->
 <header id="siteHeader">
   <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <span class="logo-mark display">MILKSHAKE</span>
+    <img src="images/milkshake-wordmark.png" alt="MILKSHAKE" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+    <span class="logo-mark display" style="display:none;">MILKSHAKE</span>
     <span class="logo-tag serif">Made For You</span>
   </div>
   <nav class="links">
@@ -412,7 +417,10 @@
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="eyebrow">Colombo's Creamery</div>
-  <h1 class="display">MILKSHAKE</h1>
+  <h1 class="hero-wordmark-wrap">
+    <img src="images/milkshake-wordmark.png" alt="MILKSHAKE" class="hero-wordmark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <span class="display hero-wordmark-fallback" style="display:none;">MILKSHAKE</span>
+  </h1>
   <p class="tagline serif">Made For You.</p>
   <div class="sbe"><span>Sip</span><span class="dot"></span><span>Blend</span><span class="dot"></span><span>Enjoy</span></div>
 
