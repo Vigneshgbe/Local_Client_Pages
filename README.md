@@ -14,7 +14,7 @@ All sites built as a social service — no charge to clients. Everything licence
 
 ## 💬 Feedback
 
-Have feedback or suggestions? Feel free to [open an issue](https://github.com/Vigneshgbe/Resume-Builder/issues) or connect on **LinkedIn**!
+Have feedback or suggestions? Feel free to [open an issue](https://github.com/Vigneshgbe/Local_Client_Pages/issues) or connect on **LinkedIn**!
 
 
 ## 📜 License
