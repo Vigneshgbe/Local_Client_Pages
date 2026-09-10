@@ -11,6 +11,15 @@ Free websites built for local clients in [Your Town], Tamil Nadu.
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
-## Licence
+
+## 💬 Feedback
+
+Have feedback or suggestions? Feel free to [open an issue](https://github.com/Vigneshgbe/Resume-Builder/issues) or connect on **LinkedIn**!
+
+
+## 📜 License
+
+This project is licensed. Copyrights and All rights reserved.
+
 
 **Developed with ❤️ by [Vignesh G](https://github.com/Vigneshgbe)**
