@@ -7,7 +7,11 @@ Free websites built for local clients in [Your Town], Tamil Nadu.
 |--------|-----------|-------------|
 | Masi Saloon | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Masi_Saloon_Site/) | Sangenthi, IN |
 | Selva Pani Puri | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Selva_PaniPuri_Stall/) | Sangenthi, IN |
-| Ikraam Milkshake | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Ikraam_Milkshake/) | Colombo, SL |
+| Ikraam Milkshake | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Ikraam_Milkshake/) | Colombo, SL |
+| Madhura Sri Visual Arts | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_MadhuraSriArts/) | SL |
+| NOV27 - Handcraft Painting | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Nov27/) | SL |
+| SKS Bathware Tools | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_SKSBathware/) | SL |
+| YAAYA Photography | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_YAAYAPhotography/) | SL |
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
