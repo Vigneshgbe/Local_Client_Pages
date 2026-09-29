@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10161a">
+  <meta name="description" content="Digital meter and speedometer repair in Narammala, Sri Lanka. Contact Digital Meter Repairing about motorcycle and car instrument displays.">
+  <title>Digital Meter Repairing | Narammala</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root{--ink:#10161a;--ink2:#1b252a;--paper:#f3f4f1;--white:#fff;--text:#202a2e;--muted:#59666b;--orange:#ff7148;--orange-dark:#d64421;--line:#dce1de}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
+    img{display:block;width:100%;height:auto}
+    a{color:inherit}
+    .container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .header{background:var(--ink);color:var(--white);border-bottom:1px solid #2c383d}
+    .header .container{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{max-width:260px;text-decoration:none;font-size:1.18rem;font-weight:950;letter-spacing:-.045em;line-height:1.03;text-transform:uppercase}
+    .brand span{color:var(--orange)}
+    nav{display:flex;align-items:center;gap:27px;font-size:.91rem;font-weight:750}
+    nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+    nav a:hover,nav a:focus-visible{text-decoration:underline;text-underline-offset:5px}
+    .hero{background:var(--ink);color:var(--white)}
+    .hero .container{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(32px,5vw,75px);padding-block:46px 58px}
+    .eyebrow{margin:0 0 18px;text-transform:uppercase;letter-spacing:.17em;font-size:.76rem;font-weight:900;color:var(--orange)}
+    h1,h2,h3,p{margin-top:0}
+    h1{max-width:680px;margin-bottom:21px;font-size:clamp(3.2rem,6vw,5.8rem);font-weight:950;letter-spacing:-.073em;line-height:1.01}
+    h1 em{font-style:normal;color:var(--orange)}
+    .hero-copy{max-width:510px;color:#cad4d6;font-size:1.09rem;margin-bottom:29px}
+    .actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 21px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:11px 22px;background:var(--orange);color:var(--ink);border:1px solid var(--orange);text-decoration:none;font-weight:900;text-align:center}
+    .button:hover,.button:focus-visible{background:#ff916f;border-color:#ff916f}
+    .under-link{font-weight:800;text-underline-offset:5px}
+    .hero-image{position:relative;min-width:0;aspect-ratio:1.07;background:#222c31;overflow:hidden}
+    .hero-image img{height:100%;object-fit:cover;object-position:center 40%}
+    .image-note{position:absolute;left:0;bottom:0;padding:11px 16px;background:var(--orange);color:var(--ink);font-size:.77rem;font-weight:900;text-transform:uppercase;letter-spacing:.085em}
+    .service-line{background:var(--ink2);color:#dbe3e4}
+    .service-line .container{min-height:59px;display:flex;align-items:center;gap:18px 35px;flex-wrap:wrap;padding-block:12px;font-size:.88rem;font-weight:700}
+    .service-line span+span{border-left:1px solid #526065;padding-left:35px}
+    .work{padding-block:72px 81px}
+    .work .eyebrow,.contact .eyebrow{color:var(--orange-dark)}
+    h2{font-size:clamp(2.25rem,4.5vw,3.75rem);line-height:1.1;letter-spacing:-.06em;margin-bottom:15px}
+    .section-intro{max-width:620px;color:var(--muted);margin-bottom:32px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+    .card{background:var(--white);border:1px solid var(--line);min-width:0}
+    .card img{width:100%;height:310px;object-fit:cover;background:#d8dedf}
+    .card:first-child img{object-position:center 49%}
+    .card:nth-child(2) img{object-position:center 33%}
+    .card:nth-child(3) img{object-position:center 54%}
+    .card-body{padding:22px 22px 24px}
+    .card small{display:block;margin-bottom:12px;color:#c64b2b;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900}
+    .card h3{font-size:1.34rem;line-height:1.25;letter-spacing:-.025em;margin-bottom:9px}
+    .card p{margin:0;color:var(--muted);font-size:.96rem}
+    .contact{background:var(--orange);color:var(--ink);padding-block:67px 73px}
+    .contact .container{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:44px}
+    .contact .eyebrow{color:#682a19}
+    .contact h2{margin-bottom:14px}
+    .contact p:not(.eyebrow){max-width:600px;margin-bottom:0;color:#40251f}
+    .contact-box{background:var(--ink);color:var(--white);padding:28px;min-width:0}
+    .contact-box .label{display:block;color:#f99576;font-size:.76rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+    .contact-box .phone{display:block;font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;font-weight:900;letter-spacing:-.04em;text-decoration:none;margin-bottom:19px}
+    .contact-box .button{width:100%}
+    .address{margin-top:16px!important;color:#c7d0d1!important;font-size:.86rem;line-height:1.55}
+    footer{background:var(--ink);color:#c2ccce;font-size:.87rem}
+    footer .container{padding-block:21px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    footer a{text-underline-offset:4px}
+    :focus-visible{outline:3px solid #ffe28a;outline-offset:3px}
+    @media(max-width:900px){.hero .container{gap:28px}.grid{gap:13px}.card img{height:260px}.card-body{padding:18px}.contact .container{gap:25px}}
+    @media(max-width:700px){.container{width:calc(100% - 32px)}.header .container{min-height:68px}.brand{font-size:1.05rem}nav{gap:15px;font-size:.84rem}.hero .container{display:flex;flex-direction:column;align-items:stretch;gap:32px;padding-block:44px 50px}h1{font-size:clamp(3rem,12vw,4.8rem)}.hero-copy{font-size:1.02rem}.hero-image{aspect-ratio:1.27}.hero-image img{object-position:center 43%}.service-line .container{gap:8px 16px}.service-line span+span{padding-left:16px}.work{padding-block:54px 61px}.grid{grid-template-columns:1fr;gap:17px}.card img{height:auto;aspect-ratio:1.34;object-fit:cover}.card:nth-child(2) img{object-position:center 43%}.contact{padding-block:54px 58px}.contact .container{grid-template-columns:1fr;gap:25px}}
+    @media(max-width:380px){.container{width:calc(100% - 28px)}.brand{font-size:.94rem}nav{gap:11px;font-size:.8rem}.service-line span+span{border:0;padding-left:0}.service-line .container{display:grid;gap:3px}}
+  </style>
+</head>
+<body>
+  <header class="header"><div class="container"><a class="brand" href="#top" aria-label="Digital Meter Repairing home">Digital Meter <span>Repairing</span></a><nav aria-label="Main navigation"><a href="#services">Services</a><a href="#contact">Contact</a></nav></div></header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title"><div class="container"><div><p class="eyebrow">Vehicle meter repairs · Narammala</p><h1 id="hero-title">Get your meter <em>working again.</em></h1><p class="hero-copy">Digital displays and speedometers for motorcycles, cars and more. Show us the fault and speak directly with the repair shop.</p><div class="actions"><a class="button" href="https://wa.me/94761305314?text=Hello%2C%20I%20need%20help%20with%20a%20vehicle%20digital%20meter." target="_blank" rel="noopener noreferrer">Message on WhatsApp</a><a class="under-link" href="#services">See repair work</a></div></div><div class="hero-image"><img src="assets/motorcycle-meter.jpg" alt="Illuminated motorcycle digital meter during workshop repair" width="960" height="1280" fetchpriority="high"><span class="image-note">Real workshop work</span></div></div></section>
+    <div class="service-line"><div class="container"><span>Motorcycles &amp; cars</span><span>Digital displays &amp; speedometers</span><span>Based in Narammala</span></div></div>
+    <section class="work container" id="services" aria-labelledby="work-title"><p class="eyebrow">What the workshop handles</p><h2 id="work-title">Meters deserve a closer look.</h2><p class="section-intro">A few examples from the shop’s work. Send a photo of your meter and your vehicle model to ask about your specific repair.</p><div class="grid">
+      <article class="card"><img src="assets/motorcycle-meter.jpg" alt="Motorcycle digital instrument display lit up on a workbench" width="960" height="1280" loading="lazy"><div class="card-body"><small>01 / Motorcycles</small><h3>Digital bike meters</h3><p>Help with display and instrument meter faults on motorcycles.</p></div></article>
+      <article class="card"><img src="assets/car-speedometer.jpg" alt="Car speedometer and odometer instrument cluster" width="901" height="1600" loading="lazy"><div class="card-body"><small>02 / Cars</small><h3>Speedometer clusters</h3><p>Get in touch about car speedometer and dashboard display issues.</p></div></article>
+      <article class="card"><img src="assets/workbench-display.jpg" alt="Disassembled digital meter on an electronics repair workbench" width="901" height="1600" loading="lazy"><div class="card-body"><small>03 / The repair bench</small><h3>Display &amp; power faults</h3><p>Ask the shop about meter screens, power-on problems and related electronics.</p></div></article>
+    </div></section>
+    <section class="contact" id="contact" aria-labelledby="contact-title"><div class="container"><div><p class="eyebrow">Speak to the workshop</p><h2 id="contact-title">Tell us what the meter is doing.</h2><p>Share your vehicle model, a photo and a short description of the issue. The shop can advise on the next step.</p></div><div class="contact-box"><span class="label">Call or WhatsApp</span><a class="phone" href="tel:+94761305314">+94 76 130 5314</a><a class="button" href="https://wa.me/94761305314?text=Hello%2C%20I%20need%20help%20with%20a%20vehicle%20digital%20meter." target="_blank" rel="noopener noreferrer">Send your meter details</a><p class="address">Kuliyapitiya Road, Galwanguwa,<br>Narammala 60100, Sri Lanka</p></div></div></section>
+  </main>
+  <footer><div class="container"><span>Digital Meter Repairing · Narammala</span><span>Site preview by <a href="https://thepadak.com/" target="_blank" rel="noopener noreferrer">Padak (Pvt) Ltd</a></span></div></footer>
+</body>
+</html>
