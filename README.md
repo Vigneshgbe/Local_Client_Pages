@@ -15,6 +15,7 @@ Free websites built for local clients in around the world.
 | SKS Bathware Tools | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_SKSBathware/) | SL |
 | YAAYA Photography | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_YAAYAPhotography/) | SL |
 | Coreline Sports | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Coreline/) | SL |
+| Digital Meter Repairing | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_DigitalMeter/) | SL |
 
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
