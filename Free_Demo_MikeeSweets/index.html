@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mikee Sweets | Pure Sri Lankan Delights (Demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=DM+Sans:wght@400;500;700&family=Noto+Sans+Sinhala:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d1242b;--green:#1d6b3b;--pink:#f3a6b8;--toffee:#5b3522;--gold:#e3aa3c;--bg:#fff8f6;--ink:#2a1a14;--card:#ffffff;--mut:#6d5a52;--line:#ecd9d3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1210;--ink:#f6e9e4;--card:#2a1b17;--mut:#c4ada4;--line:#47302a}}
+:root[data-theme="dark"]{--bg:#1c1210;--ink:#f6e9e4;--card:#2a1b17;--mut:#c4ada4;--line:#47302a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Rozha One',Georgia,serif;font-weight:400;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px;font-family:inherit}
+.btn.red{background:var(--red);color:#fff}.btn.white{background:#fff;color:var(--red)}.btn.ghost{border-color:currentColor}
+.btn.green{background:var(--green);color:#fff}
+/* demo bar */
+.demo{background:#111;color:#fff;font-size:14px;text-align:center;padding:9px 12px}
+.demo a{color:var(--gold);font-weight:700}
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-family:'Rozha One',serif;font-size:26px;color:var(--red);text-decoration:none;font-style:italic}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500}
+nav ul a{text-decoration:none}
+@media(max-width:760px){nav ul{display:none}}
+/* hero */
+.hero{background:var(--red);color:#fff;padding:64px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:end}
+.si{font-family:'Noto Sans Sinhala',sans-serif;font-size:20px;color:#ffd9dd;margin:0 0 10px}
+.hero h1{font-size:clamp(40px,7vw,78px)}
+.hero p.lead{font-size:19px;max-width:48ch;margin:18px 0 26px;color:#ffe8ea}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:56px}
+.stack{position:relative;height:380px}
+.pouch{position:absolute;width:150px;height:230px;background:#fff;border-radius:14px 14px 10px 10px;box-shadow:0 14px 30px rgba(0,0,0,.25);padding:14px 10px;text-align:center;color:#222}
+.pouch::before{content:"";position:absolute;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#e6e6e6 0 4px,#fff 4px 8px);border-radius:14px 14px 0 0}
+.pouch .lb{margin-top:12px;border-radius:8px;padding:8px 4px;color:#fff;font-weight:700;font-size:13px;line-height:1.2}
+.pouch .lb i{display:block;font-family:'Rozha One',serif;font-size:11px;opacity:.9}
+.pouch .bits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:14px 6px 0}
+.pouch .bits b{aspect-ratio:1;border-radius:4px;display:block}
+.pouch small{position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:#777}
+.p1{left:0;bottom:0;transform:rotate(-8deg)}.p2{left:110px;bottom:20px;z-index:2;transform:rotate(3deg);height:260px;width:170px}.p3{right:0;bottom:0;transform:rotate(9deg)}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.stack{height:320px;max-width:380px;margin:0 auto;width:100%}.p1{left:0}.p2{left:calc(50% - 85px)}}
+/* trust bar */
+.trust{background:var(--gold);color:#2a1a14;padding:18px 0}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:12px 34px;justify-content:center;align-items:center;font-weight:700}
+.trust span.t{font-weight:500}
+/* products */
+h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:10px}
+.sub{color:var(--mut);max-width:60ch;margin:0 0 34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.prod .art{height:170px;display:grid;place-items:center}
+.prod .art .pouch{position:static;width:96px;height:140px;transform:rotate(-5deg);padding:8px 6px;box-shadow:0 8px 16px rgba(0,0,0,.2)}
+.prod .art .pouch .lb{font-size:10px;padding:5px 2px;margin-top:8px}
+.prod .art .pouch .bits{margin:8px 4px 0;gap:3px}
+.prod .art .pouch small{display:none}
+.prod .bd{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod h3{font-size:22px}
+.prod p{margin:0;color:var(--mut);font-size:15px}
+.tag{display:inline-block;background:var(--line);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;width:max-content}
+.prod .btn{margin-top:auto;text-align:center;padding:10px}
+/* builder */
+.build{background:var(--green);color:#fff}
+.build .sub{color:#d3ecd9}
+.bgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:26px;align-items:start}
+@media(max-width:860px){.bgrid{grid-template-columns:1fr}}
+.rows{display:grid;gap:10px}
+.row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);border-radius:16px;padding:10px 14px}
+.dot{width:38px;height:38px;border-radius:10px;flex:none}
+.row .n{flex:1;font-weight:700}.row .n small{display:block;font-weight:400;color:#d3ecd9}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:var(--green);font-size:20px;font-weight:700;cursor:pointer}
+.qty output{min-width:22px;text-align:center;font-weight:700}
+.box{background:#fff;color:var(--ink);border-radius:22px;padding:22px}
+:root[data-theme="dark"] .box,:root:not([data-theme="light"]) .box{color:#2a1a14}
+.box h3{font-size:24px;margin-bottom:6px}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:14px 0}
+.slot{aspect-ratio:1;border-radius:8px;background:#eee;border:2px dashed #ccc}
+.slot.f{border:0}
+.box p{margin:0 0 14px;font-size:14px;color:#6d5a52}
+.box .btn{width:100%;text-align:center}
+/* offers */
+.offers{background:var(--pink);color:#3a1120}
+.ogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.oc{background:#fff;border-radius:22px;padding:24px;color:#3a1120}
+.oc h3{font-size:26px;margin-bottom:8px}
+.oc p{margin:0 0 14px;font-size:15px}
+.badge{display:inline-block;background:var(--green);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;margin-bottom:12px}
+/* where */
+.stores{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.store{flex:1 1 200px;border:2px solid var(--line);border-radius:18px;padding:18px;background:var(--card)}
+.store b{font-size:20px;display:block}
+.store span{color:var(--mut);font-size:14px}
+/* b2b */
+.b2b{background:var(--toffee);color:#fff}
+.b2b .sub{color:#e7cfc2}
+.bb{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+@media(max-width:860px){.bb{grid-template-columns:1fr}}
+.uses{display:grid;gap:12px}
+.uses div{background:rgba(255,255,255,.1);border-radius:16px;padding:14px 16px}
+.uses b{display:block;font-size:17px}
+form{background:#fff;color:#2a1a14;border-radius:22px;padding:22px;display:grid;gap:12px}
+label{font-weight:700;font-size:14px;display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid #dcc9c2;border-radius:12px;background:#fff;color:#2a1a14;width:100%}
+/* story + faq */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vals div{border:2px solid var(--line);border-radius:18px;padding:16px;background:var(--card)}
+.vals b{display:block;font-family:'Rozha One',serif;font-weight:400;font-size:20px;color:var(--red)}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:700;cursor:pointer;font-size:17px}
+details p{margin:8px 0 0;color:var(--mut)}
+/* pitch + footer */
+.pitch{background:#111;color:#fff;text-align:center}
+.pitch h2{max-width:20ch;margin:0 auto 12px}
+.pitch p{max-width:62ch;margin:0 auto 24px;color:#d6cfcb}
+.feat{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px}
+.feat span{border:1px solid #444;border-radius:999px;padding:5px 14px;font-size:14px}
+footer{padding:28px 0;background:var(--red);color:#fff;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(120px);background:#111;color:#fff;padding:12px 20px;border-radius:999px;transition:transform .3s;z-index:20;font-size:14px}
+.toast.on{transform:translateX(-50%) translateY(0)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="demo">Free concept demo made for Mikee Sweets by Padak. <a href="#pitch">See how we can build your real website</a></div>
+
+<nav><div class="wrap">
+<a class="logo" href="#top">Mikee</a>
+<ul><li><a href="#range">Our sweets</a></li><li><a href="#box">Build a box</a></li><li><a href="#where">Where to buy</a></li><li><a href="#bulk">Gifting &amp; wholesale</a></li><li><a href="#faq">FAQ</a></li></ul>
+<a class="btn red" href="#box" style="padding:9px 18px">Order on WhatsApp</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<p class="si">අපේ රටේ අපේම රස</p>
+<h1>A delicious bite on the go.</h1>
+<p class="lead">Traditional Sri Lankan sweets, made to a homemade recipe and packed fresh in pouches that fit your bag, your desk and your gift list.</p>
+<div class="cta"><a class="btn white" href="#box">Build your gift box</a><a class="btn ghost" href="#where">Find us at Keells</a></div>
+</div>
+<div class="stack" aria-hidden="true">
+<div class="pouch p1"><div class="lb" style="background:#c91f26"><i>Milk Toffee</i>කිරි රොටි</div><div class="bits"><b style="background:#8a6a55"></b><b style="background:#a0806b"></b><b style="background:#7a5a46"></b><b style="background:#a0806b"></b><b style="background:#8a6a55"></b><b style="background:#7a5a46"></b></div><small>200g</small></div>
+<div class="pouch p2"><div class="lb" style="background:#1d6b3b"><i>Coconut Rock</i>පොල් රොක්</div><div class="bits"><b style="background:#f3a6b8"></b><b style="background:#f3a6b8"></b><b style="background:#7fd65a"></b><b style="background:#f3a6b8"></b><b style="background:#7fd65a"></b><b style="background:#f3a6b8"></b></div><small>Premium Quality</small></div>
+<div class="pouch p3"><div class="lb" style="background:#7a1f3d"><i>Sesame Balls</i>තල ගුලි</div><div class="bits"><b style="background:#c9a15a;border-radius:50%"></b><b style="background:#b8904a;border-radius:50%"></b><b style="background:#c9a15a;border-radius:50%"></b><b style="background:#b8904a;border-radius:50%"></b><b style="background:#c9a15a;border-radius:50%"></b><b style="background:#b8904a;border-radius:50%"></b></div><small>180g</small></div>
+</div>
+</div></header>
+
+<div class="trust"><div class="wrap"><span class="t">Stocked at</span><span>Keells</span><span>Glomark</span><span>Arpico Supercentre</span><span class="t">Homemade recipe. High quality. High hygiene.</span></div></div>
+
+<section id="range"><div class="wrap">
+<h2>Six ways to satisfy a sweet craving</h2>
+<p class="sub">Every pouch is a classic Sri Lankan treat, made the way it should taste. Tap a product to add it to your gift box.</p>
+<div class="grid" id="prods"></div>
+</div></section>
+
+<section class="build" id="box"><div class="wrap">
+<h2>Build a gift box in 30 seconds</h2>
+<p class="sub">Pick your favourites, watch the box fill up, then send the order straight to Mikee on WhatsApp.</p>
+<div class="bgrid">
+<div class="rows" id="rows"></div>
+<div class="box">
+<h3>Your box</h3>
+<div class="slots" id="slots"></div>
+<p id="summary">Nothing yet. Add a pouch to start.</p>
+<button class="btn red" id="send" type="button">Send order on WhatsApp</button>
+</div>
+</div>
+</div></section>
+
+<section class="offers"><div class="wrap">
+<h2>Deals worth reaching for</h2>
+<p class="sub" style="color:#6b2a3f">Seasonal offers, loyalty perks and festive bundles, all in one place.</p>
+<div class="ogrid">
+<div class="oc"><span class="badge">In store</span><h3>Keells specials</h3><p>Limited-time discounts on Coconut Rock, Kisses and more at Keells Super outlets island-wide. Updated each campaign.</p><a class="btn red" href="#where">See stores</a></div>
+<div class="oc"><span class="badge">Festive</span><h3>Avurudu &amp; Christmas boxes</h3><p>Ready-made festive gift boxes with your greeting card inside. Pre-order early.</p><a class="btn red" href="#bulk">Enquire</a></div>
+<div class="oc"><span class="badge">Join</span><h3>Sweet Club</h3><p>Get new flavour news and offer alerts on WhatsApp before they hit the shelves.</p><a class="btn red" href="#box">Join on WhatsApp</a></div>
+</div>
+</div></section>
+
+<section id="where"><div class="wrap">
+<h2>Find Mikee near you</h2>
+<p class="sub">Grab a pouch on your weekly shop, or order online and let us send it over.</p>
+<div class="stores">
+<div class="store"><b>Keells</b><span>Keells Super outlets island-wide</span></div>
+<div class="store"><b>Glomark</b><span>Selected outlets</span></div>
+<div class="store"><b>Arpico Supercentre</b><span>Selected outlets</span></div>
+<div class="store"><b>Direct order</b><span>WhatsApp us for delivery</span></div>
+</div>
+<a class="btn green" href="#box">Order on WhatsApp</a>
+</div></section>
+
+<section class="b2b" id="bulk"><div class="wrap">
+<h2>Gifting, events &amp; wholesale</h2>
+<p class="sub">Bulk orders and custom packs for people who give sweets for a living or for a moment.</p>
+<div class="bb">
+<div class="uses">
+<div><b>Corporate gifts</b>Branded boxes for staff, clients and year-end.</div>
+<div><b>Weddings &amp; events</b>Favour pouches and platters by the hundred.</div>
+<div><b>Shops &amp; supermarkets</b>Stock the range with clear wholesale terms.</div>
+<div><b>Exports &amp; tourists</b>Travel-ready packs for visitors and overseas family.</div>
+</div>
+<form id="bf">
+<label>Name<input name="n" required></label>
+<label>Organisation<input name="o"></label>
+<label>I need<select name="t"><option>Corporate gift boxes</option><option>Event favours</option><option>Wholesale supply</option><option>Something else</option></select></label>
+<label>Quantity and date<textarea name="m" rows="2" placeholder="e.g. 200 boxes by 10 December"></textarea></label>
+<button class="btn red" type="submit">Request a quote</button>
+</form>
+</div>
+</div></section>
+
+<section><div class="wrap story">
+<div>
+<h2>Sweets with a story</h2>
+<p style="color:var(--mut)">Mikee brings you the taste of ultimate Sri Lankan traditional sweets, prepared to a well-crafted homemade recipe with high quality and hygiene assured. From coconut rock to milk toffee, each one is a taste of home.</p>
+</div>
+<div class="vals">
+<div><b>Homemade recipe</b>Traditional methods, small batches.</div>
+<div><b>Hygiene first</b>Sealed pouches, clear labels.</div>
+<div><b>Clear labelling</b>Nutrition colour guide on every pack.</div>
+<div><b>Made for sharing</b>200g pouches that travel well.</div>
+</div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap" style="max-width:780px">
+<h2>Good questions</h2>
+<details><summary>Where can I buy Mikee sweets?</summary><p>At Keells, Glomark and Arpico Supercentre outlets, or by messaging us on WhatsApp.</p></details>
+<details><summary>Can I order a custom gift box?</summary><p>Yes. Use the box builder above or send a bulk enquiry for corporate and event orders.</p></details>
+<details><summary>How big are the pouches?</summary><p>Most pouches are 200g, with nutrition colour labels on the front.</p></details>
+<details><summary>Do you supply shops and events?</summary><p>Yes. Fill in the wholesale form and we will reply with terms and a quote.</p></details>
+</div></section>
+
+<section class="pitch" id="pitch"><div class="wrap">
+<h2>Like what you see? This is only the preview.</h2>
+<p>This concept was built free by Padak, a software team that builds websites and online shops for Sri Lankan brands. A full version turns this design into a working business tool.</p>
+<div class="feat"><span>Online ordering and payments</span><span>Product and offer admin panel</span><span>Store locator</span><span>WhatsApp and order tracking</span><span>Wholesale portal</span><span>SEO and fast hosting</span></div>
+<a class="btn red" href="https://wa.me/94XXXXXXXXX?text=Hi%20Padak%2C%20we%20saw%20the%20Mikee%20Sweets%20demo%20site" target="_blank" rel="noopener">Talk to Padak on WhatsApp</a>
+</div></section>
+
+<footer><div class="wrap"><span>Mikee Sweets. Pure Sri Lankan Delights.</span><span>Concept demo by Padak Pvt Ltd. Not the official site.</span></div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var P=[
+{n:"Coconut Rock",s:"පොල් රොක්",d:"Soft pink and green coconut cubes. The classic.",c:"#1d6b3b",b:["#f3a6b8","#f3a6b8","#7fd65a","#f3a6b8","#7fd65a","#f3a6b8"],t:"Bestseller",w:"200g"},
+{n:"Sesame Balls",s:"තල ගුලි",d:"Crunchy sesame in a jaggery bite.",c:"#7a1f3d",b:["#c9a15a","#b8904a","#c9a15a","#b8904a","#c9a15a","#b8904a"],t:"Crunchy",w:"180g",r:1},
+{n:"Milk Toffee",s:"කිරි රොටි",d:"Creamy, slow-cooked, melts slowly.",c:"#c91f26",b:["#8a6a55","#a0806b","#7a5a46","#a0806b","#8a6a55","#7a5a46"],t:"Creamy",w:"200g"},
+{n:"Coconut Milk Toffee",s:"පොල් කිරි රොටි",d:"Rich coconut milk toffee with a warm finish.",c:"#d4541a",b:["#a66a3f","#b87a4d","#9a5f36","#b87a4d","#a66a3f","#9a5f36"],t:"Rich",w:"200g"},
+{n:"Coconut Toffee",s:"පොල් රොටි",d:"Chewy coconut toffee, made for sharing.",c:"#2d8a4e",b:["#c9a06a","#d8b27c","#c9a06a","#d8b27c","#c9a06a","#d8b27c"],t:"Chewy",w:"200g"},
+{n:"Kisses",s:"කිස්ස්",d:"Light, crisp meringue swirls in pink.",c:"#d83a8f",b:["#f7c5d8","#f7c5d8","#f7c5d8","#f7c5d8","#f7c5d8","#f7c5d8"],t:"Light",w:"Pack",r:1}
+];
+var q=P.map(function(){return 0}),MAX=8;
+function pouch(p){return '<div class="pouch"><div class="lb" style="background:'+p.c+'"><i>'+p.n+'</i>'+p.s+'</div><div class="bits">'+p.b.map(function(x){return '<b style="background:'+x+(p.r?';border-radius:50%':'')+'"></b>'}).join('')+'</div></div>'}
+document.getElementById('prods').innerHTML=P.map(function(p,i){return '<article class="prod"><div class="art" style="background:'+p.c+'22">'+pouch(p)+'</div><div class="bd"><span class="tag">'+p.t+'</span><h3>'+p.n+'</h3><p>'+p.d+'</p><button class="btn ghost" type="button" data-add="'+i+'">Add to box</button></div></article>'}).join('');
+document.getElementById('rows').innerHTML=P.map(function(p,i){return '<div class="row"><span class="dot" style="background:'+p.c+'"></span><div class="n">'+p.n+'<small>'+p.w+'</small></div><div class="qty"><button type="button" data-m="'+i+'" aria-label="Remove '+p.n+'">-</button><output id="q'+i+'">0</output><button type="button" data-a="'+i+'" aria-label="Add '+p.n+'">+</button></div></div>'}).join('');
+function tot(){return q.reduce(function(a,b){return a+b},0)}
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove('on')},1800)}
+function draw(){
+ var cols=[];q.forEach(function(n,i){for(var k=0;k<n;k++)cols.push(P[i].c)});
+ document.getElementById('slots').innerHTML=Array.from({length:MAX}).map(function(_,i){return '<div class="slot'+(cols[i]?' f':'')+'" style="'+(cols[i]?'background:'+cols[i]:'')+'"></div>'}).join('');
+ q.forEach(function(n,i){document.getElementById('q'+i).textContent=n});
+ var l=P.map(function(p,i){return q[i]?q[i]+' x '+p.n:''}).filter(Boolean);
+ document.getElementById('summary').textContent=l.length?l.join(', ')+' ('+tot()+' of '+MAX+' pouches)':'Nothing yet. Add a pouch to start.';
+}
+function add(i){if(tot()>=MAX){toast('Box is full ('+MAX+' pouches). Remove one to swap.');return}q[i]++;draw()}
+document.addEventListener('click',function(e){
+ var a=e.target.closest('[data-add]'),p=e.target.closest('[data-a]'),m=e.target.closest('[data-m]');
+ if(a){add(+a.dataset.add);toast(P[+a.dataset.add].n+' added to your box')}
+ if(p)add(+p.dataset.a);
+ if(m&&q[+m.dataset.m]>0){q[+m.dataset.m]--;draw()}
+});
+document.getElementById('send').onclick=function(){
+ if(!tot()){toast('Add at least one pouch first.');return}
+ var l=P.map(function(p,i){return q[i]?q[i]+' x '+p.n:''}).filter(Boolean).join(', ');
+ window.open('https://wa.me/94XXXXXXXXX?text='+encodeURIComponent('Hi Mikee, I would like to order a gift box: '+l),'_blank');
+};
+document.getElementById('bf').onsubmit=function(e){
+ e.preventDefault();var f=e.target;
+ var m='Hi Mikee, quote request. Name: '+f.n.value+'. Organisation: '+f.o.value+'. Need: '+f.t.value+'. Details: '+f.m.value;
+ window.open('https://wa.me/94XXXXXXXXX?text='+encodeURIComponent(m),'_blank');
+};
+draw();
+</script>
+</body>
+</html>
