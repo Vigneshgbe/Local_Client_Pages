@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder | Padak Pvt Ltd</title>
+<meta name="description" content="Founder of Padak Pvt Ltd - web development and digital marketing that grows businesses.">
+<style>
+:root{--o:#FF8A00;--y:#FFB94A;--yl:#FFE2A8;--ink:#1B1409;--mut:#6B5D48;--bg:#FFFAF1;--card:#fff;--r:20px;--sh:0 12px 40px rgba(255,138,0,.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:10px}
+.lead{color:var(--mut);max-width:620px;margin-bottom:40px}
+.btn{display:inline-block;padding:14px 28px;border-radius:50px;font-weight:700;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.25s}
+.btn-p{background:linear-gradient(135deg,var(--o),var(--y));color:#fff;box-shadow:0 8px 24px rgba(255,138,0,.35)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(255,138,0,.45)}
+.btn-o{border-color:var(--ink);color:var(--ink)}
+.btn-o:hover{background:var(--ink);color:#fff}
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+header.s{background:rgba(255,250,241,.92);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-weight:800;font-size:1.25rem}.logo span{color:var(--o)}
+.links{display:flex;gap:28px;align-items:center;font-weight:600;font-size:.95rem}
+.links a:not(.btn):hover{color:var(--o)}
+.links .btn{padding:10px 22px}
+.burger{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px;background:radial-gradient(circle at 85% 20%,var(--yl),transparent 55%),var(--bg);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,5.5vw,4rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--o),var(--y));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);font-size:1.12rem;max-width:520px;margin-bottom:30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.photo{position:relative;justify-self:center;width:min(420px,100%)}
+.photo::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border-radius:32px;background:linear-gradient(135deg,var(--o),var(--y));z-index:0}
+.photo img{position:relative;z-index:1;border-radius:32px;width:100%;aspect-ratio:1;object-fit:cover;box-shadow:var(--sh)}
+.badge{position:absolute;z-index:2;left:-20px;bottom:30px;background:#fff;border-radius:16px;padding:12px 18px;box-shadow:var(--sh);font-size:.85rem;font-weight:700;animation:fl 4s ease-in-out infinite}
+.badge small{display:block;color:var(--mut);font-weight:500}
+@keyframes fl{50%{transform:translateY(-10px)}}
+/* stats */
+.stats{padding:0;margin-top:-20px}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);border-radius:var(--r);padding:34px 20px;color:#fff;box-shadow:0 20px 50px rgba(27,20,9,.25)}
+.st{text-align:center;padding:6px}
+.st b{display:block;font-size:2.4rem;color:var(--y)}
+.st span{font-size:.9rem;opacity:.8}
+/* about */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.ab p{color:var(--mut);margin-bottom:16px}
+.vals{display:grid;gap:14px}
+.val{background:var(--card);border-radius:var(--r);padding:20px 22px;box-shadow:var(--sh);border-left:5px solid var(--o)}
+.val h3{font-size:1.05rem;margin-bottom:4px}
+.val p{margin:0;font-size:.93rem}
+/* timeline */
+.tl{position:relative;max-width:760px;margin:0 auto}
+.tl::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:3px;background:linear-gradient(var(--o),var(--yl));border-radius:3px}
+.ti{position:relative;padding-left:56px;margin-bottom:34px}
+.ti::before{content:"";position:absolute;left:8px;top:6px;width:23px;height:23px;border-radius:50%;background:#fff;border:5px solid var(--o)}
+.ti time{font-weight:800;color:var(--o);font-size:.9rem}
+.ti h3{font-size:1.2rem;margin:2px 0 4px}
+.ti p{color:var(--mut)}
+/* services */
+.sv{background:linear-gradient(180deg,#fff,var(--yl) 220%)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border-radius:var(--r);padding:30px 26px;box-shadow:var(--sh);transition:.3s;border:1px solid rgba(255,138,0,.12)}
+.card:hover{transform:translateY(-8px)}
+.ic{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--o),var(--y));display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
+.card h3{margin-bottom:8px;font-size:1.15rem}
+.card p{color:var(--mut);font-size:.95rem}
+/* quotes */
+.qg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.q{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:var(--sh);position:relative}
+.q::before{content:"\201C";position:absolute;top:6px;right:20px;font-size:5rem;color:var(--yl);line-height:1}
+.q p{font-style:italic;margin-bottom:16px;position:relative}
+.q b{display:block}.q small{color:var(--mut)}
+/* contact */
+.ct{background:var(--ink);color:#fff;border-radius:32px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.ct .eyebrow{color:var(--y)}
+.ct p{opacity:.8;margin-bottom:20px}
+.ci a{display:block;margin-bottom:10px;font-weight:600}.ci a:hover{color:var(--y)}
+form{display:grid;gap:14px}
+input,textarea,select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font:inherit}
+select option{color:#000}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.55)}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--y)}
+.note{font-size:.85rem;min-height:1.2em;color:var(--y)}
+footer{text-align:center;padding:36px 0;color:var(--mut);font-size:.9rem}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:.7s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+section{padding:64px 0}
+.hero .wrap,.ab,.ct{grid-template-columns:1fr}
+.hero{text-align:center}.hero p{margin-inline:auto}.cta{justify-content:center}
+.photo{order:-1;width:min(300px,80%)}
+.sg{grid-template-columns:repeat(2,1fr);gap:18px}
+.grid3,.qg{grid-template-columns:1fr}
+.ct{padding:32px 22px}
+.burger{display:block}
+.links{position:absolute;top:70px;left:0;right:0;background:var(--bg);flex-direction:column;padding:22px;gap:18px;display:none;box-shadow:0 14px 30px rgba(0,0,0,.08)}
+.links.open{display:flex}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#home" class="logo" id="logo"></a>
+    <button class="burger" id="bg" aria-label="Menu">&#9776;</button>
+    <nav class="links" id="lk">
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#work">Work</a>
+      <a href="#voices">Voices</a>
+      <a href="#contact" class="btn btn-p">Work With Me</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow" id="role"></span>
+      <h1 id="headline"></h1>
+      <p id="tagline"></p>
+      <div class="cta">
+        <a href="#contact" class="btn btn-p">Let's Build Something</a>
+        <a href="#journey" class="btn btn-o">See the Journey</a>
+      </div>
+    </div>
+    <div class="photo rv">
+      <img id="pic" src="ThikilanP.png" alt="Founder portrait">
+      <div class="badge" id="badge"></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap"><div class="sg rv" id="stats"></div></div>
+</section>
+
+<section id="about">
+  <div class="wrap ab">
+    <div class="rv">
+      <span class="eyebrow">About</span>
+      <h2 id="aboutT"></h2>
+      <div id="aboutP"></div>
+    </div>
+    <div class="vals rv" id="vals"></div>
+  </div>
+</section>
+
+<section id="journey" style="background:#fff">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="eyebrow">Legacy</span>
+      <h2>The journey so far</h2>
+      <p class="lead" style="margin-inline:auto">Every milestone built on one belief: businesses grow when technology and marketing work as one.</p>
+    </div>
+    <div class="tl" id="tl"></div>
+  </div>
+</section>
+
+<section id="work" class="sv">
+  <div class="wrap">
+    <span class="eyebrow">What We Deliver</span>
+    <h2>Results, not just deliverables</h2>
+    <p class="lead">Under this leadership, Padak turns ideas into revenue-ready digital products.</p>
+    <div class="grid3" id="svc"></div>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="wrap">
+    <span class="eyebrow">Voices</span>
+    <h2>What partners say</h2>
+    <p class="lead">Trust is the real product. Here is how it feels from the other side.</p>
+    <div class="qg" id="qs"></div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+  <div class="wrap">
+    <div class="ct rv">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2 style="color:#fff">Have a project in mind?</h2>
+        <p>Tell us what you want to achieve. You get a direct response, a clear plan and honest numbers.</p>
+        <div class="ci" id="ci"></div>
+      </div>
+      <form id="fm">
+        <input id="fn" placeholder="Your name" required>
+        <input id="fe" type="email" placeholder="Email address" required>
+        <input id="fp" placeholder="Phone / WhatsApp (optional)">
+        <select id="fs"></select>
+        <textarea id="fmsg" rows="4" placeholder="Tell me about your project" required></textarea>
+        <button class="btn btn-p" type="submit">Send Message</button>
+        <div class="note" id="nt"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="ft"></footer>
+
+<script>
+/* ===== EDIT YOUR CONTENT HERE ===== */
+const C={
+  name:"Founder Name",
+  company:"Padak",
+  role:"Founder & CEO, Padak Pvt Ltd",
+  headline:"Building brands that <em>grow and last.</em>",
+  tagline:"Web development and digital marketing led by a founder who treats every client's business like his own.",
+  badge:["Founder & CEO","Padak Pvt Ltd"],
+  stats:[[50,"+","Projects Delivered"],[30,"+","Happy Clients"],[5,"+","Years of Experience"],[100,"%","Commitment"]],
+  aboutTitle:"Vision-driven. Hands-on. Accountable.",
+  about:[
+    "Padak began with a simple idea: small and growing businesses deserve the same quality of digital presence as the big players, without the complexity or the inflated price.",
+    "Today the agency covers web development, digital marketing, design and custom software, led from the front with a founder who stays close to every project."
+  ],
+  values:[
+    ["Clarity","Plain-language plans, transparent pricing, no surprises."],
+    ["Ownership","Your goals become our goals. We stay accountable to results."],
+    ["Craft","Fast, clean, conversion-focused work that holds up over time."]
+  ],
+  timeline:[
+    ["Year","The spark","Where the idea of Padak started and why it mattered."],
+    ["Year","Padak is founded","First clients, first wins, and the foundation of the brand."],
+    ["Year","Growing the team","Internships, new services and a stronger delivery process."],
+    ["Year","Products and platforms","Custom software and tools built for real business problems."],
+    ["Today","Looking ahead","Scaling impact across the region with technology and marketing."]
+  ],
+  services:[
+    ["&#128187;","Web Development","Fast, responsive websites and web apps built to convert visitors into customers."],
+    ["&#128200;","Digital Marketing","SEO, social media, ads and content that bring qualified leads consistently."],
+    ["&#127912;","Branding & Design","Identity, creative and video that make your business look as good as it is."],
+    ["&#9881;","Custom Software","POS, CRM and internal tools that remove manual work and give you control."],
+    ["&#128640;","Lead Generation","Systems that find, nurture and track prospects from first click to closed deal."],
+    ["&#129309;","Long-term Partnership","Ongoing support and growth planning, not a one-off handover."]
+  ],
+  quotes:[
+    ["Replace with a real client testimonial about working with the founder.","Client Name","Company / Role"],
+    ["Replace with a real testimonial about delivery, communication or results.","Client Name","Company / Role"],
+    ["Replace with a real testimonial about trust and long-term partnership.","Client Name","Company / Role"]
+  ],
+  services_opts:["Website / Web App","Digital Marketing","Branding & Design","Custom Software","Something else"],
+  email:"hello@yourdomain.com",
+  phone:"+94 00 000 0000",
+  whatsapp:"94000000000",
+  links:[["LinkedIn","https://linkedin.com/"],["Facebook","https://facebook.com/"],["Instagram","https://instagram.com/"]]
+};
+/* ===== RENDER ===== */
+const $=id=>document.getElementById(id);
+document.title=C.name+" | "+C.company;
+$("logo").innerHTML=C.name.split(" ")[0]+"<span>.</span>";
+$("role").textContent=C.role;
+$("headline").innerHTML=C.headline;
+$("tagline").textContent=C.tagline;
+$("pic").alt=C.name+" - "+C.role;
+$("badge").innerHTML=C.badge[0]+"<small>"+C.badge[1]+"</small>";
+$("stats").innerHTML=C.stats.map(s=>`<div class="st"><b data-t="${s[0]}" data-s="${s[1]}">0${s[1]}</b><span>${s[2]}</span></div>`).join("");
+$("aboutT").textContent=C.aboutTitle;
+$("aboutP").innerHTML=C.about.map(p=>`<p>${p}</p>`).join("");
+$("vals").innerHTML=C.values.map(v=>`<div class="val"><h3>${v[0]}</h3><p>${v[1]}</p></div>`).join("");
+$("tl").innerHTML=C.timeline.map(t=>`<div class="ti rv"><time>${t[0]}</time><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join("");
+$("svc").innerHTML=C.services.map(s=>`<div class="card rv"><div class="ic">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join("");
+$("qs").innerHTML=C.quotes.map(q=>`<div class="q rv"><p>${q[0]}</p><b>${q[1]}</b><small>${q[2]}</small></div>`).join("");
+$("fs").innerHTML='<option value="">I am interested in...</option>'+C.services_opts.map(o=>`<option>${o}</option>`).join("");
+$("ci").innerHTML=`<a href="mailto:${C.email}">&#9993; ${C.email}</a><a href="tel:${C.phone.replace(/\s/g,"")}">&#9742; ${C.phone}</a><a href="https://wa.me/${C.whatsapp}" target="_blank" rel="noopener">&#128172; WhatsApp</a>`+C.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">&#8599; ${l[0]}</a>`).join("");
+$("ft").textContent="\u00A9 "+new Date().getFullYear()+" "+C.name+" | "+C.company+" Pvt Ltd. All rights reserved.";
+/* nav */
+const hd=$("hd"),lk=$("lk");
+addEventListener("scroll",()=>hd.classList.toggle("s",scrollY>30),{passive:true});
+$("bg").onclick=()=>lk.classList.toggle("open");
+lk.querySelectorAll("a").forEach(a=>a.onclick=()=>lk.classList.remove("open"));
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,t=+el.dataset.t,s=el.dataset.s,d=1400,st=performance.now();
+  (function f(n){const p=Math.min((n-st)/d,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})(st);
+}),{threshold:.6});
+document.querySelectorAll("[data-t]").forEach(el=>cio.observe(el));
+/* form -> WhatsApp */
+$("fm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const m=`Hi, I'm ${$("fn").value}.\nEmail: ${$("fe").value}\nPhone: ${$("fp").value||"-"}\nInterested in: ${$("fs").value||"-"}\n\n${$("fmsg").value}`;
+  window.open("https://wa.me/"+C.whatsapp+"?text="+encodeURIComponent(m),"_blank");
+  $("nt").textContent="Opening WhatsApp with your message...";
+  e.target.reset();
+});
+</script>
+</body>
+</html>
