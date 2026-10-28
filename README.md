@@ -18,6 +18,7 @@ Free websites built for local clients in around the world.
 | Digital Meter Repairing | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_DigitalMeter/) | SL |
 | Mikee Sweets | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_MikeeSweets/) | SL |
 | Fathi Deluxe Perfumes | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_FATHI_Perfumes/) | SL |
+| Obias Areem Towels store | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_ObiasAreem/) | SL |
 
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
