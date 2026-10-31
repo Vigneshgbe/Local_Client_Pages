@@ -19,7 +19,7 @@ Free websites built for local clients in around the world.
 | Mikee Sweets | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_MikeeSweets/) | SL |
 | Fathi Deluxe Perfumes | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_FATHI_Perfumes/) | SL |
 | Obias Areem Towels store | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_ObiasAreem/) | SL |
-| Aurelia | [View](https://Vigneshgbe.github.io/Local_Client_Pages/index.html/) | SL |
+| Aurelia | [View](https://Vigneshgbe.github.io/Local_Client_Pages/index.html) | SL |
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
