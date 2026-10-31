@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurelia | Printed Tees & Accessories</title>
+<meta name="description" content="Trendy printed tees, mother & daughter sets and accessories. Islandwide delivery. Cash on delivery available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf5ec; --sand:#efe3d0; --tan:#c9a778; --gold:#b8893f; --gold-d:#8f6a2c;
+  --ink:#3a2e22; --muted:#7a6a58; --white:#fffdf9; --wa:#25d366;
+  --shadow:0 18px 45px -18px rgba(90,62,24,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.script{font-family:'Pinyon Script',cursive;color:var(--gold);font-size:1.9rem}
+.eyebrow{letter-spacing:.28em;font-size:.72rem;text-transform:uppercase;color:var(--gold-d);font-weight:500}
+section{padding:90px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:50px;font-weight:500;letter-spacing:.04em;border:1.5px solid var(--gold);cursor:pointer;transition:.3s;font-family:inherit;font-size:.95rem}
+.btn-gold{background:linear-gradient(135deg,#c9a059,#a67a32);color:#fff;border-color:transparent;box-shadow:0 10px 25px -10px rgba(143,106,44,.7)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 30px -10px rgba(143,106,44,.8)}
+.btn-line{background:transparent;color:var(--gold-d)}
+.btn-line:hover{background:var(--gold);color:#fff}
+
+/* demo ribbon */
+.demo-bar{background:var(--ink);color:#f3e6cf;text-align:center;font-size:.78rem;padding:8px 14px;letter-spacing:.06em}
+.demo-bar b{color:#e6bf7a}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(250,245,236,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,137,63,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px}
+.mono{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold-d);background:var(--white)}
+.logo b{font-family:'Cormorant Garamond',serif;letter-spacing:.3em;font-size:1.35rem;font-weight:600}
+.logo small{display:block;font-size:.55rem;letter-spacing:.3em;color:var(--muted);margin-top:-4px}
+nav ul{display:flex;gap:34px;list-style:none;font-size:.9rem}
+nav a{position:relative;padding:6px 0;color:var(--muted);transition:.3s}
+nav a:hover{color:var(--gold-d)}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:.3s}
+nav a:hover::after{width:100%}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{position:relative;padding:70px 0 90px;background:
+  radial-gradient(circle at 85% 20%,rgba(201,167,120,.35),transparent 45%),
+  radial-gradient(circle at 5% 90%,rgba(239,227,208,.9),transparent 40%),var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);margin:14px 0 18px}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:500}
+.hero p{color:var(--muted);max-width:480px;font-size:1.05rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 36px}
+.mini-stats{display:flex;gap:34px;flex-wrap:wrap}
+.mini-stats div b{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-d)}
+.mini-stats div span{font-size:.78rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.hero-art{position:relative;height:520px}
+.blob{position:absolute;inset:30px 20px;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;background:linear-gradient(145deg,#efe0c6,#d9bd91);animation:morph 12s ease-in-out infinite}
+@keyframes morph{50%{border-radius:55% 45% 40% 60%/45% 55% 45% 55%}}
+.float-tee{position:absolute;filter:drop-shadow(0 22px 22px rgba(80,54,20,.28));transition:transform .4s}
+.ft1{width:270px;left:2%;top:40px;transform:rotate(-8deg);animation:bob 6s ease-in-out infinite}
+.ft2{width:240px;right:0;top:170px;transform:rotate(7deg);animation:bob 7s ease-in-out infinite .8s}
+.ft3{width:170px;left:30%;bottom:0;transform:rotate(-2deg);animation:bob 5s ease-in-out infinite 1.4s}
+@keyframes bob{50%{translate:0 -14px}}
+.tag{position:absolute;background:var(--white);padding:10px 18px;border-radius:50px;box-shadow:var(--shadow);font-size:.82rem;display:flex;gap:8px;align-items:center;z-index:3}
+.tag1{right:6%;top:30px}.tag2{left:0;bottom:70px}
+
+/* trust strip */
+.strip{background:var(--ink);color:#f3e6cf;padding:26px 0}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.strip-item{display:flex;align-items:center;justify-content:center;gap:12px;font-size:.92rem;letter-spacing:.04em}
+.strip-item i{font-style:normal;font-size:1.5rem}
+
+/* titles */
+.title{text-align:center;margin-bottom:54px}
+.title h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-top:8px}
+.title p{color:var(--muted);max-width:520px;margin:12px auto 0}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;color:var(--gold)}
+.divider::before,.divider::after{content:"";width:70px;height:1px;background:var(--tan)}
+
+/* collections */
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.col-card{background:var(--white);border-radius:22px;padding:26px 18px 22px;text-align:center;box-shadow:var(--shadow);transition:.4s;cursor:pointer;border:1px solid rgba(184,137,63,.12)}
+.col-card:hover{transform:translateY(-10px)}
+.col-card svg{width:100%;max-width:170px;height:150px}
+.col-card h3{font-size:1.45rem;margin-top:10px}
+.col-card span{font-size:.82rem;color:var(--muted)}
+
+/* filter + products */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.chip{padding:9px 22px;border-radius:40px;border:1px solid var(--tan);background:transparent;color:var(--muted);cursor:pointer;font-family:inherit;font-size:.88rem;transition:.3s}
+.chip.on,.chip:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{background:var(--white);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:.4s;position:relative;border:1px solid rgba(184,137,63,.1)}
+.card:hover{transform:translateY(-8px)}
+.card .img{background:linear-gradient(160deg,#f6ecdb,#ebd9bb);padding:26px 20px 12px;display:grid;place-items:center;position:relative}
+.card .img svg{width:78%;transition:.5s}
+.card:hover .img svg{transform:scale(1.08) rotate(-3deg)}
+.badge{position:absolute;top:14px;left:14px;background:var(--ink);color:#f3e6cf;font-size:.68rem;letter-spacing:.14em;padding:5px 12px;border-radius:30px;text-transform:uppercase}
+.card .info{padding:18px 20px 22px}
+.card h3{font-size:1.3rem}
+.card .cat{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold-d)}
+.order{background:var(--ink);color:#fff;border:0;border-radius:40px;padding:9px 18px;font-size:.8rem;cursor:pointer;font-family:inherit;transition:.3s}
+.order:hover{background:var(--wa)}
+.dots{display:flex;gap:7px;margin-top:12px}
+.dot{width:18px;height:18px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #d8c6a6;cursor:pointer;transition:.2s}
+.dot:hover{transform:scale(1.25)}
+
+/* feature (mother & daughter) */
+.feature{background:linear-gradient(135deg,#efe3d0,#e4d0ae)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feat-art{display:flex;justify-content:center;align-items:flex-end;gap:10px;background:var(--white);border-radius:30px;padding:46px 20px 30px;box-shadow:var(--shadow);position:relative}
+.feat-art svg:first-child{width:52%}.feat-art svg:last-child{width:36%}
+.feat h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:10px 0 16px}
+.feat p{color:var(--muted);margin-bottom:22px}
+.price-big{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold-d);font-weight:700}
+.price-big small{font-size:1rem;color:var(--muted);font-family:'Jost'}
+.ticks{list-style:none;margin:20px 0 30px}
+.ticks li{padding:6px 0 6px 32px;position:relative}
+.ticks li::before{content:"✦";position:absolute;left:0;color:var(--gold)}
+
+/* customizer */
+.cust{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;background:var(--white);border-radius:32px;padding:50px;box-shadow:var(--shadow)}
+.cust-view{background:linear-gradient(160deg,#f6ecdb,#ebd9bb);border-radius:24px;padding:30px;display:grid;place-items:center}
+.cust-view svg{width:78%;transition:.4s}
+.swatches{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 26px}
+.sw{width:38px;height:38px;border-radius:50%;cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1.5px #d4c19d;transition:.25s}
+.sw.on{box-shadow:0 0 0 2.5px var(--gold);transform:scale(1.12)}
+.sizes{display:flex;gap:10px;margin:14px 0 26px;flex-wrap:wrap}
+.size{width:48px;height:48px;border-radius:12px;border:1px solid var(--tan);display:grid;place-items:center;cursor:pointer;transition:.25s;background:transparent;font-family:inherit}
+.size.on,.size:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.lab{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why div{text-align:center;padding:34px 22px;border-radius:22px;background:var(--white);box-shadow:var(--shadow)}
+.why i{font-style:normal;font-size:2.2rem;display:block;margin-bottom:12px}
+.why h3{font-size:1.35rem;margin-bottom:6px}
+.why p{font-size:.9rem;color:var(--muted)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.step{text-align:center;position:relative;padding:10px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:64px;height:64px;margin:0 auto 16px;border-radius:50%;background:linear-gradient(135deg,#c9a059,#a67a32);color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.8rem;box-shadow:0 12px 24px -10px rgba(143,106,44,.7)}
+.step h3{font-size:1.3rem}.step p{color:var(--muted);font-size:.9rem}
+
+/* reviews */
+.rev-note{text-align:center;font-size:.78rem;color:var(--muted);margin-top:-30px;margin-bottom:34px;font-style:italic}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:var(--white);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px}
+.rev p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic}
+.rev b{display:block;margin-top:14px;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Jost'}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+.q{border-bottom:1px solid rgba(184,137,63,.3)}
+.q button{width:100%;background:none;border:0;text-align:left;padding:20px 4px;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.q button span{color:var(--gold);transition:.3s;font-family:'Jost'}
+.q .a{max-height:0;overflow:hidden;transition:max-height .4s;color:var(--muted)}
+.q.open .a{max-height:200px;padding-bottom:18px}
+.q.open button span{transform:rotate(45deg)}
+
+/* cta */
+.cta{background:linear-gradient(135deg,#3a2e22,#5a4630);color:#f3e6cf;text-align:center;border-radius:34px;padding:70px 24px;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(2.2rem,4vw,3.4rem);margin-bottom:12px}
+.cta p{max-width:480px;margin:0 auto 28px;opacity:.85}
+.cta::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(201,160,89,.18);right:-80px;top:-100px}
+
+footer{padding:60px 0 28px;background:var(--ink);color:#d9c8aa;margin-top:90px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#f3e6cf;margin-bottom:12px}
+footer li{list-style:none;padding:3px 0;font-size:.92rem}
+footer a:hover{color:#e6bf7a}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;font-size:.78rem;text-align:center;opacity:.7}
+
+/* floating wa */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;background:var(--wa);color:#fff;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.7);font-size:1.7rem;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:12px 24px;border-radius:40px;font-size:.88rem;z-index:70;transition:.4s}
+.toast.show{transform:translate(-50%,0)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:980px){
+  .hero-grid,.feat-grid,.cust{grid-template-columns:1fr}
+  .hero-art{height:430px}
+  .cols,.grid,.why,.steps{grid-template-columns:repeat(2,1fr)}
+  .strip-grid{grid-template-columns:repeat(2,1fr)}
+  .revs{grid-template-columns:1fr}
+  .cust{padding:28px}
+  .f-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  nav ul{position:absolute;top:74px;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:8px 22px 18px;border-bottom:1px solid var(--sand);display:none}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0;border-bottom:1px solid var(--sand)}
+  .menu-btn{display:block}
+  section{padding:64px 0}
+  .ft1{width:200px}.ft2{width:180px;top:190px}.ft3{width:130px}
+  .hero-art{height:380px}
+}
+@media(max-width:520px){
+  .cols,.grid,.why,.steps{grid-template-columns:1fr}
+  .mini-stats{gap:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">✦ Design preview prepared for <b>Aurelia</b> by <b>Padak</b> &nbsp;·&nbsp; Sample layout &amp; content for review</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <div class="mono">A</div>
+      <div><b>AURELIA</b><small>PRINTED TEES &amp; ACCESSORIES</small></div>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#duo">Mother &amp; Daughter</a></li>
+        <li><a href="#studio">Try Colours</a></li>
+        <li><a href="#order">How to Order</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="eyebrow">New Collection · Made for you</span>
+      <h1>Wear your <em>story</em>,<br>softly.</h1>
+      <p>Trendy printed tees &amp; fashion essentials in premium, breathable fabric. Delivered islandwide, with cash on delivery available.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-gold">Shop the Collection →</a>
+        <a href="#order" class="btn btn-line">How to Order</a>
+      </div>
+      <div class="mini-stats">
+        <div><b>Rs. 990</b><span>Tees from</span></div>
+        <div><b>Islandwide</b><span>Delivery</span></div>
+        <div><b>COD</b><span>Available</span></div>
+      </div>
+    </div>
+    <div class="hero-art rv">
+      <div class="blob"></div>
+      <div class="tag tag1">🚚 Islandwide Delivery</div>
+      <div class="tag tag2">✨ Soft &amp; Breathable</div>
+      <div class="float-tee ft1" data-tee="#f4a7c0" data-motif="cat"></div>
+      <div class="float-tee ft2" data-tee="#2b2622" data-motif="cats"></div>
+      <div class="float-tee ft3" data-tee="#d94b4b" data-motif="duck"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item"><i>🧵</i>Premium Quality</div>
+    <div class="strip-item"><i>☁️</i>Soft &amp; Comfortable</div>
+    <div class="strip-item"><i>🚚</i>Islandwide Delivery</div>
+    <div class="strip-item"><i>💵</i>Cash on Delivery</div>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="wrap">
+    <div class="title rv">
+      <span class="script">Explore</span>
+      <h2>Our Collections</h2>
+      <div class="divider">✦</div>
+    </div>
+    <div class="cols">
+      <div class="col-card rv" data-filter="women"><div data-tee="#f4a7c0" data-motif="cat" data-small></div><h3>Women's Tees</h3><span>Everyday charm · Rs. 990</span></div>
+      <div class="col-card rv" data-filter="duo"><div data-tee="#27b3b3" data-motif="turtle" data-small></div><h3>Mother &amp; Daughter</h3><span>Couple sets · Rs. 1,990</span></div>
+      <div class="col-card rv" data-filter="kids"><div data-tee="#2b2622" data-motif="cats" data-small></div><h3>Aurelia Kids</h3><span>Little outfits · Rs. 1,590</span></div>
+      <div class="col-card rv" data-filter="acc"><div data-acc="bag" data-small></div><h3>Accessories</h3><span>Totes, hair &amp; more</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv">
+      <span class="script">Favourites</span>
+      <h2>Shop the Edit</h2>
+      <p>Tap "Order" to send your pick straight to us on WhatsApp.</p>
+      <div class="divider">✦</div>
+    </div>
+    <div class="filters rv" id="filters">
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="women">Women</button>
+      <button class="chip" data-f="duo">Mother &amp; Daughter</button>
+      <button class="chip" data-f="kids">Kids</button>
+      <button class="chip" data-f="acc">Accessories</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- MOTHER & DAUGHTER -->
+<section class="feature feat" id="duo">
+  <div class="wrap feat-grid">
+    <div class="feat-art rv">
+      <div id="duoA" data-tee="#27b3b3" data-motif="turtle"></div>
+      <div id="duoB" data-tee="#f4a7c0" data-motif="turtle"></div>
+    </div>
+    <div class="rv">
+      <span class="script">Matching moments</span>
+      <h2>Mother &amp; Daughter<br>Couple T-Shirts</h2>
+      <p>Same print, two sizes, one beautiful bond. Our best-loved matching set, made for everyday memories.</p>
+      <div class="price-big">Rs. 1,990 <small>/ set</small></div>
+      <ul class="ticks">
+        <li>Soft &amp; breathable fabric</li>
+        <li>Premium print quality</li>
+        <li>Comfortable everyday fit</li>
+        <li>Perfect for gifting</li>
+      </ul>
+      <button class="btn btn-gold" onclick="orderMsg('Mother & Daughter Couple T-Shirt Set','Rs. 1,990')">Order this set on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section id="studio">
+  <div class="wrap">
+    <div class="title rv">
+      <span class="script">Your style</span>
+      <h2>Try Your Colour</h2>
+      <p>Pick a colour, pick a size, see it instantly.</p>
+      <div class="divider">✦</div>
+    </div>
+    <div class="cust rv">
+      <div class="cust-view" id="custView"></div>
+      <div>
+        <h3 style="font-size:2.2rem">Everyday Charm Tee</h3>
+        <div class="price" style="font-size:2rem;margin:6px 0 16px">Rs. 990</div>
+        <div class="lab">Colour · <span id="colName">Blush Pink</span></div>
+        <div class="swatches" id="swatches"></div>
+        <div class="lab">Size</div>
+        <div class="sizes" id="sizes"></div>
+        <button class="btn btn-gold" id="custOrder">Order on WhatsApp</button>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--muted)">Cash on delivery available · Islandwide delivery</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="script">Why Aurelia</span><h2>Made With Care</h2><div class="divider">✦</div></div>
+    <div class="why">
+      <div class="rv"><i>🧵</i><h3>Premium Fabric</h3><p>Soft, breathable cotton that feels good all day.</p></div>
+      <div class="rv"><i>🎨</i><h3>Unique Prints</h3><p>Playful, artistic designs you won't find everywhere.</p></div>
+      <div class="rv"><i>🚚</i><h3>Islandwide Delivery</h3><p>From Colombo to Jaffna, we deliver to your door.</p></div>
+      <div class="rv"><i>💵</i><h3>Cash on Delivery</h3><p>Pay when it arrives. Easy and worry-free.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="order" style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="script">So easy</span><h2>How to Order</h2><div class="divider">✦</div></div>
+    <div class="steps">
+      <div class="step rv"><h3>Choose</h3><p>Pick your favourite design, colour and size.</p></div>
+      <div class="step rv"><h3>Message Us</h3><p>Tap Order or DM us on Facebook / WhatsApp.</p></div>
+      <div class="step rv"><h3>Confirm</h3><p>Share your delivery details and confirm.</p></div>
+      <div class="step rv"><h3>Receive</h3><p>Get it delivered. Pay cash on delivery if you prefer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="script">Kind words</span><h2>Customer Love</h2><div class="divider">✦</div></div>
+    <p class="rev-note">Sample layout only. Real customer reviews will replace these before launch.</p>
+    <div class="revs">
+      <div class="rev rv"><div class="stars">★★★★★</div><p>"Review text will appear here. Replace with a genuine customer message."</p><b>— Customer name</b></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>"Review text will appear here. Replace with a genuine customer message."</p><b>— Customer name</b></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>"Review text will appear here. Replace with a genuine customer message."</p><b>— Customer name</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="script">Good to know</span><h2>Questions</h2><div class="divider">✦</div></div>
+    <div class="faq rv" id="faqBox">
+      <div class="q"><button>Do you deliver all over Sri Lanka?<span>+</span></button><div class="a">Yes, we offer islandwide delivery.</div></div>
+      <div class="q"><button>Is cash on delivery available?<span>+</span></button><div class="a">Yes, cash on delivery is available for your convenience.</div></div>
+      <div class="q"><button>How do I place an order?<span>+</span></button><div class="a">Send us a DM on Facebook or tap any Order button to message us on WhatsApp with your design, colour and size.</div></div>
+      <div class="q"><button>Which sizes are available?<span>+</span></button><div class="a">Please message us for the current size range for each design, including kids and mother &amp; daughter sets.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wrap">
+  <div class="cta rv">
+    <h2>Ready to find your tee?</h2>
+    <p>Message us now and we'll help you pick the perfect style.</p>
+    <a class="btn btn-gold" href="https://wa.me/94769925986?text=Hi%20Aurelia%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px"><div class="mono" style="background:transparent;color:#e6bf7a;border-color:#e6bf7a">A</div><div><b style="color:#f3e6cf">AURELIA</b><small style="color:#bba98a">PRINTED TEES &amp; ACCESSORIES</small></div></div>
+        <p style="font-size:.92rem;max-width:320px">Trendy T-shirts &amp; fashion essentials. Thank you for supporting small business.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#collections">Collections</a></li><li><a href="#shop">Shop</a></li><li><a href="#duo">Mother &amp; Daughter</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>📞 +94 76 992 5986</li><li>💬 WhatsApp: +94 76 992 5986</li><li>🌐 aurelia.lk</li><li>📍 Islandwide Delivery</li></ul></div>
+    </div>
+    <div class="copy">© <span id="yr"></span> Aurelia · Demo design preview by Padak</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/94769925986?text=Hi%20Aurelia%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="toast" id="toast">Opening WhatsApp…</div>
+
+<script>
+const WA = '94769925986';
+
+/* ---------- SVG helpers ---------- */
+function shade(hex, amt){
+  const n = parseInt(hex.slice(1),16);
+  let r=(n>>16)+amt, g=((n>>8)&255)+amt, b=(n&255)+amt;
+  r=Math.max(0,Math.min(255,r));g=Math.max(0,Math.min(255,g));b=Math.max(0,Math.min(255,b));
+  return '#'+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
+}
+function isDark(hex){const n=parseInt(hex.slice(1),16);return ((n>>16)*0.3+((n>>8)&255)*0.59+(n&255)*0.11)<110}
+function motif(type, dark){
+  const l = dark ? '#f3e6cf' : '#5a4630';
+  const m = {
+    cat:`<g transform="translate(100 78)"><circle r="15" fill="#e9c58f"/><path d="M-13 -9 L-9 -22 L-3 -12 Z M13 -9 L9 -22 L3 -12 Z" fill="#e9c58f"/><circle cx="-5" cy="-2" r="1.6" fill="#3a2e22"/><circle cx="5" cy="-2" r="1.6" fill="#3a2e22"/><path d="M-3 4 Q0 7 3 4" stroke="#3a2e22" fill="none" stroke-width="1.4"/><path d="M-22 20 Q0 34 22 20" stroke="#f2a35c" stroke-width="5" fill="none" stroke-linecap="round"/></g>`,
+    cats:`<g transform="translate(100 88)"><g><rect x="-30" y="-8" width="20" height="30" rx="8" fill="#ef7d3c"/><circle cx="-20" cy="-14" r="10" fill="#ef7d3c"/><path d="M-28 -20 L-26 -30 L-20 -23Z M-12 -20 L-14 -30 L-20 -23Z" fill="#ef7d3c"/></g><g><rect x="-8" y="-20" width="20" height="42" rx="8" fill="#3aa6c9"/><circle cx="2" cy="-26" r="10" fill="#3aa6c9"/><path d="M-6 -32 L-4 -42 L2 -35Z M10 -32 L8 -42 L2 -35Z" fill="#3aa6c9"/></g><g><rect x="14" y="-2" width="20" height="24" rx="8" fill="#e8c23a"/><circle cx="24" cy="-8" r="10" fill="#e8c23a"/><path d="M16 -14 L18 -24 L24 -17Z M32 -14 L30 -24 L24 -17Z" fill="#e8c23a"/></g></g>`,
+    duck:`<g transform="translate(100 88)"><ellipse cx="0" cy="12" rx="17" ry="13" fill="#fffdf9"/><circle cx="8" cy="-8" r="10" fill="#fffdf9"/><path d="M16 -8 L26 -5 L16 -2Z" fill="#f2a33c"/><circle cx="10" cy="-11" r="1.6" fill="#3a2e22"/><rect x="-34" y="-6" width="14" height="22" rx="6" fill="#e9c58f"/><path d="M-30 -14 L-28 -22 L-24 -14Z" fill="#fffdf9"/></g>`,
+    turtle:`<g transform="translate(100 86)"><ellipse rx="26" ry="20" fill="#6fd3d3"/><path d="M-14 -10 L0 -16 L14 -10 L14 6 L0 14 L-14 6Z" fill="#3fa9b0" opacity=".7"/><circle cx="-28" cy="2" r="8" fill="#9be3e0"/><circle cx="-31" cy="0" r="1.4" fill="#3a2e22"/><circle cx="-16" cy="-6" r="2.5" fill="#fff"/><circle cx="12" cy="4" r="2.5" fill="#fff"/><circle cx="4" cy="-10" r="2" fill="#fff"/></g>`,
+    heart:`<path transform="translate(100 82)" d="M0 14 C-28 -8 -14 -28 0 -12 C14 -28 28 -8 0 14Z" fill="#e87b9a"/>`,
+    leaf:`<g transform="translate(100 84)" stroke="${l}" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M0 28 L0 -22"/><path d="M0 -4 Q-18 -8 -20 -24 Q-2 -22 0 -4"/><path d="M0 8 Q18 4 20 -12 Q2 -10 0 8"/><path d="M0 18 Q-14 16 -16 4 Q-2 6 0 18"/></g>`
+  };
+  return m[type]||'';
+}
+function teeSVG(color, mt){
+  const d = isDark(color), edge = shade(color,-26), hi = shade(color,18);
+  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g${color.slice(1)}" x1="0" x2="1"><stop offset="0" stop-color="${hi}"/><stop offset="1" stop-color="${color}"/></linearGradient></defs>
+  <path d="M70 20 L38 36 L12 74 L42 90 L55 72 L55 182 L145 182 L145 72 L158 90 L188 74 L162 36 L130 20 Q100 44 70 20Z" fill="url(#g${color.slice(1)})" stroke="${edge}" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M70 20 Q100 44 130 20" fill="none" stroke="${edge}" stroke-width="3"/>
+  <path d="M55 72 L55 182 M145 72 L145 182" stroke="${edge}" stroke-width=".8" opacity=".35"/>
+  ${motif(mt, d)}
+  </svg>`;
+}
+function accSVG(kind){
+  if(kind==='bag') return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M70 70 Q70 25 100 25 Q130 25 130 70" fill="none" stroke="#a98657" stroke-width="6" stroke-linecap="round"/><path d="M45 70 L155 70 L162 180 L38 180Z" fill="#efe3cd" stroke="#c9a778" stroke-width="2" stroke-linejoin="round"/><text x="100" y="118" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" fill="#8f6a2c" letter-spacing="3">AURELIA</text><path d="M80 134 L120 134" stroke="#c9a778"/><text x="100" y="152" text-anchor="middle" font-family="Jost,sans-serif" font-size="8" fill="#7a6a58" letter-spacing="2">GOOD VIBES</text></svg>`;
+  if(kind==='hair') return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M70 20 Q40 60 50 120 Q55 170 78 185 Q70 120 82 70 Q86 40 70 20Z" fill="#2b2118"/><path d="M110 22 Q90 60 108 110 Q125 150 100 188 Q150 160 142 100 Q138 50 110 22Z" fill="#3a2c20"/><path d="M60 30 Q100 8 140 40" fill="none" stroke="#6b5440" stroke-width="3"/></svg>`;
+  if(kind==='jewel') return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M40 40 Q100 190 160 40" fill="none" stroke="#c9a059" stroke-width="3"/><circle cx="100" cy="150" r="14" fill="#f4e2b8" stroke="#b8893f" stroke-width="3"/><circle cx="68" cy="108" r="5" fill="#e87b9a"/><circle cx="132" cy="108" r="5" fill="#e87b9a"/></svg>`;
+}
+function mount(){
+  document.querySelectorAll('[data-tee]').forEach(el=>{
+    el.innerHTML = teeSVG(el.dataset.tee, el.dataset.motif);
+    if(el.hasAttribute('data-small')){el.style.cssText='width:100%;max-width:170px;margin:0 auto'}
+  });
+  document.querySelectorAll('[data-acc]').forEach(el=>{
+    el.innerHTML = accSVG(el.dataset.acc);
+    el.style.cssText='width:100%;max-width:170px;margin:0 auto';
+  });
+}
+
+/* ---------- products ---------- */
+const products = [
+  {n:'Everyday Charm Tee', c:'women', cat:"Women's Tee", p:990, color:'#f4a7c0', m:'cat', b:'Bestseller', alt:['#f4a7c0','#e0475f','#f1e3c8','#2b2622']},
+  {n:'Playful Style Tee', c:'women', cat:"Women's Tee", p:990, color:'#e8506a', m:'heart', b:'New', alt:['#e8506a','#f4a7c0','#7bb8a4','#f1e3c8']},
+  {n:'Cosy Duck Tee', c:'women', cat:"Women's Tee", p:990, color:'#d94b4b', m:'duck', alt:['#d94b4b','#f1e3c8','#2b2622','#6fa2c9']},
+  {n:'Art Meets Comfort', c:'women', cat:"Women's Tee", p:1490, color:'#2b2622', m:'cats', b:'Premium', alt:['#2b2622','#f1e3c8','#3d5a80']},
+  {n:'Ocean Turtle Set', c:'duo', cat:'Mother & Daughter', p:1990, color:'#27b3b3', m:'turtle', b:'Set of 2', alt:['#27b3b3','#f4a7c0','#8bbf8e']},
+  {n:'Kitty Cats Duo', c:'duo', cat:'Mother & Daughter', p:1990, color:'#7da37d', m:'cats', b:'Set of 2', alt:['#7da37d','#d94b4b','#2b2622']},
+  {n:'Different Cats, Same Love', c:'kids', cat:'Aurelia Kids', p:1590, color:'#2b2622', m:'cats', b:'Kids', alt:['#2b2622','#f1e3c8','#f4a7c0']},
+  {n:'Little Duck Tee', c:'kids', cat:'Aurelia Kids', p:1590, color:'#f4c95d', m:'duck', b:'Kids', alt:['#f4c95d','#f4a7c0','#6fa2c9']},
+  {n:'Aurelia Canvas Tote', c:'acc', cat:'Accessories', p:null, acc:'bag', b:'Message for price'},
+  {n:'Hair Extensions', c:'acc', cat:'Accessories', p:null, acc:'hair', b:'Message for price'},
+  {n:'Charm Necklace', c:'acc', cat:'Accessories', p:null, acc:'jewel', b:'Message for price'}
+];
+const fmt = n => 'Rs. ' + n.toLocaleString('en-US');
+function orderMsg(name, price, extra){
+  const t = `Hi Aurelia, I'd like to order:\n• ${name}${extra?'\n• '+extra:''}${price?'\n• Price: '+price:''}\nPlease share availability and delivery details.`;
+  toast('Opening WhatsApp…');
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');
+}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+
+const grid = document.getElementById('grid');
+function render(filter){
+  grid.innerHTML = '';
+  products.filter(x=>filter==='all'||x.c===filter).forEach((x,i)=>{
+    const card = document.createElement('div');
+    card.className='card rv';
+    card.style.transitionDelay=(i%4)*70+'ms';
+    const art = x.acc ? accSVG(x.acc) : teeSVG(x.color,x.m);
+    const dots = x.alt ? `<div class="dots">${x.alt.map(c=>`<span class="dot" style="background:${c}" data-c="${c}"></span>`).join('')}</div>` : '';
+    card.innerHTML = `<div class="img">${x.b?`<span class="badge">${x.b}</span>`:''}<div class="art">${art}</div></div>
+      <div class="info"><div class="cat">${x.cat}</div><h3>${x.n}</h3>${dots}
+      <div class="row"><span class="price" style="${x.p?'':'font-size:1rem'}">${x.p?fmt(x.p):'DM for price'}</span><button class="order">Order</button></div></div>`;
+    const artEl = card.querySelector('.art');
+    let cur = x.color;
+    card.querySelectorAll('.dot').forEach(d=>d.onclick=()=>{cur=d.dataset.c;artEl.innerHTML=teeSVG(cur,x.m)});
+    card.querySelector('.order').onclick=()=>orderMsg(x.n, x.p?fmt(x.p):'', x.alt?'Colour: '+colorName(cur):'');
+    grid.appendChild(card);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>card.classList.add('in')));
+  });
+}
+const cnames={'#f4a7c0':'Blush Pink','#e0475f':'Rose Red','#f1e3c8':'Cream','#2b2622':'Black','#e8506a':'Coral Pink','#7bb8a4':'Sage','#d94b4b':'Red','#6fa2c9':'Sky Blue','#3d5a80':'Navy','#27b3b3':'Teal','#8bbf8e':'Mint','#7da37d':'Olive Green','#f4c95d':'Sunshine'};
+function colorName(c){return cnames[c]||'Custom'}
+
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  b.classList.add('on'); render(b.dataset.f);
+});
+document.querySelectorAll('.col-card').forEach(c=>c.onclick=()=>{
+  const f=c.dataset.filter;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.f===f));
+  render(f); document.getElementById('shop').scrollIntoView({behavior:'smooth'});
+});
+
+/* ---------- colour studio ---------- */
+const studioColors=['#f4a7c0','#e0475f','#d94b4b','#f1e3c8','#7bb8a4','#6fa2c9','#2b2622'];
+let sc=studioColors[0], ss='M';
+const sw=document.getElementById('swatches'), szs=document.getElementById('sizes'), cv=document.getElementById('custView');
+function drawStudio(){
+  cv.innerHTML=teeSVG(sc,'cat');
+  document.getElementById('colName').textContent=colorName(sc);
+  sw.querySelectorAll('.sw').forEach(s=>s.classList.toggle('on',s.dataset.c===sc));
+}
+studioColors.forEach(c=>{const s=document.createElement('span');s.className='sw';s.style.background=c;s.dataset.c=c;s.onclick=()=>{sc=c;drawStudio()};sw.appendChild(s)});
+['S','M','L','XL','XXL'].forEach(z=>{const b=document.createElement('button');b.className='size'+(z===ss?' on':'');b.textContent=z;b.onclick=()=>{ss=z;szs.querySelectorAll('.size').forEach(x=>x.classList.toggle('on',x===b))};szs.appendChild(b)});
+document.getElementById('custOrder').onclick=()=>orderMsg('Everyday Charm Tee','Rs. 990',`Colour: ${colorName(sc)}, Size: ${ss}`);
+drawStudio();
+
+/* ---------- misc ---------- */
+document.getElementById('menuBtn').onclick=()=>document.getElementById('menu').classList.toggle('open');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>document.getElementById('menu').classList.remove('open'));
+document.querySelectorAll('.q button').forEach(b=>b.onclick=()=>{
+  const q=b.parentElement, was=q.classList.contains('open');
+  document.querySelectorAll('.q').forEach(x=>x.classList.remove('open'));
+  if(!was) q.classList.add('open');
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+mount(); render('all');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
