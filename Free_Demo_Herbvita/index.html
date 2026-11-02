@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herbvita | Quality Herbal Products for Everyday Wellness</title>
+<meta name="description" content="Herbvita Bright & Glow Collagen Booster. Quality herbal products for everyday wellness. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0b4a2f; --green-d:#06331f; --leaf:#2f8a57; --mint:#e6f3ea; --cream:#fbf8f1;
+  --pink:#e8456b; --orange:#f58a3b; --ink:#1e2a23; --muted:#66756b; --white:#fff;
+  --grad:linear-gradient(135deg,#e8456b,#f58a3b);
+  --shadow:0 22px 50px -22px rgba(6,51,31,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins','Noto Sans Sinhala',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display','Noto Sans Sinhala',serif;font-weight:700;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:92px 0}
+.eyebrow{letter-spacing:.22em;font-size:.72rem;text-transform:uppercase;color:var(--leaf);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:50px;font-weight:500;border:2px solid transparent;cursor:pointer;transition:.3s;font-family:inherit;font-size:.95rem}
+.btn-pink{background:var(--grad);color:#fff;box-shadow:0 14px 28px -12px rgba(232,69,107,.75)}
+.btn-pink:hover{transform:translateY(-3px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-d);transform:translateY(-3px)}
+.btn-line{border-color:var(--green);color:var(--green);background:transparent}
+.btn-line:hover{background:var(--green);color:#fff}
+.btn-wa{background:#25d366;color:#fff;box-shadow:0 14px 28px -12px rgba(37,211,102,.75)}
+.btn-wa:hover{transform:translateY(-3px)}
+
+.demo-bar{background:var(--green-d);color:#cfe6d8;text-align:center;font-size:.78rem;padding:8px 14px;letter-spacing:.05em}
+.demo-bar b{color:#ffd28a}
+
+header{position:sticky;top:0;z-index:50;background:rgba(251,248,241,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(11,74,47,.1)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:600;font-size:1.45rem;color:var(--green);letter-spacing:-.02em}
+.logo i{width:38px;height:38px;border-radius:50%;background:var(--green);display:grid;place-items:center}
+.logo sup{font-size:.5rem;color:var(--muted);font-weight:400}
+nav ul{display:flex;gap:30px;list-style:none;font-size:.9rem}
+nav a{color:var(--muted);transition:.25s;position:relative}
+nav a:hover{color:var(--green)}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--grad);transition:.3s}
+nav a:hover::after{width:100%}
+.right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;background:var(--mint);border-radius:40px;padding:3px}
+.lang button{border:0;background:transparent;padding:6px 14px;border-radius:40px;font-size:.78rem;cursor:pointer;font-family:inherit;color:var(--green);font-weight:500}
+.lang button.on{background:var(--green);color:#fff}
+.menu-btn{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(160deg,#073f27 0%,#0b5a38 60%,#14754a 100%);color:#fff;overflow:hidden;padding:70px 0 90px}
+.hero::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(245,138,59,.28),transparent 65%);right:-120px;top:-120px}
+.hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,69,107,.22),transparent 65%);left:-120px;bottom:-140px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
+.hero .eyebrow{color:#9fe0b8}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.6rem);margin:14px 0 18px}
+.hero h1 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500}
+.hero p{max-width:470px;opacity:.88;font-size:1.04rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 34px}
+.hero .btn-line{border-color:rgba(255,255,255,.6);color:#fff}
+.hero .btn-line:hover{background:#fff;color:var(--green)}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badges span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 16px;border-radius:40px;font-size:.8rem}
+.stage{position:relative;height:500px;display:grid;place-items:center}
+.ring{position:absolute;width:400px;height:400px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.28);animation:spin 40s linear infinite}
+.disc{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2f9d68,#0d5a38)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bottle{position:relative;z-index:2;width:250px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.4));animation:bob 5.5s ease-in-out infinite;transition:transform .2s ease-out}
+@keyframes bob{50%{translate:0 -14px}}
+.leaf{position:absolute;font-size:2.2rem;animation:drift 8s ease-in-out infinite}
+.l1{left:6%;top:12%}.l2{right:8%;top:26%;animation-delay:1.5s;font-size:1.7rem}.l3{left:14%;bottom:10%;animation-delay:3s;font-size:1.9rem}
+@keyframes drift{50%{transform:translateY(-18px) rotate(14deg)}}
+.chip{position:absolute;z-index:3;background:#fff;color:var(--green);padding:10px 16px;border-radius:50px;font-size:.8rem;font-weight:500;box-shadow:var(--shadow)}
+.c1{left:0;top:90px}.c2{right:0;bottom:110px}
+
+/* trust */
+.trust{background:var(--white);border-bottom:1px solid #ece6d8}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px 0;text-align:center}
+.trust-grid div{display:flex;gap:12px;align-items:center;justify-content:center;font-size:.9rem;font-weight:500;color:var(--green)}
+.trust-grid i{font-style:normal;font-size:1.5rem}
+
+.title{text-align:center;margin-bottom:52px}
+.title h2{font-size:clamp(2rem,3.8vw,3rem);margin-top:8px;color:var(--green-d)}
+.title p{color:var(--muted);max-width:540px;margin:12px auto 0}
+
+/* benefits */
+.ben{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.ben div{background:var(--white);border-radius:24px;padding:32px 24px;box-shadow:var(--shadow);transition:.35s;border:1px solid #eee7d6}
+.ben div:hover{transform:translateY(-8px)}
+.ben .ic{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:16px;background:var(--mint)}
+.ben h3{font-size:1.25rem;margin-bottom:6px;color:var(--green-d)}
+.ben p{font-size:.9rem;color:var(--muted)}
+
+/* product */
+.prod{background:var(--mint)}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.prod-img{background:linear-gradient(160deg,#fff,#dff0e5);border-radius:36px;padding:40px;display:grid;place-items:center;box-shadow:var(--shadow);position:relative}
+.prod-img svg{width:60%}
+.sale{position:absolute;top:22px;right:22px;background:var(--grad);color:#fff;padding:8px 18px;border-radius:40px;font-size:.78rem;font-weight:600;letter-spacing:.08em}
+.prod h2{font-size:clamp(2rem,3.6vw,3rem);color:var(--green-d);margin:8px 0 10px}
+.prod p{color:var(--muted)}
+.ticks{list-style:none;margin:20px 0}
+.ticks li{padding:6px 0 6px 32px;position:relative;font-size:.95rem}
+.ticks li::before{content:"✓";position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.72rem;display:grid;place-items:center}
+.lab{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:20px 0 10px;display:block}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.pack{border:2px solid #cfe2d6;border-radius:18px;padding:16px 10px;text-align:center;cursor:pointer;background:#fff;transition:.25s;position:relative;font-family:inherit}
+.pack b{display:block;font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green-d)}
+.pack span{font-size:.76rem;color:var(--muted)}
+.pack.on{border-color:var(--pink);box-shadow:0 10px 24px -12px rgba(232,69,107,.6);transform:translateY(-3px)}
+.pack em{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:.62rem;font-style:normal;padding:3px 10px;border-radius:20px;letter-spacing:.08em;white-space:nowrap}
+
+/* quiz */
+.quiz{max-width:760px;margin:0 auto;background:var(--white);border-radius:32px;padding:44px;box-shadow:var(--shadow);text-align:center;border:1px solid #eee7d6}
+.qstep{display:none}.qstep.on{display:block;animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1}}
+.qstep h3{font-size:1.6rem;margin-bottom:22px;color:var(--green-d)}
+.opts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.opt{padding:13px 24px;border-radius:50px;border:2px solid #cfe2d6;background:#fff;cursor:pointer;font-family:inherit;font-size:.92rem;transition:.25s;color:var(--ink)}
+.opt:hover{border-color:var(--pink);background:#fff4f6;transform:translateY(-2px)}
+.prog{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
+.prog i{width:36px;height:5px;border-radius:5px;background:#dce8e0}
+.prog i.on{background:var(--grad)}
+.result p{color:var(--muted);margin:10px 0 24px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{text-align:center}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:62px;height:62px;margin:0 auto 14px;border-radius:50%;background:var(--grad);color:#fff;font-family:'Playfair Display',serif;font-size:1.7rem;box-shadow:0 12px 24px -10px rgba(232,69,107,.7)}
+.step h3{font-size:1.25rem;color:var(--green-d)}.step p{font-size:.9rem;color:var(--muted)}
+
+/* feedback */
+.fb-note{text-align:center;font-size:.78rem;color:var(--muted);font-style:italic;margin:-30px 0 30px}
+.fb{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.phone{background:#0b141a;border-radius:30px;padding:16px;box-shadow:var(--shadow)}
+.phone .bar{color:#cfe6d8;font-size:.78rem;padding:4px 8px 12px;display:flex;gap:8px;align-items:center}
+.bub{background:#005c4b;color:#e9f5ee;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:.85rem;margin:8px 0 8px auto;max-width:90%}
+.bub.in{background:#202c33;border-radius:14px 14px 14px 4px;margin-left:0;margin-right:auto}
+
+/* teaser */
+.teaser{background:var(--green);color:#fff;border-radius:36px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.teaser h2{font-size:clamp(2rem,3.6vw,3rem);margin:8px 0 12px}
+.teaser p{opacity:.88;margin-bottom:24px;max-width:460px}
+.teaser .eyebrow{color:#ffd28a}
+.jar{display:grid;place-items:center}
+.jar svg{width:60%;animation:bob 6s ease-in-out infinite}
+.teaser::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(245,138,59,.18);right:-80px;top:-90px}
+
+/* faq / contact */
+.faq{max-width:740px;margin:0 auto}
+.q{border-bottom:1px solid #dfe6df}
+.q button{width:100%;background:none;border:0;text-align:left;padding:20px 4px;font-family:'Playfair Display','Noto Sans Sinhala',serif;font-size:1.15rem;font-weight:700;color:var(--green-d);cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.q button span{color:var(--pink);transition:.3s}
+.q .a{max-height:0;overflow:hidden;transition:max-height .4s;color:var(--muted)}
+.q.open .a{max-height:200px;padding-bottom:18px}
+.q.open button span{transform:rotate(45deg)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:0 auto}
+.contact a{background:var(--white);padding:26px;border-radius:22px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center;transition:.3s;border:1px solid #eee7d6}
+.contact a:hover{transform:translateY(-5px)}
+.contact i{font-style:normal;font-size:1.8rem}
+.contact b{display:block;color:var(--green-d)}
+.contact span{font-size:.9rem;color:var(--muted);word-break:break-all}
+
+footer{background:var(--green-d);color:#bcd6c5;padding:46px 0 24px;margin-top:90px}
+.f{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer .logo{color:#fff}
+footer .logo i{background:var(--leaf)}
+.disc-txt{font-size:.78rem;opacity:.7;max-width:520px;margin-top:10px}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;text-align:center;font-size:.78rem;opacity:.7}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.7rem;animation:pulse 2.4s infinite;box-shadow:0 12px 28px -8px rgba(37,211,102,.7)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:12px 24px;border-radius:40px;font-size:.88rem;z-index:70;transition:.4s}
+.toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(32px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero-grid,.prod-grid,.teaser{grid-template-columns:1fr}
+  .ben,.steps{grid-template-columns:repeat(2,1fr)}
+  .fb{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .stage{height:430px}
+  .teaser{padding:36px 26px}
+}
+@media(max-width:760px){
+  nav ul{position:absolute;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:6px 22px 16px;border-bottom:1px solid #e8e0cc;display:none}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0;border-bottom:1px solid #eee7d6}
+  .menu-btn{display:block}
+  section{padding:64px 0}
+  .quiz{padding:28px 20px}
+}
+@media(max-width:520px){
+  .ben,.steps,.contact{grid-template-columns:1fr}
+  .bottle{width:210px}.ring{width:330px;height:330px}.disc{width:270px;height:270px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">🌿 Design preview prepared for <b>Hendrix Clothes</b> by <b>Padak</b> &nbsp;·&nbsp; Sample layout &amp; content for review</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i><svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-15 15Z" fill="#fff"/><path d="M5 19 14 10" stroke="#0b4a2f" stroke-width="1.6" fill="none"/></svg></i>Herbvita<sup>™</sup></a>
+    <nav><ul id="menu">
+      <li><a href="#benefits" data-i="n1">Why Herbvita</a></li>
+      <li><a href="#product" data-i="n2">Product</a></li>
+      <li><a href="#quiz" data-i="n3">Glow Guide</a></li>
+      <li><a href="#order" data-i="n4">How to Order</a></li>
+      <li><a href="#faq" data-i="n5">FAQ</a></li>
+    </ul></nav>
+    <div class="right">
+      <div class="lang"><button class="on" id="en">EN</button><button id="si">සිං</button></div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding-top:70px">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="eyebrow" data-i="eb">Quality herbal products for everyday wellness</span>
+      <h1><span data-i="h1a">Let your skin</span> <em data-i="h1b">glow</em><span data-i="h1c"> naturally.</span></h1>
+      <p data-i="hp">Herbvita Bright &amp; Glow Collagen Booster. Ayurvedic-inspired care, made for your daily beauty ritual.</p>
+      <div class="hero-cta">
+        <button class="btn btn-pink" onclick="order()" data-i="cta1">Order on WhatsApp →</button>
+        <a href="#quiz" class="btn btn-line" data-i="cta2">Find my glow routine</a>
+      </div>
+      <div class="badges"><span>🌿 Herbal</span><span>✅ Quality &amp; Certified</span><span>🚚 Quick Delivery</span></div>
+    </div>
+    <div class="stage rv" id="stage">
+      <div class="disc"></div><div class="ring"></div>
+      <span class="leaf l1">🍃</span><span class="leaf l2">🌿</span><span class="leaf l3">🍃</span>
+      <div class="chip c1">✨ Bright &amp; Glow</div>
+      <div class="chip c2">60 Capsules</div>
+      <svg class="bottle" id="bottle" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bg1" x1="0" x2="1"><stop offset="0" stop-color="#e9efe9"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#dfe7e0"/></linearGradient>
+          <linearGradient id="lb" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#e8456b"/><stop offset="1" stop-color="#f58a3b"/></linearGradient>
+        </defs>
+        <rect x="52" y="14" width="96" height="46" rx="10" fill="url(#bg1)" stroke="#cfd8d1"/>
+        <path d="M60 24h80M60 34h80M60 44h80" stroke="#d3dcd5" stroke-width="2"/>
+        <rect x="60" y="56" width="80" height="16" fill="#e1e9e3"/>
+        <rect x="30" y="68" width="140" height="214" rx="26" fill="url(#bg1)" stroke="#cfd8d1"/>
+        <rect x="30" y="112" width="140" height="130" fill="#0b4a2f"/>
+        <text x="100" y="140" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="600" font-size="20" fill="#fff">Herbvita</text>
+        <rect x="46" y="154" width="108" height="62" rx="14" fill="url(#lb)"/>
+        <text x="100" y="180" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="14" fill="#fff">BRIGHT</text>
+        <text x="100" y="199" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="14" fill="#fff">&amp; GLOW</text>
+        <text x="100" y="232" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8.5" fill="#cfe6d8" letter-spacing="2">COLLAGEN BOOSTER</text>
+        <circle cx="146" cy="96" r="15" fill="#0b4a2f"/><text x="146" y="100" text-anchor="middle" font-family="Poppins" font-weight="600" font-size="11" fill="#fff">60</text>
+        <path d="M44 84 Q40 160 46 262" stroke="#fff" stroke-width="6" opacity=".45" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust"><div class="wrap trust-grid">
+  <div><i>🌿</i><span data-i="t1">Ayurvedic-inspired</span></div>
+  <div><i>✅</i><span data-i="t2">Quality &amp; Certified</span></div>
+  <div><i>🚚</i><span data-i="t3">Quick &amp; Prompt Delivery</span></div>
+  <div><i>💬</i><span data-i="t4">Easy WhatsApp Ordering</span></div>
+</div></div>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="title rv"><span class="eyebrow">Why Herbvita</span><h2 data-i="bt">Care your skin deserves</h2><p data-i="bp">A simple daily step, rooted in natural ingredients and traditional wisdom.</p></div>
+    <div class="ben">
+      <div class="rv"><div class="ic">✨</div><h3>Radiant Look</h3><p>Designed to support a brighter, healthier-looking glow.</p></div>
+      <div class="rv"><div class="ic">🧬</div><h3>Natural Collagen Support</h3><p>A collagen booster to support skin from within.</p></div>
+      <div class="rv"><div class="ic">🌿</div><h3>Herbal Approach</h3><p>Inspired by Ayurvedic tradition, made for everyday wellness.</p></div>
+      <div class="rv"><div class="ic">🛡️</div><h3>Trusted Quality</h3><p>Quality and certified product you can feel confident about.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="prod" id="product">
+  <div class="wrap prod-grid">
+    <div class="prod-img rv">
+      <span class="sale">NEW</span>
+      <svg viewBox="0 0 200 300"><use href="#bottleDef"/></svg>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Herbvita</span>
+      <h2>Bright &amp; Glow<br>Collagen Booster</h2>
+      <p>Your daily glow ritual in a bottle of 60. Ask us on WhatsApp for today's price and delivery to your area.</p>
+      <ul class="ticks">
+        <li>Ayurvedic-inspired herbal formula</li>
+        <li>60 count bottle</li>
+        <li>Quality &amp; certified product</li>
+        <li>Quick and prompt delivery</li>
+      </ul>
+      <span class="lab" data-i="choose">Choose your pack</span>
+      <div class="packs" id="packs">
+        <button class="pack on" data-n="1"><b>1</b><span>Bottle</span></button>
+        <button class="pack" data-n="2"><em>POPULAR</em><b>2</b><span>Bottles</span></button>
+        <button class="pack" data-n="3"><b>3</b><span>Bottles</span></button>
+      </div>
+      <button class="btn btn-wa" id="packOrder">💬 Order on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="title rv"><span class="eyebrow">Glow Guide</span><h2 data-i="qt">Find your glow routine</h2><p data-i="qp">Three quick taps. We'll continue the conversation on WhatsApp.</p></div>
+    <div class="quiz rv" id="quizBox">
+      <div class="prog" id="prog"><i class="on"></i><i></i><i></i></div>
+      <div class="qstep on" data-s="0"><h3>What's your main skin goal?</h3><div class="opts">
+        <button class="opt" data-k="goal" data-v="Brighter, glowing skin">✨ Glow up</button>
+        <button class="opt" data-k="goal" data-v="Even-looking skin tone">🎯 Even tone</button>
+        <button class="opt" data-k="goal" data-v="Hydrated, healthy-looking skin">💧 Healthy look</button></div></div>
+      <div class="qstep" data-s="1"><h3>How does your skin feel most days?</h3><div class="opts">
+        <button class="opt" data-k="skin" data-v="Dry">🏜️ Dry</button>
+        <button class="opt" data-k="skin" data-v="Dull">🌫️ Dull</button>
+        <button class="opt" data-k="skin" data-v="Normal / mixed">🌸 Normal / mixed</button></div></div>
+      <div class="qstep" data-s="2"><h3>How long do you want to start with?</h3><div class="opts">
+        <button class="opt" data-k="pack" data-v="1 bottle">1 bottle</button>
+        <button class="opt" data-k="pack" data-v="2 bottles">2 bottles</button>
+        <button class="opt" data-k="pack" data-v="3 bottles">3 bottles</button></div></div>
+      <div class="qstep result" data-s="3"><h3>Your glow plan is ready 🌿</h3><p id="sum"></p>
+        <button class="btn btn-wa" id="qOrder">💬 Send to Herbvita on WhatsApp</button>
+        <p style="margin-top:14px"><a href="#quiz" id="again" style="color:var(--pink);font-size:.88rem;text-decoration:underline">Start again</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="order" style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="eyebrow">Simple</span><h2 data-i="ot">How to Order</h2></div>
+    <div class="steps">
+      <div class="step rv"><h3>Message Us</h3><p>Tap any Order button to open WhatsApp.</p></div>
+      <div class="step rv"><h3>Choose Pack</h3><p>Tell us how many bottles you'd like.</p></div>
+      <div class="step rv"><h3>Share Address</h3><p>Send your delivery details.</p></div>
+      <div class="step rv"><h3>Receive</h3><p>Quick and prompt delivery to your door.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="eyebrow">Customer Feedback</span><h2>Real Words, Real Customers</h2></div>
+    <p class="fb-note">Sample layout only. Real customer chats from the Herbvita page will replace these before launch.</p>
+    <div class="fb">
+      <div class="phone rv"><div class="bar">● Customer · WhatsApp</div><div class="bub in">Sample customer message appears here.</div><div class="bub">Thank you for your valuable feedback!</div></div>
+      <div class="phone rv"><div class="bar">● Customer · WhatsApp</div><div class="bub in">Sample customer message appears here.</div><div class="bub">Thank you for your valuable feedback!</div></div>
+      <div class="phone rv"><div class="bar">● Customer · WhatsApp</div><div class="bub in">Sample customer message appears here.</div><div class="bub">Thank you for your valuable feedback!</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEASER -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="teaser rv">
+      <div>
+        <span class="eyebrow">Coming Soon</span>
+        <h2>Face Cream</h2>
+        <p>Something new for your skincare shelf is on the way. Be first to know when it launches.</p>
+        <button class="btn btn-pink" onclick="order('Please add me to the early list for the Herbvita face cream launch.')">🔔 Notify me on WhatsApp</button>
+      </div>
+      <div class="jar">
+        <svg viewBox="0 0 200 180"><ellipse cx="100" cy="150" rx="70" ry="12" fill="rgba(0,0,0,.25)"/><rect x="34" y="62" width="132" height="84" rx="16" fill="#fff"/><rect x="28" y="34" width="144" height="38" rx="12" fill="#e8456b"/><rect x="28" y="34" width="144" height="38" rx="12" fill="url(#lb2)"/><defs><linearGradient id="lb2" x1="0" x2="1"><stop offset="0" stop-color="#e8456b"/><stop offset="1" stop-color="#f58a3b"/></linearGradient></defs><rect x="34" y="94" width="132" height="34" fill="#0b4a2f"/><text x="100" y="116" text-anchor="middle" font-family="Poppins" font-weight="600" font-size="15" fill="#fff">Herbvita</text></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="eyebrow">Good to know</span><h2>Questions</h2></div>
+    <div class="faq rv">
+      <div class="q"><button>How do I place an order?<span>+</span></button><div class="a">Tap any Order button to message us on WhatsApp, or send us an email.</div></div>
+      <div class="q"><button>How long does delivery take?<span>+</span></button><div class="a">We aim for quick and prompt delivery. Message us with your area for an estimate.</div></div>
+      <div class="q"><button>Is the product certified?<span>+</span></button><div class="a">Herbvita products are presented as quality and certified. Ask us on WhatsApp for details.</div></div>
+      <div class="q"><button>How should I take it?<span>+</span></button><div class="a">Please follow the directions on the product label, and consult a healthcare professional if you have any medical condition.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="title rv"><span class="eyebrow">Get in touch</span><h2>Talk to Herbvita</h2></div>
+    <div class="contact rv">
+      <a href="https://wa.me/94762258595" target="_blank" rel="noopener"><i>💬</i><div><b>WhatsApp</b><span>+94 76 225 8595</span></div></a>
+      <a href="mailto:herbvitawellness@gmail.com"><i>✉️</i><div><b>Email</b><span>herbvitawellness@gmail.com</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f">
+      <div><a href="#top" class="logo"><i><svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-15 15Z" fill="#fff"/></svg></i>Herbvita<sup style="color:#bcd6c5">™</sup></a>
+      <p class="disc-txt">Quality Herbal Products for Everyday Wellness. Results may vary. These statements have not been evaluated to diagnose, treat or cure any disease. Please read the label and consult a professional if needed.</p></div>
+      <div style="font-size:.9rem">📍 Avissawella, Sri Lanka<br>💬 +94 76 225 8595<br>✉️ herbvitawellness@gmail.com</div>
+    </div>
+    <div class="copy">© <span id="yr"></span> Herbvita · Demo design preview by Padak</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/94762258595?text=Hi%20Herbvita%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="toast" id="toast">Opening WhatsApp…</div>
+
+<script>
+const WA='94762258595';
+const $=id=>document.getElementById(id);
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+function order(msg){
+  const t=msg||"Hi Herbvita, I'd like to order the Bright & Glow Collagen Booster. Please share the price and delivery details.";
+  toast('Opening WhatsApp…');window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');
+}
+
+/* reuse bottle svg in product section */
+(function(){
+  const src=$('bottle');
+  const defs=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  defs.setAttribute('width','0');defs.setAttribute('height','0');defs.style.position='absolute';
+  defs.innerHTML='<g id="bottleDef">'+src.innerHTML+'</g>';
+  document.body.prepend(defs);
+})();
+
+/* menu, faq, year */
+$('menuBtn').onclick=()=>$('menu').classList.toggle('open');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('menu').classList.remove('open'));
+document.querySelectorAll('.q button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=q.classList.contains('open');document.querySelectorAll('.q').forEach(x=>x.classList.remove('open'));if(!o)q.classList.add('open')});
+$('yr').textContent=new Date().getFullYear();
+
+/* packs */
+let packN=1;
+document.querySelectorAll('.pack').forEach(p=>p.onclick=()=>{packN=+p.dataset.n;document.querySelectorAll('.pack').forEach(x=>x.classList.toggle('on',x===p))});
+$('packOrder').onclick=()=>order(`Hi Herbvita, I'd like to order ${packN} bottle${packN>1?'s':''} of Bright & Glow Collagen Booster. Please share the price and delivery details.`);
+
+/* quiz */
+const ans={};let step=0;
+function show(n){
+  document.querySelectorAll('.qstep').forEach(s=>s.classList.toggle('on',+s.dataset.s===n));
+  document.querySelectorAll('#prog i').forEach((d,i)=>d.classList.toggle('on',i<=Math.min(n,2)));
+  $('prog').style.display=n>2?'none':'flex';
+}
+document.querySelectorAll('.opt').forEach(o=>o.onclick=()=>{
+  ans[o.dataset.k]=o.dataset.v;step++;
+  if(step===3){$('sum').textContent=`Goal: ${ans.goal} · Skin: ${ans.skin} · Starting with: ${ans.pack}`}
+  show(step);
+});
+$('qOrder').onclick=()=>order(`Hi Herbvita! I'm interested in Bright & Glow Collagen Booster.\n• Goal: ${ans.goal}\n• Skin feels: ${ans.skin}\n• Starting with: ${ans.pack}\nPlease advise and share price & delivery details.`);
+$('again').onclick=e=>{e.preventDefault();step=0;show(0)};
+
+/* hero bottle tilt on mouse */
+const stage=$('stage'),bt=$('bottle');
+stage.addEventListener('mousemove',e=>{const r=stage.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;bt.style.transform=`rotateY(${x*18}deg) rotateX(${-y*12}deg)`});
+stage.addEventListener('mouseleave',()=>bt.style.transform='');
+
+/* EN / Sinhala (key lines; review wording with the client before launch) */
+const T={
+ en:{eb:'Quality herbal products for everyday wellness',h1a:'Let your skin',h1b:'glow',h1c:' naturally.',hp:'Herbvita Bright & Glow Collagen Booster. Ayurvedic-inspired care, made for your daily beauty ritual.',cta1:'Order on WhatsApp →',cta2:'Find my glow routine',t1:'Ayurvedic-inspired',t2:'Quality & Certified',t3:'Quick & Prompt Delivery',t4:'Easy WhatsApp Ordering',bt:'Care your skin deserves',bp:'A simple daily step, rooted in natural ingredients and traditional wisdom.',choose:'Choose your pack',qt:'Find your glow routine',qp:"Three quick taps. We'll continue the conversation on WhatsApp.",ot:'How to Order',n1:'Why Herbvita',n2:'Product',n3:'Glow Guide',n4:'How to Order',n5:'FAQ'},
+ si:{eb:'එදිනෙදා සුවතාවට ගුණාත්මක ඖෂධීය නිෂ්පාදන',h1a:'ඔබේ සම',h1b:'දිළිසෙන්න',h1c:' ස්වභාවිකවම.',hp:'Herbvita Bright & Glow Collagen Booster. ඔබේ සුන්දරත්ව චාරිත්‍රයට ආයුර්වේද ආභාසයෙන් නිර්මිත රැකවරණය.',cta1:'WhatsApp හරහා ඇණවුම් කරන්න →',cta2:'මගේ Glow ක්‍රමය සොයන්න',t1:'ආයුර්වේද ආභාසය',t2:'ගුණාත්මක සහ සහතිකලත්',t3:'ඉක්මන් බෙදාහැරීම',t4:'පහසු WhatsApp ඇණවුම්',bt:'ඔබේ සමට ලැබිය යුතු රැකවරණය',bp:'ස්වභාවික අමුද්‍රව්‍ය සහ සාම්ප්‍රදායික ප්‍රඥාව මත පදනම් වූ සරල දෛනික පියවරක්.',choose:'ඔබේ පැකේජය තෝරන්න',qt:'ඔබේ Glow ක්‍රමය සොයන්න',qp:'ඉක්මන් තට්ටු තුනක්. සංවාදය WhatsApp හරහා දිගටම කරගෙන යමු.',ot:'ඇණවුම් කරන ආකාරය',n1:'ඇයි Herbvita',n2:'නිෂ්පාදනය',n3:'Glow මාර්ගෝපදේශය',n4:'ඇණවුම් කරන ආකාරය',n5:'නිතර අසන ප්‍රශ්න'}
+};
+function setLang(l){
+  document.querySelectorAll('[data-i]').forEach(el=>{const v=T[l][el.dataset.i];if(v)el.textContent=v});
+  $('en').classList.toggle('on',l==='en');$('si').classList.toggle('on',l==='si');
+  document.documentElement.lang=l;
+}
+$('en').onclick=()=>setLang('en');$('si').onclick=()=>setLang('si');
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
