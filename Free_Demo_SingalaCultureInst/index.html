@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinhala Cultural Institute - Sudarshi | Est. 1954, Colombo</title>
+<meta name="description" content="Sinhala Cultural Institute (Sudarshi), a community organisation in Colombo preserving and sharing Sinhala culture since 1954.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Noto+Serif+Sinhala:wght@600;700&family=Noto+Serif+Tamil:wght@600;700&family=Noto+Sans:wght@400;500;600&family=Noto+Sans+Sinhala:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#8f1d1d; --red-d:#6b1414; --gold:#e0ab2b; --gold-d:#7d5a0c;
+  --ivory:#fbf7ee; --paper:#f2ead9; --white:#fffdf8; --ink:#201a17; --muted:#58504a; --line:#e2d8c2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans','Noto Sans Sinhala','Noto Sans Tamil',sans-serif;font-size:1.0625rem;line-height:1.7;color:var(--ink);background:var(--ivory)}
+h1,h2,h3{font-family:'Noto Serif','Noto Serif Sinhala','Noto Serif Tamil',serif;font-weight:700;line-height:1.3;color:var(--red-d)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:1rem}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.alt{background:var(--paper)}
+.label{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px}
+.title{max-width:680px;margin-bottom:44px}
+.title.c{text-align:center;margin-left:auto;margin-right:auto}
+.title h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:10px}
+.title p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:6px;font-weight:600;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#241a05}
+.btn-gold:hover{background:#ebb93f;transform:translateY(-2px)}
+.btn-line{border-color:var(--red);color:var(--red)}
+.btn-line:hover{background:var(--red);color:#fff}
+.btn-light{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-light:hover{background:#fff;color:var(--red-d)}
+
+.demo-bar{background:#241a17;color:#ecdcb8;text-align:center;font-size:.85rem;padding:9px 14px}
+.demo-bar b{color:var(--gold)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,238,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.crest{width:46px;height:46px;border-radius:50%;background:var(--red);border:3px solid var(--gold);display:grid;place-items:center;color:#fff;font-family:'Noto Serif',serif;font-weight:700;font-size:1.05rem}
+.brand b{display:block;font-family:'Noto Serif',serif;font-size:1.05rem;color:var(--red-d);line-height:1.2}
+.brand small{font-size:.78rem;color:var(--muted)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.95rem;font-weight:500}
+nav a{color:var(--muted);padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--red);border-color:var(--gold)}
+.right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--white)}
+.lang button{border:0;background:transparent;padding:7px 12px;cursor:pointer;font-size:.9rem;color:var(--muted);font-weight:500}
+.lang button.on{background:var(--red);color:#fff}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--red-d),var(--red));color:#fff;padding:84px 0}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+.hero .label{color:var(--gold)}
+.hero h1{color:#fff;font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:16px}
+.hero p{color:#f6e8e0;max-width:520px;font-size:1.12rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.card-est{background:var(--ivory);color:var(--ink);border-radius:12px;padding:34px 32px;border-top:6px solid var(--gold);box-shadow:0 24px 50px -24px rgba(0,0,0,.55)}
+.card-est .yr{font-family:'Noto Serif',serif;font-weight:700;font-size:3.2rem;color:var(--red);line-height:1}
+.card-est small{display:block;color:var(--muted);margin:4px 0 18px;font-weight:500}
+.names{border-top:1px solid var(--line);padding-top:16px}
+.names p{padding:5px 0;color:var(--red-d);font-weight:600}
+.names p span{display:block;font-size:.78rem;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+
+/* stats */
+.stats{background:var(--white);border-bottom:1px solid var(--line)}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:28px 0;text-align:center}
+.stats b{display:block;font-family:'Noto Serif',serif;font-size:1.7rem;color:var(--red)}
+.stats span{font-size:.92rem;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.about p{color:var(--muted);margin-bottom:16px}
+.fact{background:var(--white);border:1px solid var(--line);border-left:6px solid var(--red);border-radius:8px;padding:28px}
+.fact h3{font-size:1.25rem;margin-bottom:6px}
+.fact p{margin-bottom:0}
+.fact + .fact{margin-top:16px;border-left-color:var(--gold)}
+
+/* programmes */
+.finder{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:26px;display:grid;grid-template-columns:1fr 1fr auto;gap:16px;align-items:end;margin-bottom:34px}
+.finder label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--muted)}
+.finder select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--ivory);color:var(--ink)}
+.prog{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pc{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px;transition:transform .25s,box-shadow .25s,opacity .25s;display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-4px);box-shadow:0 18px 36px -24px rgba(60,20,10,.5)}
+.pc.dim{opacity:.35}
+.pc .ic{font-size:1.8rem;margin-bottom:10px}
+.pc h3{font-size:1.2rem;margin-bottom:6px}
+.pc p{color:var(--muted);font-size:.98rem;margin-bottom:16px}
+.pc a{margin-top:auto;color:var(--red);font-weight:600;font-size:.95rem}
+.pc a:hover{text-decoration:underline}
+.note{font-size:.88rem;color:var(--muted);margin-top:22px;text-align:center;font-style:normal}
+
+/* events */
+.ev{display:grid;gap:14px;max-width:860px;margin:0 auto}
+.e{display:grid;grid-template-columns:84px 1fr auto;gap:22px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 22px}
+.date{background:var(--red);color:#fff;border-radius:8px;text-align:center;padding:10px 6px;line-height:1.1}
+.date b{display:block;font-family:'Noto Serif',serif;font-size:1.7rem}
+.date span{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold)}
+.e h3{font-size:1.15rem;margin-bottom:2px}
+.e p{font-size:.95rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;background:#f3e3b8;color:var(--gold-d);padding:2px 9px;border-radius:20px;margin-left:8px;vertical-align:middle}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.g{aspect-ratio:4/3;border-radius:10px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:.9rem;font-weight:500;position:relative;overflow:hidden}
+.g:nth-child(1),.g:nth-child(6){grid-column:span 2}
+.g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.55))}
+.g span{position:relative;z-index:1}
+
+/* join */
+.join{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.join ul{list-style:none;margin:18px 0 26px}
+.join li{padding:8px 0 8px 30px;position:relative}
+.join li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:700}
+.form{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:32px}
+.form label{display:block;font-size:.88rem;font-weight:600;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;padding:12px 14px;border:1px solid #d9ceb6;border-radius:6px;margin-bottom:16px;background:var(--ivory);color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.form .btn{width:100%}
+.hint{font-size:.85rem;color:var(--muted);margin-top:10px}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.vc{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px}
+.vc h3{font-size:1.2rem;margin-bottom:10px}
+.vc p{color:var(--muted);margin-bottom:6px}
+.vc a.l{color:var(--red);font-weight:600}
+.vc a.l:hover{text-decoration:underline}
+
+/* pitch */
+.pitch{background:var(--red-d);color:#fff;border-radius:16px;padding:56px 48px}
+.pitch h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:10px}
+.pitch>p{color:#f1ddd4;max-width:620px;margin-bottom:30px}
+.pitch .label{color:var(--gold)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.pg div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:20px 22px}
+.pg b{display:block;font-family:'Noto Serif',serif;color:var(--gold);margin-bottom:4px;font-size:1.05rem}
+.pg span{font-size:.95rem;color:#f1ddd4}
+.pitch small{display:block;margin-top:18px;color:#dbbfb3;font-size:.85rem}
+
+footer{background:#241a17;color:#d3c4b8;padding:44px 0 22px;margin-top:88px}
+.f{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer b{color:#fff;font-family:'Noto Serif',serif;font-size:1.1rem;display:block;margin-bottom:6px}
+footer p{font-size:.95rem}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:16px;font-size:.85rem;text-align:center;color:#a99a8e}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);background:#241a17;color:#fff;padding:12px 22px;border-radius:8px;font-size:.92rem;z-index:90;transition:transform .35s}
+.toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:960px){
+  .hero-grid,.about,.join,.visit{grid-template-columns:1fr}
+  .prog{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .g:nth-child(1),.g:nth-child(6){grid-column:span 2}
+  .stats-g{grid-template-columns:repeat(2,1fr)}
+  .pg{grid-template-columns:1fr}
+  .finder{grid-template-columns:1fr}
+  .pitch{padding:36px 24px}
+}
+@media(max-width:800px){
+  nav ul{position:absolute;top:76px;left:0;right:0;background:var(--ivory);flex-direction:column;gap:0;padding:6px 24px 14px;border-bottom:1px solid var(--line);display:none}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  section{padding:60px 0}
+  .brand small{display:none}
+}
+@media(max-width:560px){
+  .prog{grid-template-columns:1fr}
+  .e{grid-template-columns:70px 1fr}
+  .e .btn{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Design preview prepared for <b>Sinhala Cultural Institute - Sudarshi</b> by <b>Padak</b>. Sample layout, content and images for review.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand"><div class="crest">SC</div><div><b>Sinhala Cultural Institute</b><small>Sudarshi · Est. 1954</small></div></a>
+    <nav><ul id="menu">
+      <li><a href="#about" data-i="n1">About</a></li>
+      <li><a href="#programmes" data-i="n2">Programmes</a></li>
+      <li><a href="#events" data-i="n3">Events</a></li>
+      <li><a href="#gallery" data-i="n4">Gallery</a></li>
+      <li><a href="#contact" data-i="n5">Contact</a></li>
+    </ul></nav>
+    <div class="right">
+      <div class="lang"><button class="on" data-l="en">EN</button><button data-l="si">සිං</button><button data-l="ta">த</button></div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="label" data-i="eb">Community organisation · Colombo</span>
+      <h1 data-i="h1">Sinhala Cultural Institute</h1>
+      <p data-i="hp">Preserving and sharing Sinhala culture with our community since 1954.</p>
+      <div class="hero-cta">
+        <a href="#join" class="btn btn-gold" data-i="c1">Become a Member</a>
+        <a href="#programmes" class="btn btn-light" data-i="c2">View Programmes</a>
+      </div>
+    </div>
+    <div class="card-est">
+      <div class="yr">1954</div>
+      <small>Started in November 1954 with the movement of Nalini Wickramasinghe</small>
+      <div class="names">
+        <p><span>සිංහල</span>සිංහල සංස්කෘතික ආයතනය</p>
+        <p><span>தமிழ்</span>சிங்கள கலாசார நிறுவனம்</p>
+        <p><span>English</span>Institute of Sinhala Culture</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats"><div class="wrap stats-g">
+  <div><b>1954</b><span>Founded</span></div>
+  <div><b>2.4K</b><span>Facebook community</span></div>
+  <div><b>Colombo</b><span>Bauddhaloka Mawatha</span></div>
+  <div><b>3</b><span>Languages served</span></div>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="rv">
+      <span class="label">About us</span>
+      <div class="title" style="margin-bottom:20px"><h2>Seven decades of cultural service</h2></div>
+      <p>The Sinhala Cultural Institute, known as Sudarshi, began in November 1954 with the movement of Nalini Wickramasinghe. It has since served as a community home for Sinhala culture in Colombo.</p>
+      <p>This section is where your full story will be told: the founders, the milestones, the people who carried the work forward, and what the institute means to the community today.</p>
+      <a href="#contact" class="btn btn-line" style="margin-top:8px">Get in touch</a>
+    </div>
+    <div class="rv">
+      <div class="fact"><h3>November 1954</h3><p>The institute begins with the movement of Nalini Wickramasinghe.</p></div>
+      <div class="fact"><h3>Today</h3><p>A community organisation in Colombo with a growing following of 2.4K people online.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMMES -->
+<section class="alt" id="programmes">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Programmes</span><h2 data-i="pt">What we offer</h2><p>Find the right programme for you or your family.</p></div>
+    <div class="finder rv">
+      <div><label for="fi">I'm interested in</label><select id="fi"><option value="all">Anything</option><option value="arts">Arts &amp; performance</option><option value="lang">Language &amp; literature</option><option value="community">Community &amp; events</option></select></div>
+      <div><label for="fa">For</label><select id="fa"><option>Myself</option><option>My child</option><option>My family</option><option>My school or group</option></select></div>
+      <button class="btn btn-red" id="fbtn">Show programmes</button>
+    </div>
+    <div class="prog" id="prog">
+      <div class="pc rv" data-c="arts"><div class="ic">🎭</div><h3>Traditional Dance</h3><p>Learn and perform traditional Sinhala dance forms.</p><a href="#contact">Enquire →</a></div>
+      <div class="pc rv" data-c="arts"><div class="ic">🥁</div><h3>Music &amp; Drumming</h3><p>Rhythm, song and instruments rooted in our heritage.</p><a href="#contact">Enquire →</a></div>
+      <div class="pc rv" data-c="lang"><div class="ic">📖</div><h3>Language &amp; Literature</h3><p>Reading circles, writing and appreciation of Sinhala literature.</p><a href="#contact">Enquire →</a></div>
+      <div class="pc rv" data-c="arts"><div class="ic">🎨</div><h3>Arts &amp; Crafts</h3><p>Hands-on workshops in traditional arts and handicrafts.</p><a href="#contact">Enquire →</a></div>
+      <div class="pc rv" data-c="community"><div class="ic">🏮</div><h3>Cultural Festivals</h3><p>Celebrations marking the traditions of the year.</p><a href="#contact">Enquire →</a></div>
+      <div class="pc rv" data-c="community"><div class="ic">🤝</div><h3>Community Outreach</h3><p>Programmes for schools, groups and neighbours.</p><a href="#contact">Enquire →</a></div>
+    </div>
+    <p class="note">Sample programmes for layout only. The real list will be confirmed by the institute.</p>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Events</span><h2 data-i="et">Upcoming events</h2><p>A simple calendar your members can check anytime.</p></div>
+    <div class="ev" id="evList"></div>
+    <p class="note">Sample events for layout only. Your admin will be able to add real events in minutes.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="alt" id="gallery">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Gallery</span><h2>Moments from our community</h2></div>
+    <div class="gal" id="gal"></div>
+    <p class="note">Photo placeholders. Real photographs from your events will be used on the live site.</p>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join">
+  <div class="wrap join">
+    <div class="rv">
+      <span class="label">Membership</span>
+      <div class="title" style="margin-bottom:0"><h2>Become part of our community</h2></div>
+      <p style="color:var(--muted)">Join the Sinhala Cultural Institute and take part in programmes, events and the life of the community.</p>
+      <ul><li>Priority information on programmes and events</li><li>Meet people who share your interest in our culture</li><li>Support the institute's continuing work</li></ul>
+    </div>
+    <form class="form rv" id="form">
+      <label for="n">Full name</label><input id="n" required placeholder="Your name">
+      <label for="e">Email</label><input id="e" type="email" required placeholder="you@example.com">
+      <label for="t">I'd like to</label>
+      <select id="t"><option>Become a member</option><option>Enquire about a programme</option><option>Ask about an event</option><option>Something else</option></select>
+      <label for="m">Message</label><textarea id="m" rows="3" placeholder="How can we help?"></textarea>
+      <button class="btn btn-red" type="submit">Send enquiry by email</button>
+      <p class="hint">This opens your email app with the message ready to send.</p>
+    </form>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Contact</span><h2>Visit or contact us</h2></div>
+    <div class="visit">
+      <div class="vc rv"><h3>Find us</h3><p>Bauddhaloka Mawatha, Colombo, Sri Lanka</p><p>Opening hours: to be confirmed</p><a class="l" href="https://www.google.com/maps/search/?api=1&query=Institute+of+Sinhala+Culture+Bauddhaloka+Mawatha+Colombo" target="_blank" rel="noopener">Open in Google Maps →</a></div>
+      <div class="vc rv"><h3>Get in touch</h3><p>Phone: <a class="l" href="tel:+94112687979">+94 11 268 7979</a></p><p>Email: <a class="l" href="mailto:sudrshi@gmail.com">sudrshi@gmail.com</a></p><p>Facebook: Sinhala Cultural Institute - Sudarshi</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PITCH -->
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="pitch rv">
+      <span class="label">Your website</span>
+      <h2>From this preview to a website you manage yourself</h2>
+      <p>This is a design preview. The full website is built around your real content and your needs.</p>
+      <div class="pg">
+        <div><b>Your own content</b><span>Real history, photos, programmes and people.</span></div>
+        <div><b>Easy event updates</b><span>Add events and news yourself, no technical help needed.</span></div>
+        <div><b>Online enquiries</b><span>Membership and programme forms that reach your inbox.</span></div>
+        <div><b>Three languages</b><span>Sinhala, Tamil and English, checked by native speakers.</span></div>
+        <div><b>Mobile friendly</b><span>Clear and fast on every phone, tablet and computer.</span></div>
+        <div><b>Found on Google</b><span>Help new members and visitors find the institute.</span></div>
+      </div>
+      <button class="btn btn-gold" id="pitchBtn">Let's discuss your website</button>
+      <small>Prepared by Padak · Web development &amp; digital marketing</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f">
+      <div><b>Sinhala Cultural Institute - Sudarshi</b><p>Community organisation · Est. 1954<br>Bauddhaloka Mawatha, Colombo, Sri Lanka</p></div>
+      <div><b>Contact</b><p>+94 11 268 7979<br>sudrshi@gmail.com</p></div>
+    </div>
+    <div class="copy">© <span id="yr"></span> Sinhala Cultural Institute - Sudarshi · Demo design preview by Padak</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2400)}
+
+/* Padak's own contact for the closing button. Add the WhatsApp number here, e.g. '94771234567' */
+const PADAK_WA='';
+$('pitchBtn').onclick=()=>{
+  if(!PADAK_WA){toast('Padak contact number not set yet');return}
+  window.open('https://wa.me/'+PADAK_WA+'?text='+encodeURIComponent('Hi Padak, I saw the website preview for Sinhala Cultural Institute and would like to discuss it.'),'_blank');
+};
+
+/* menu / year */
+$('menuBtn').onclick=()=>$('menu').classList.toggle('open');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('menu').classList.remove('open'));
+$('yr').textContent=new Date().getFullYear();
+
+/* programme finder */
+$('fbtn').onclick=()=>{
+  const v=$('fi').value;let n=0;
+  document.querySelectorAll('#prog .pc').forEach(c=>{const show=v==='all'||c.dataset.c===v;c.classList.toggle('dim',!show);if(show)n++});
+  toast(n+' programme'+(n===1?'':'s')+' match');
+};
+
+/* sample events (dates are generated from today, for layout only) */
+(function(){
+  const items=[['Cultural Evening','Music, dance and community gathering','Sample'],['Language & Literature Workshop','An afternoon session for all ages','Sample'],['Traditional Arts Showcase','Members present their work','Sample']];
+  const now=new Date();
+  $('evList').innerHTML=items.map((it,i)=>{
+    const d=new Date(now.getFullYear(),now.getMonth()+1+i,10+i*5);
+    return `<div class="e rv"><div class="date"><b>${d.getDate()}</b><span>${d.toLocaleString('en-GB',{month:'short'})}</span></div><div><h3>${it[0]}<span class="tag">${it[2]}</span></h3><p>${it[1]}</p></div><a class="btn btn-line" href="#join">Register interest</a></div>`}).join('');
+})();
+
+/* gallery placeholders */
+const g=[['#8f1d1d','#c0463a','Cultural evening'],['#7d5a0c','#c99a2a','Workshop'],['#6b1414','#a83232','Performance'],['#5a4630','#a88b5e','Community'],['#8f1d1d','#d0702e','Festival'],['#7d5a0c','#b8832a','Members']];
+$('gal').innerHTML=g.map(([a,b,n])=>`<div class="g rv" style="background:linear-gradient(135deg,${a},${b})"><span>${n}</span></div>`).join('');
+
+/* enquiry -> email */
+$('form').onsubmit=e=>{
+  e.preventDefault();
+  const body=`Name: ${$('n').value}\nEmail: ${$('e').value}\nRequest: ${$('t').value}\n\n${$('m').value}`;
+  window.location.href='mailto:sudrshi@gmail.com?subject='+encodeURIComponent('Website enquiry: '+$('t').value)+'&body='+encodeURIComponent(body);
+};
+
+/* language (key lines only; native speakers must review before launch) */
+const T={
+ en:{n1:'About',n2:'Programmes',n3:'Events',n4:'Gallery',n5:'Contact',eb:'Community organisation · Colombo',h1:'Sinhala Cultural Institute',hp:'Preserving and sharing Sinhala culture with our community since 1954.',c1:'Become a Member',c2:'View Programmes',pt:'What we offer',et:'Upcoming events'},
+ si:{n1:'අපි ගැන',n2:'වැඩසටහන්',n3:'සිදුවීම්',n4:'ගැලරිය',n5:'සම්බන්ධ වන්න',eb:'ප්‍රජා සංවිධානය · කොළඹ',h1:'සිංහල සංස්කෘතික ආයතනය',hp:'1954 සිට අපගේ ප්‍රජාව සමඟ සිංහල සංස්කෘතිය ආරක්ෂා කරමින් බෙදා හදා ගනිමු.',c1:'සාමාජික වන්න',c2:'වැඩසටහන් බලන්න',pt:'අප පිරිනමන දේ',et:'ඉදිරියට එන සිදුවීම්'},
+ ta:{n1:'எங்களைப் பற்றி',n2:'நிகழ்ச்சிகள்',n3:'நிகழ்வுகள்',n4:'புகைப்படங்கள்',n5:'தொடர்புக்கு',eb:'சமூக அமைப்பு · கொழும்பு',h1:'சிங்கள கலாசார நிறுவனம்',hp:'1954 முதல் எங்கள் சமூகத்துடன் சிங்கள கலாசாரத்தைப் பாதுகாத்துப் பகிர்ந்து வருகிறோம்.',c1:'உறுப்பினராகுங்கள்',c2:'நிகழ்ச்சிகளைப் பார்க்க',pt:'நாங்கள் வழங்குவது',et:'வரவிருக்கும் நிகழ்வுகள்'}
+};
+function setLang(l){
+  document.querySelectorAll('[data-i]').forEach(el=>{const v=T[l][el.dataset.i];if(v)el.textContent=v});
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  document.documentElement.lang=l;
+}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+/* gentle reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
