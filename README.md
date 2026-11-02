@@ -24,6 +24,7 @@ Free websites built for local clients in around the world.
 | Herbvita Products | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Herbvita/) | SL |
 | Green Grass DIY School Projects | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_GreenGrass/) | SL |
 | Pathum Wedding Planner | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_PathumWedding/) | SL |
+| Sinhala Culture Instute | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_SinhalaCultureInst/) | SL |
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
