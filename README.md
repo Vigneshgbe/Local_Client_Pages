@@ -29,6 +29,8 @@ Free websites built for local clients in around the world.
 | Sinhala Culture Instute | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_SinhalaCultureInst/) | SL |
 | Urban Stitch Store | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_UrbanStitch/) | SL |
 | Tux Ceylon Tailoring | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_TuxCeylon/) | SL |
+| Zingara Clothing | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Zingara/) | SL |
+
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
