@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zingara Clothing | Let the Fabric Speak</title>
+<meta name="description" content="Zingara Clothing. Stylish, feminine ladies' fashion. Choose your size, pay securely and have it delivered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#fbe8ea; --blush2:#f6d3d8; --rose:#c2456b; --rose-d:#9a2f52; --navy:#1f2d52; --cream:#fffaf8; --ink:#241a1f;
+  --muted:#65565d; --line:#efdfe1; --white:#fff; --green:#1f8a4c;
+  --shadow:0 18px 40px -24px rgba(90,30,50,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:var(--ink);background:var(--cream)}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;line-height:1.18;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:1rem}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+section{padding:80px 0}
+.alt{background:var(--blush)}
+.label{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d);margin-bottom:8px}
+.title{margin-bottom:34px}
+.title.c{text-align:center}
+.title h2{font-size:clamp(1.9rem,3.8vw,2.7rem);margin-bottom:8px}
+.title p{color:var(--muted);max-width:560px}
+.title.c p{margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:30px;font-weight:600;border:2px solid transparent;cursor:pointer;transition:background .2s,transform .2s,color .2s}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--rose-d);transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#111b36;transform:translateY(-2px)}
+.btn-line{border-color:var(--rose);color:var(--rose-d)}
+.btn-line:hover{background:var(--rose);color:#fff}
+.btn-light{border-color:rgba(255,255,255,.75);color:#fff}
+.btn-light:hover{background:#fff;color:var(--navy)}
+.btn-wa{background:#1fa855;color:#fff}
+.btn-wa:hover{background:#188a45}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+.demo-bar{background:var(--navy);color:#e3e7f2;text-align:center;font-size:.84rem;padding:9px 14px}
+.demo-bar b{color:#ffc2d1}
+
+header{position:sticky;top:0;z-index:60;background:rgba(255,250,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{width:42px;height:42px;border-radius:50%;background:var(--blush);border:1.5px solid var(--rose);display:grid;place-items:center;font-style:normal;font-family:'Playfair Display',serif;font-weight:700;font-size:1.4rem;color:var(--rose-d)}
+.logo b{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);display:block;line-height:1}
+.logo small{font-size:.66rem;letter-spacing:.24em;color:var(--rose-d);text-transform:uppercase;font-weight:600}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:500;font-size:.95rem}
+nav a{color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--rose)}
+.right{display:flex;align-items:center;gap:10px}
+.cart-btn{background:var(--navy);color:#fff;border:0;border-radius:30px;padding:10px 20px;cursor:pointer;font-weight:600;display:flex;gap:8px;align-items:center}
+.cart-btn:hover{background:var(--rose-d)}
+.cart-btn b{background:var(--rose);min-width:22px;height:22px;border-radius:11px;display:grid;place-items:center;font-size:.78rem;padding:0 6px}
+.menu-btn{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--blush),var(--blush2));padding:74px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.2rem);margin-bottom:16px}
+.hero h1 span{color:var(--rose)}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:480px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips span{background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:30px;font-size:.88rem;font-weight:500}
+.hero-art{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
+.hero-art div{background:#fff;border-radius:20px;padding:16px 8px;display:grid;place-items:center;box-shadow:var(--shadow)}
+.hero-art div:nth-child(2){transform:translateY(-22px)}
+.hero-art svg{width:100%;height:210px}
+
+.strip{background:var(--navy);color:#fff}
+.strip-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:16px 0;text-align:center;font-weight:500;font-size:.92rem}
+
+/* feature */
+.feat{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.feat-img{background:linear-gradient(160deg,#fff,var(--blush2));border-radius:24px;padding:30px;display:grid;place-items:center;box-shadow:var(--shadow);position:relative}
+.feat-img svg{height:380px;max-width:100%}
+.feat-img .tag{position:absolute;top:18px;left:18px;background:var(--rose);color:#fff;font-size:.78rem;font-weight:600;padding:5px 14px;border-radius:20px;letter-spacing:.06em}
+.feat h2{font-size:clamp(2rem,3.8vw,2.8rem);margin:6px 0 12px}
+.feat p{color:var(--muted);margin-bottom:16px}
+.feat ul{list-style:none;margin:6px 0 22px}
+.feat li{padding:8px 0 8px 32px;position:relative}
+.feat li::before{content:"✓";position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--rose);color:#fff;font-size:.75rem;display:grid;place-items:center}
+.feat .price{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--rose-d);margin-bottom:16px}
+
+/* shop */
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.fchips{display:flex;gap:8px;flex-wrap:wrap;flex:1}
+.fc{padding:9px 18px;border-radius:30px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:500;font-size:.9rem;color:var(--muted)}
+.fc.on,.fc:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.toolbar select,.toolbar input{padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.toolbar input{min-width:210px}
+.toolbar input:focus,.toolbar select:focus{outline:2px solid var(--rose);border-color:var(--rose)}
+.count{font-size:.9rem;color:var(--muted);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pc{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.pc:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.pimg{height:230px;display:grid;place-items:center;background:linear-gradient(160deg,#fff4f5,var(--blush));position:relative;padding:14px}
+.pimg svg{height:100%;max-width:100%;transition:transform .35s}
+.pc:hover .pimg svg{transform:scale(1.05)}
+.badge{position:absolute;top:12px;left:12px;background:var(--rose);color:#fff;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:20px;letter-spacing:.04em}
+.badge.low{background:var(--navy)}
+.pinfo{padding:14px 16px 18px;display:flex;flex-direction:column;flex:1}
+.pcat{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pinfo h3{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;margin:4px 0 10px;line-height:1.3;color:var(--ink)}
+.sizes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.sz{min-width:40px;padding:5px 8px;text-align:center;border:1.5px solid var(--line);border-radius:8px;font-size:.84rem;font-weight:600;cursor:pointer;background:#fff;color:var(--ink)}
+.sz:hover{border-color:var(--navy)}
+.sz.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.sz.out{color:#b5a9ad;text-decoration:line-through;cursor:not-allowed;background:#faf5f5}
+.prow{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-weight:700;font-size:1.08rem;color:var(--rose-d)}
+.add{background:var(--rose);color:#fff;border:0;border-radius:20px;padding:9px 16px;font-weight:600;font-size:.84rem;cursor:pointer}
+.add:hover{background:var(--navy)}
+.add[disabled]{background:#cdbfc3;cursor:not-allowed}
+.note{font-size:.88rem;color:var(--muted);text-align:center;margin-top:22px}
+
+/* size tool */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:34px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:38px}
+.tool label{display:block;font-weight:600;margin-bottom:6px;font-size:.92rem}
+.tool input[type=range]{width:100%;accent-color:var(--rose);margin-bottom:16px}
+.big{font-family:'Playfair Display',serif;font-weight:700;font-size:3.4rem;color:var(--rose);line-height:1}
+.tool table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tool th,.tool td{padding:9px 6px;text-align:left;border-bottom:1px solid var(--line)}
+.tool th{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.tool tr.hl td{background:var(--blush);font-weight:600}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 22px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--rose);color:#fff;font-family:'Playfair Display',serif;font-weight:700;margin-bottom:14px}
+.step h3{font-size:1.2rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* dashboard */
+.admin{background:var(--navy);color:#fff;border-radius:22px;padding:42px}
+.admin .label{color:#ffc2d1}
+.admin .title h2{color:#fff}
+.admin .title p{color:#c9d0e2}
+.dash{display:grid;grid-template-columns:1fr 1.4fr;gap:18px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kpi{background:#2a3a63;border:1px solid #3a4b7a;border-radius:12px;padding:16px 18px}
+.kpi span{font-size:.82rem;color:#c9d0e2;font-weight:500}
+.kpi b{display:block;font-family:'Playfair Display',serif;font-size:1.6rem;margin-top:2px;color:#fff}
+.kpi.w{grid-column:span 2}
+.kpi b.up{color:#ffc2d1}
+.panel{background:#2a3a63;border:1px solid #3a4b7a;border-radius:12px;padding:20px}
+.panel h4{font-family:'Inter',sans-serif;font-size:.8rem;color:#c9d0e2;letter-spacing:.08em;margin-bottom:8px;font-weight:600}
+table.t{width:100%;border-collapse:collapse;font-size:.92rem}
+.t th{text-align:left;color:#c9d0e2;font-weight:500;font-size:.8rem;padding:8px 6px}
+.t td{padding:10px 6px;border-top:1px solid #3a4b7a}
+.st{padding:3px 10px;border-radius:20px;font-size:.78rem;font-weight:600}
+.st.paid{background:rgba(31,138,76,.3);color:#8be8b0}
+.st.pend{background:rgba(255,194,209,.2);color:#ffc2d1}
+.flash{animation:flash 1.4s}
+@keyframes flash{0%{background:rgba(194,69,107,.5)}100%{background:transparent}}
+.alerts{margin-top:18px;border-top:1px solid #3a4b7a;padding-top:14px;font-size:.92rem}
+.alerts div{display:flex;justify-content:space-between;padding:5px 0;color:#eef0f7}
+.alerts span.r{color:#ffc2d1;font-weight:600}
+.hint{font-size:.85rem;color:#c9d0e2;margin-top:14px}
+
+/* pitch */
+.pitch{background:var(--rose-d);color:#fff;border-radius:22px;padding:52px 44px}
+.pitch h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:10px}
+.pitch>p{color:#ffe1e8;max-width:620px;margin-bottom:28px}
+.pitch .label{color:#ffc2d1}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.pg div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:20px}
+.pg b{display:block;margin-bottom:4px}
+.pg span{font-size:.95rem;color:#ffe9ee}
+.pitch small{display:block;margin-top:18px;color:#ffc9d6;font-size:.85rem}
+
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+.cc h3{font-size:1.15rem;margin-bottom:6px}
+.cc p,.cc a{color:var(--muted);word-break:break-word}
+.cc a:hover{color:var(--rose)}
+
+footer{background:var(--navy);color:#c9d0e2;padding:40px 0 20px;margin-top:80px}
+.f{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.3rem}
+.copy{border-top:1px solid #34456f;margin-top:22px;padding-top:16px;text-align:center;font-size:.85rem}
+
+/* drawer + modal */
+.overlay{position:fixed;inset:0;background:rgba(25,12,20,.55);z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:90;transform:translateX(105%);transition:transform .35s;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.dh h3{font-size:1.35rem}
+.x{background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--muted)}
+.items{flex:1;overflow:auto;padding:8px 24px}
+.item{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.th{width:58px;height:72px;border-radius:10px;background:var(--blush);display:grid;place-items:center;flex-shrink:0;padding:4px}
+.th svg{height:100%;max-width:100%}
+.item h4{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;line-height:1.3;color:var(--ink)}
+.item small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+.item .pr{margin-left:auto;font-weight:700;white-space:nowrap}
+.empty{text-align:center;color:var(--muted);padding:60px 0}
+.df{padding:20px 24px;border-top:1px solid var(--line);background:var(--cream)}
+.tot{display:flex;justify-content:space-between;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:14px;color:var(--navy)}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);width:min(540px,94%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px;z-index:100;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;padding:28px}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.steps2{display:flex;gap:6px;margin-bottom:20px}
+.steps2 i{flex:1;height:5px;border-radius:5px;background:var(--line)}
+.steps2 i.on{background:var(--rose)}
+.cf label{display:block;font-size:.85rem;font-weight:600;margin-bottom:5px}
+.cf input,.cf textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:14px;background:var(--cream)}
+.cf input:focus,.cf textarea:focus{outline:2px solid var(--rose);border-color:var(--rose)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pm{display:flex;gap:12px;align-items:center;padding:14px 16px;border:2px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer}
+.pm.on{border-color:var(--rose);background:var(--blush)}
+.pm b{display:block;font-size:.95rem}
+.pm span{font-size:.85rem;color:var(--muted)}
+.pm i{font-style:normal;font-size:1.4rem}
+.sum{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0;font-size:.95rem}
+.sum div{display:flex;justify-content:space-between;padding:3px 0}
+.gate{text-align:center;padding:30px 0}
+.spinner{width:50px;height:50px;border-radius:50%;border:5px solid var(--blush2);border-top-color:var(--rose);margin:0 auto 16px;animation:rot 1s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.lock{display:block;background:var(--blush);border:1px dashed var(--rose);color:var(--rose-d);padding:10px 14px;border-radius:10px;font-size:.85rem;margin-top:12px}
+.ok{text-align:center}
+.tick{width:68px;height:68px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:2rem;margin:0 auto 12px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);background:var(--navy);color:#fff;padding:12px 22px;border-radius:30px;font-size:.92rem;z-index:120;transition:transform .35s}
+.toast.show{transform:translate(-50%,0)}
+.wa{position:fixed;right:20px;bottom:20px;z-index:70;width:56px;height:56px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;font-size:1.5rem;box-shadow:0 10px 24px -8px rgba(31,168,85,.7)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1040px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){
+  .hero-grid,.dash,.tool,.feat{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .pg,.contact{grid-template-columns:1fr}
+  .strip-g{grid-template-columns:repeat(2,1fr)}
+  .admin,.pitch,.tool{padding:28px 20px}
+  .hero-art div:nth-child(2){transform:none}
+}
+@media(max-width:760px){
+  nav ul{position:absolute;top:74px;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:6px 22px 14px;border-bottom:1px solid var(--line);display:none}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  section{padding:56px 0}
+  .toolbar input{min-width:100%}
+}
+@media(max-width:520px){
+  .grid{gap:12px}
+  .pimg{height:170px}
+  .pinfo{padding:12px}
+  .steps{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .hero-art svg{height:150px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Store preview prepared for <b>Zingara Clothing</b> by <b>Padak</b>. Sample products, prices and demo payment. Nothing here is charged.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i>Z</i><div><b>Zingara</b><small>Clothing</small></div></a>
+    <nav><ul id="menu">
+      <li><a href="#new">New Arrival</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#size">Size Guide</a></li>
+      <li><a href="#how">How to Order</a></li>
+      <li><a href="#admin">Seller Dashboard</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <div class="right">
+      <button class="cart-btn" id="cartBtn">Cart <b id="cnt">0</b></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="label">Stylish · Feminine · You</span>
+      <h1>Let the fabric <span>speak.</span></h1>
+      <p>Welcome to our world. Elevate your style with dresses and everyday fashion made to make you feel beautiful.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-rose">Shop the Collection</a>
+        <a href="#size" class="btn btn-line">Find My Size</a>
+      </div>
+      <div class="chips"><span>Card payments</span><span>Bank transfer</span><span>Cash on delivery</span></div>
+    </div>
+    <div class="hero-art rv" id="heroArt"></div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap strip-g"><div>New arrivals</div><div>Choose your size</div><div>Secure checkout</div><div>Delivery to your door</div></div></div>
+
+<!-- NEW ARRIVAL -->
+<section id="new">
+  <div class="wrap feat">
+    <div class="feat-img rv"><span class="tag">New arrival</span><div id="featArt"></div></div>
+    <div class="rv">
+      <span class="label">Just in</span>
+      <h2>Navy Floral Dress with Waist Tie</h2>
+      <p>An elegant floral dress that will enhance your beauty.</p>
+      <ul><li>Beautiful navy blue floral design</li><li>Elegant V-neck style</li><li>Beautiful waist tie detail</li></ul>
+      <div class="price">Rs. 2,950</div>
+      <button class="btn btn-rose" id="featBtn">Choose your size</button>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="alt" id="shop">
+  <div class="wrap">
+    <div class="title rv"><span class="label">Live demo</span><h2>Shop the collection</h2><p>Pick a size, add to cart and go through checkout. Stock goes down as orders come in. The payment step is simulated.</p></div>
+    <div class="toolbar">
+      <div class="fchips" id="chips">
+        <button class="fc on" data-f="all">All</button>
+        <button class="fc" data-f="dress">Dresses</button>
+        <button class="fc" data-f="top">Tops</button>
+        <button class="fc" data-f="bottom">Bottoms</button>
+        <button class="fc" data-f="set">Sets</button>
+      </div>
+      <select id="sizeF"><option value="">All sizes</option></select>
+      <select id="sort"><option value="f">Featured</option><option value="a">Price: low to high</option><option value="d">Price: high to low</option></select>
+      <input id="search" placeholder="Search styles">
+    </div>
+    <div class="count" id="count"></div>
+    <div class="grid" id="grid"></div>
+    <p class="note">Sample products, prices and stock for layout only (the Navy Floral Dress price is from your recent post). Your real range and photos will be loaded on the live site.</p>
+  </div>
+</section>
+
+<!-- SIZE TOOL -->
+<section id="size">
+  <div class="wrap">
+    <div class="title rv"><span class="label">Size guide</span><h2>Find your size</h2><p>Fewer wrong sizes means fewer returns and fewer inbox questions.</p></div>
+    <div class="tool rv">
+      <div>
+        <label for="bust">Bust: <b id="bv">90</b> cm</label>
+        <input type="range" id="bust" min="80" max="108" step="1" value="90">
+        <label for="waist">Waist: <b id="wv">72</b> cm</label>
+        <input type="range" id="waist" min="62" max="90" step="1" value="72">
+        <p style="color:var(--muted);margin:6px 0 10px">Suggested size</p>
+        <div class="big" id="rec">M</div>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:12px">Guide only. Sizes follow Zingara's own size chart on the live site.</p>
+      </div>
+      <table><thead><tr><th>Size</th><th>Bust (cm)</th><th>Waist (cm)</th></tr></thead><tbody id="sizeT"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Simple</span><h2>How to order</h2><p>No more "inbox now to order". Customers choose and pay on their own.</p></div>
+    <div class="steps">
+      <div class="step rv"><h3>Pick your style</h3><p>Browse the collection and choose your size.</p></div>
+      <div class="step rv"><h3>Add to cart</h3><p>Review your items and delivery details.</p></div>
+      <div class="step rv"><h3>Pay your way</h3><p>Card, bank transfer or cash on delivery.</p></div>
+      <div class="step rv"><h3>Get it delivered</h3><p>Receive your order at your door.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="admin">
+  <div class="wrap">
+    <div class="admin rv">
+      <div class="title"><span class="label">Seller dashboard preview</span><h2>See orders and stock in real time</h2><p>This is what you would get behind the store. Place a demo order above and watch the orders and stock update here.</p></div>
+      <div class="dash">
+        <div class="kpis">
+          <div class="kpi"><span>Orders today</span><b id="kOrd">3</b></div>
+          <div class="kpi"><span>Pending</span><b id="kPend">1</b></div>
+          <div class="kpi w"><span>Revenue today (sample)</span><b class="up" id="kRev">Rs. 9,150</b></div>
+          <div class="kpi w"><span>Units sold from this demo</span><b id="kUnits">0</b></div>
+        </div>
+        <div class="panel">
+          <h4>RECENT ORDERS (SAMPLE)</h4>
+          <table class="t"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead><tbody id="orders">
+            <tr><td>#ZG-1003</td><td>Nimali P.</td><td>Rs. 2,950</td><td><span class="st paid">Paid</span></td></tr>
+            <tr><td>#ZG-1002</td><td>Kavindi R.</td><td>Rs. 3,450</td><td><span class="st pend">Pending</span></td></tr>
+            <tr><td>#ZG-1001</td><td>Dilini S.</td><td>Rs. 2,750</td><td><span class="st paid">Paid</span></td></tr>
+          </tbody></table>
+          <div class="alerts"><h4 style="margin-bottom:6px">STOCK ALERTS</h4><div id="alerts"></div></div>
+        </div>
+      </div>
+      <p class="hint">All names and figures are sample data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PITCH -->
+<section style="padding-top:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="pitch rv">
+      <span class="label">Your website</span>
+      <h2>From this preview to your own online boutique</h2>
+      <p>This is a design preview. The full Zingara website is built around your real designs and your customers.</p>
+      <div class="pg">
+        <div><b>Real payment gateway</b><span>Card payments, bank transfer and cash on delivery.</span></div>
+        <div><b>Stock by size</b><span>Every style tracked by size. Sold-out sizes update by themselves.</span></div>
+        <div><b>Admin panel</b><span>Post a new arrival, set the price and manage orders yourself.</span></div>
+        <div><b>Fewer inbox messages</b><span>Customers choose size and pay without messaging you each time.</span></div>
+        <div><b>Your own photos</b><span>A catalogue that looks like your brand, not a template.</span></div>
+        <div><b>Google visibility</b><span>Help new customers find Zingara when they search for ladies' fashion.</span></div>
+      </div>
+      <button class="btn btn-light" id="pitchBtn">Let's discuss your store</button>
+      <small>Prepared by Padak · Web development &amp; digital marketing</small>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Contact</span><h2>Talk to Zingara</h2></div>
+    <div class="contact">
+      <div class="cc rv"><h3>Call or WhatsApp</h3><a href="tel:+94778162009">+94 77 816 2009</a></div>
+      <div class="cc rv"><h3>Facebook Messenger</h3><p>Message "Zingara" on Facebook</p></div>
+      <div class="cc rv"><h3>Delivery</h3><p>Delivery details to be confirmed</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f">
+      <div><b>Zingara Clothing</b><br>Stylish. Feminine. You.</div>
+      <div>+94 77 816 2009<br>Let the fabric speak.</div>
+    </div>
+    <div class="copy">© <span id="yr"></span> Zingara Clothing · Demo design preview by Padak</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/94778162009?text=Hi%20Zingara%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<div class="overlay" id="ov"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh"><h3>Your cart</h3><button class="x" id="closeDrawer" aria-label="Close">×</button></div>
+  <div class="items" id="items"></div>
+  <div class="df"><div class="tot"><span>Total</span><span id="tot">Rs. 0</span></div><button class="btn btn-rose" style="width:100%" id="checkout">Checkout</button></div>
+</aside>
+
+<div class="modal" id="modal">
+  <div class="steps2" id="steps2"><i class="on"></i><i></i><i></i></div>
+  <div id="m1">
+    <h3 style="font-size:1.4rem;margin-bottom:16px">Delivery details</h3>
+    <div class="cf">
+      <label>Full name</label><input id="cn" placeholder="Your name">
+      <div class="two"><div><label>Phone</label><input id="cp" placeholder="07X XXX XXXX"></div><div><label>City</label><input id="cc" placeholder="Colombo"></div></div>
+      <label>Address</label><textarea id="ca" rows="2" placeholder="Street, area"></textarea>
+    </div>
+    <button class="btn btn-rose" style="width:100%" id="to2">Continue to payment</button>
+  </div>
+  <div id="m2" style="display:none">
+    <h3 style="font-size:1.4rem;margin-bottom:16px">Payment method</h3>
+    <div class="pm on" data-m="Card (secure gateway)"><i>💳</i><div><b>Card payment</b><span>Visa or Mastercard via a secure payment gateway</span></div></div>
+    <div class="pm" data-m="Bank transfer"><i>🏦</i><div><b>Bank transfer</b><span>Transfer and send the slip on WhatsApp</span></div></div>
+    <div class="pm" data-m="Cash on delivery"><i>💵</i><div><b>Cash on delivery</b><span>Pay when your order arrives</span></div></div>
+    <div class="sum" id="sum"></div>
+    <button class="btn btn-rose" style="width:100%" id="pay">Pay and place order (demo)</button>
+    <span class="lock">Demo only. The live store connects a real payment gateway here. No card details are collected on this page.</span>
+  </div>
+  <div id="m3" style="display:none"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const STORE_WA='94778162009';
+/* Padak's own WhatsApp number for the pitch button, e.g. '94771234567' */
+const PADAK_WA='';
+const fmt=n=>'Rs. '+n.toLocaleString('en-US');
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2000)}
+$('pitchBtn').onclick=()=>{
+  if(!PADAK_WA){toast('Padak contact number not set yet');return}
+  window.open('https://wa.me/'+PADAK_WA+'?text='+encodeURIComponent('Hi Padak, I saw the store preview for Zingara Clothing and would like to discuss it.'),'_blank');
+};
+
+/* garment illustrations (generic designs) */
+const lum=h=>{const n=parseInt(h.slice(1),16);return ((n>>16)*.3+((n>>8)&255)*.59+(n&255)*.11)};
+function art(p){
+  const id='g'+p.id,b=p.c,a=p.a||'#e9a9b8',dark=lum(b)<120,lc=dark?(p.pc||'rgba(255,255,255,.55)'):'rgba(0,0,0,.2)';
+  const edge=dark?'rgba(255,255,255,.2)':'rgba(0,0,0,.22)';
+  const pat=p.pat==='floral'?`<pattern id="${id}" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="${lc}"/><circle cx="12" cy="11" r="1.6" fill="${lc}"/><circle cx="12" cy="3" r=".9" fill="${lc}"/></pattern>`
+   :p.pat==='stripe'?`<pattern id="${id}" width="8" height="8" patternUnits="userSpaceOnUse"><line x1="4" y1="0" x2="4" y2="8" stroke="${lc}" stroke-width="1"/></pattern>`:'';
+  const S=(d,extra='')=>`<path d="${d}" fill="${b}" stroke="${edge}" stroke-width="1.5" ${extra}/>${p.pat?`<path d="${d}" fill="url(#${id})" ${extra}/>`:''}`;
+  const defs=pat?`<defs>${pat}</defs>`:'';
+  const top=(tf='')=>`<g ${tf?`transform="${tf}"`:''}>${S('M52 20 Q80 38 108 20 L132 36 L124 62 L110 54 L110 132 L50 132 L50 54 L36 62 L28 36Z')}<path d="M64 20 Q80 38 96 20" fill="none" stroke="${edge}" stroke-width="2"/></g>`;
+  const skirt=(tf='')=>`<g ${tf?`transform="${tf}"`:''}>${S('M46 8 L114 8 L148 142 Q80 152 12 142Z')}<path d="M70 8 L56 144 M90 8 L104 144 M80 8 L80 148" stroke="${edge}" stroke-width="1"/><rect x="46" y="4" width="68" height="10" fill="${a}"/></g>`;
+  let body='',vb='0 0 160 240';
+  if(p.k==='dress'){
+    body=S('M52 22 L28 46 L42 62 L58 42Z')+S('M108 22 L132 46 L118 62 L102 42Z')+S('M52 22 L108 22 L114 98 L46 98Z')+S('M46 96 L114 96 Q148 160 156 228 Q80 242 4 228 Q12 160 46 96Z')
+     +`<path d="M66 22 L80 50 L94 22Z" fill="#f0d3c2"/><path d="M66 22 L80 50 L94 22" fill="none" stroke="${edge}" stroke-width="1.5"/>`
+     +`<rect x="46" y="92" width="68" height="10" fill="${a}"/><path d="M100 97 Q84 84 80 98 Q86 112 100 97Z M100 97 Q116 84 120 98 Q114 112 100 97Z M100 97 L94 128 L102 122 L108 130 L104 97Z" fill="${a}" stroke="rgba(0,0,0,.2)" stroke-width="1"/>`;
+  }else if(p.k==='top'){vb='0 0 160 150';body=top()}
+  else if(p.k==='skirt'){vb='0 0 160 160';body=skirt()}
+  else if(p.k==='set'){body=top('translate(22,0) scale(.74)')+skirt('translate(22,112) scale(.74)')}
+  else if(p.k==='jeans'){vb='0 0 120 220';body=S('M28 10 L92 10 L98 70 L90 212 L64 212 L60 84 L56 212 L30 212 L22 70Z')+`<rect x="28" y="6" width="64" height="12" fill="${a}"/><path d="M32 26 Q40 48 54 30 M88 26 Q80 48 66 30" fill="none" stroke="${a}" stroke-width="1.6"/><path d="M60 18 L60 84" stroke="${edge}" stroke-width="1.2"/>`}
+  else if(p.k==='pants'){vb='0 0 120 220';body=S('M26 10 L94 10 L108 212 L66 212 L60 92 L54 212 L12 212Z')+`<rect x="26" y="6" width="68" height="12" fill="${a}"/><path d="M60 18 L60 92" stroke="${edge}" stroke-width="1.2"/>`}
+  return `<svg viewBox="${vb}" xmlns="http://www.w3.org/2000/svg">${defs}${body}</svg>`;
+}
+
+/* sample products. st = units per size (feature dress price is from the brand's post) */
+const SIZES=['S','M','L','XL'];
+const P=[
+ {id:1,n:'Navy Floral Dress · Waist Tie',t:'dress',k:'dress',c:'#1f2d52',a:'#e9a9b8',pat:'floral',pc:'#f0b3c3',p:2950,tag:'New arrival',st:{S:2,M:3,L:2,XL:1}},
+ {id:2,n:'Rose Floral Midi Dress',t:'dress',k:'dress',c:'#d9798f',a:'#fbe8ea',pat:'floral',pc:'rgba(255,255,255,.55)',p:3450,tag:'Popular',st:{S:1,M:2,L:2,XL:0}},
+ {id:3,n:'Classic Black V-neck Dress',t:'dress',k:'dress',c:'#1c1c20',a:'#c9a24a',p:3200,st:{S:2,M:2,L:1,XL:1}},
+ {id:4,n:'Emerald Waist Tie Dress',t:'dress',k:'dress',c:'#1f6b52',a:'#f0d9a0',p:3600,st:{S:1,M:1,L:1,XL:0}},
+ {id:5,n:'Blush Pleated Blouse',t:'top',k:'top',c:'#f1b9c4',p:1850,st:{S:3,M:3,L:2,XL:1}},
+ {id:6,n:'White Linen Top',t:'top',k:'top',c:'#f6f2ea',p:1650,st:{S:2,M:2,L:0,XL:1}},
+ {id:7,n:'Navy Pleated Skirt',t:'bottom',k:'skirt',c:'#26365f',a:'#e9a9b8',p:2250,st:{S:1,M:2,L:2,XL:1}},
+ {id:8,n:'Wide-leg Trousers · Cream',t:'bottom',k:'pants',c:'#e8dcc6',a:'#c9a24a',p:2950,st:{S:2,M:1,L:1,XL:0}},
+ {id:9,n:'Slim Jeans · Mid Blue',t:'bottom',k:'jeans',c:'#3f6aa8',a:'#2e4f82',p:3900,st:{S:1,M:2,L:2,XL:1}},
+ {id:10,n:'Floral Co-ord Set',t:'set',k:'set',c:'#e9b3c0',a:'#c2456b',pat:'floral',pc:'rgba(255,255,255,.6)',p:4950,tag:'Set',st:{S:1,M:2,L:1,XL:1}}
+];
+const tname={dress:'Dress',top:'Top',bottom:'Bottoms',set:'Set'};
+$('heroArt').innerHTML=[1,2,10].map(i=>`<div>${art(P.find(p=>p.id===i))}</div>`).join('');
+$('featArt').innerHTML=art(P[0]);
+SIZES.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent='Size '+s;$('sizeF').appendChild(o)});
+
+let cart={},filter='all',q='',sizeF='',sort='f',picked={},unitsSold=0;
+const stock=(p,s)=>p.st[s]||0;
+const inCart=(id,s)=>cart[id+'|'+s]||0;
+function renderGrid(){
+  let r=P.filter(x=>(filter==='all'||x.t===filter)&&x.n.toLowerCase().includes(q)&&(!sizeF||stock(x,sizeF)>0));
+  if(sort==='a')r.sort((a,b)=>a.p-b.p);if(sort==='d')r.sort((a,b)=>b.p-a.p);
+  $('count').textContent=r.length+' style'+(r.length===1?'':'s')+(sizeF?' in size '+sizeF:'');
+  $('grid').innerHTML=r.map(x=>{
+    const total=SIZES.reduce((a,s)=>a+stock(x,s),0),low=total>0&&total<=4,sel=picked[x.id];
+    return `<div class="pc"><div class="pimg">${x.tag?`<span class="badge">${x.tag}</span>`:low?'<span class="badge low">Low stock</span>':''}${art(x)}</div><div class="pinfo"><div class="pcat">${tname[x.t]}</div><h3>${x.n}</h3>
+    <div class="sizes">${SIZES.map(s=>`<button class="sz ${stock(x,s)===0?'out':''} ${sel===s?'on':''}" data-id="${x.id}" data-s="${s}" ${stock(x,s)===0?'disabled':''}>${s}</button>`).join('')}</div>
+    <div class="prow"><span class="price">${fmt(x.p)}</span><button class="add" data-id="${x.id}" ${sel?'':'disabled'}>${sel?'Add '+sel:'Pick size'}</button></div></div></div>`}).join('')||'<p style="grid-column:1/-1;text-align:center;color:var(--muted);padding:40px">No styles match your filters.</p>';
+}
+$('grid').addEventListener('click',e=>{
+  const z=e.target.closest('.sz');
+  if(z&&!z.disabled){picked[z.dataset.id]=z.dataset.s;renderGrid();return}
+  const a=e.target.closest('.add');
+  if(a&&!a.disabled){
+    const id=a.dataset.id,s=picked[id],p=P.find(x=>x.id==id);
+    if(inCart(id,s)>=stock(p,s)){toast('Only '+stock(p,s)+' left in size '+s);return}
+    cart[id+'|'+s]=inCart(id,s)+1;upd();toast('Added to cart')
+  }
+});
+function setFilter(f){filter=f;document.querySelectorAll('.fc').forEach(c=>c.classList.toggle('on',c.dataset.f===f));renderGrid()}
+$('chips').addEventListener('click',e=>{const c=e.target.closest('.fc');if(c)setFilter(c.dataset.f)});
+$('search').oninput=e=>{q=e.target.value.toLowerCase();renderGrid()};
+$('sizeF').onchange=e=>{sizeF=e.target.value;renderGrid()};
+$('sort').onchange=e=>{sort=e.target.value;renderGrid()};
+$('featBtn').onclick=()=>{q='navy floral';$('search').value='navy floral';setFilter('all');$('shop').scrollIntoView({behavior:'smooth'})};
+
+/* cart */
+const total=()=>Object.entries(cart).reduce((s,[k,n])=>s+P.find(p=>p.id==k.split('|')[0]).p*n,0);
+function upd(){
+  $('cnt').textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+  const keys=Object.keys(cart);
+  $('items').innerHTML=keys.length?keys.map(k=>{const [id,s]=k.split('|'),p=P.find(x=>x.id==id),n=cart[k];return `<div class="item"><div class="th">${art(p)}</div><div><h4>${p.n}</h4><small>Size ${s}</small><div class="qty"><button data-d="-1" data-k="${k}">−</button><span>${n}</span><button data-d="1" data-k="${k}">+</button></div></div><div class="pr">${fmt(p.p*n)}</div></div>`}).join(''):'<div class="empty">Your cart is empty</div>';
+  $('tot').textContent=fmt(total());
+}
+$('items').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const k=b.dataset.k,[id,s]=k.split('|'),p=P.find(x=>x.id==id),d=+b.dataset.d;
+  if(d>0&&cart[k]>=stock(p,s)){toast('Only '+stock(p,s)+' left in size '+s);return}
+  cart[k]+=d;if(cart[k]<=0)delete cart[k];upd();
+});
+const open=el=>{el.classList.add('on');$('ov').classList.add('on')};
+const closeAll=()=>{['drawer','modal'].forEach(i=>$(i).classList.remove('on'));$('ov').classList.remove('on')};
+$('cartBtn').onclick=()=>open($('drawer'));$('closeDrawer').onclick=closeAll;$('ov').onclick=closeAll;
+
+/* checkout */
+let method='Card (secure gateway)',orderNo=1003;
+function stepTo(n){['m1','m2','m3'].forEach((m,i)=>$(m).style.display=(i===n-1)?'block':'none');document.querySelectorAll('#steps2 i').forEach((s,i)=>s.classList.toggle('on',i<n))}
+const shipFee=()=>total()>8000?0:350;
+$('checkout').onclick=()=>{if(!Object.keys(cart).length){toast('Add an item to the cart first');return}$('drawer').classList.remove('on');open($('modal'));stepTo(1)};
+$('to2').onclick=()=>{
+  if(!$('cn').value.trim()||!$('cp').value.trim()){toast('Please add your name and phone');return}
+  const tt=total(),ship=shipFee();
+  $('sum').innerHTML=`<div><span>Items</span><span>${fmt(tt)}</span></div><div><span>Delivery (sample)</span><span>${ship?fmt(ship):'Free'}</span></div><div style="font-weight:700;border-top:1px solid var(--line);margin-top:6px;padding-top:8px"><span>Total</span><span>${fmt(tt+ship)}</span></div>`;
+  stepTo(2);
+};
+document.querySelectorAll('.pm').forEach(p=>p.onclick=()=>{method=p.dataset.m;document.querySelectorAll('.pm').forEach(x=>x.classList.toggle('on',x===p))});
+$('pay').onclick=()=>{
+  const grand=total()+shipFee(),name=$('cn').value.trim(),viaGate=method.startsWith('Card');
+  stepTo(3);
+  $('m3').innerHTML=`<div class="gate"><div class="spinner"></div><h3 style="font-size:1.2rem">${viaGate?'Connecting to secure payment gateway…':'Placing your order…'}</h3>${viaGate?'<p style="color:var(--muted);font-size:.92rem;margin-top:6px">Demo simulation. No real payment is made.</p>':''}</div>`;
+  setTimeout(()=>{
+    orderNo++;const no='#ZG-'+orderNo;let units=0;
+    Object.entries(cart).forEach(([k,n])=>{const [id,s]=k.split('|'),p=P.find(x=>x.id==id);p.st[s]=Math.max(0,stock(p,s)-n);units+=n});
+    $('m3').innerHTML=`<div class="ok"><div class="tick">✓</div><h3 style="font-size:1.5rem">${viaGate?'Payment successful':'Order placed'}</h3><p style="color:var(--muted);margin:8px 0 4px">Order <b>${no}</b> · ${fmt(grand)}</p><p style="color:var(--muted);font-size:.92rem">Method: ${method}</p><span class="lock">This was a demo. Check the Seller Dashboard to see the order and stock update.</span><div style="display:grid;gap:10px;margin-top:18px"><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/${STORE_WA}?text=${encodeURIComponent('Hi Zingara, I placed order '+no+' ('+fmt(grand)+', '+method+'). Name: '+name)}">Send receipt on WhatsApp</a><button class="btn btn-line" id="done">Close</button></div></div>`;
+    $('done').onclick=()=>{closeAll();$('admin').scrollIntoView({behavior:'smooth'})};
+    pushOrder(no,name,grand,viaGate,units);cart={};picked={};upd();renderGrid();alerts();
+  },viaGate?2200:1200);
+};
+
+/* dashboard */
+let kOrd=3,kPend=1,kRev=9150;
+function pushOrder(no,name,amt,paid,units){
+  kOrd++;if(!paid)kPend++;kRev+=amt;unitsSold+=units;
+  $('kOrd').textContent=kOrd;$('kPend').textContent=kPend;$('kRev').textContent=fmt(kRev);$('kUnits').textContent=unitsSold;
+  const parts=name.split(' '),tr=document.createElement('tr');tr.className='flash';
+  tr.innerHTML=`<td>${no}</td><td>${parts[0]}${parts[1]?' '+parts[1].charAt(0)+'.':''}</td><td>${fmt(amt)}</td><td><span class="st ${paid?'paid':'pend'}">${paid?'Paid':'Pending'}</span></td>`;
+  $('orders').prepend(tr);if($('orders').children.length>6)$('orders').lastElementChild.remove();
+}
+function alerts(){
+  const rows=[];
+  P.forEach(p=>SIZES.forEach(s=>{if(stock(p,s)===1)rows.push([p.n+' · '+s,'1 left'])}));
+  $('alerts').innerHTML=rows.slice(0,5).map(r=>`<div><span>${r[0]}</span><span class="r">${r[1]}</span></div>`).join('')||'<div><span>No low-stock sizes</span><span></span></div>';
+}
+
+/* size tool */
+const CH=[['S',84,66],['M',90,72],['L',96,78],['XL',102,84]];
+$('sizeT').innerHTML=CH.map(c=>`<tr data-s="${c[0]}"><td>${c[0]}</td><td>${c[1]-3}–${c[1]+3}</td><td>${c[2]-3}–${c[2]+3}</td></tr>`).join('');
+function sizeCalc(){
+  const b=+$('bust').value,w=+$('waist').value;$('bv').textContent=b;$('wv').textContent=w;
+  const idx=v=>{let best=0;CH.forEach((c,i)=>{if(Math.abs(c[v]-(v===1?b:w))<Math.abs(CH[best][v]-(v===1?b:w)))best=i});return best};
+  const r=CH[Math.max(idx(1),idx(2))][0];
+  $('rec').textContent=r;
+  document.querySelectorAll('#sizeT tr').forEach(tr=>tr.classList.toggle('hl',tr.dataset.s===r));
+}
+$('bust').oninput=sizeCalc;$('waist').oninput=sizeCalc;sizeCalc();
+
+/* misc */
+$('menuBtn').onclick=()=>$('menu').classList.toggle('open');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('menu').classList.remove('open'));
+$('yr').textContent=new Date().getFullYear();
+renderGrid();upd();alerts();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
