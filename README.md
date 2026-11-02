@@ -28,7 +28,7 @@ Free websites built for local clients in around the world.
 | Pathum Wedding Planner | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_PathumWedding/) | SL |
 | Sinhala Culture Instute | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_SinhalaCultureInst/) | SL |
 | Urban Stitch Store | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_UrbanStitch/) | SL |
-| Tux Ceylone Tailoring | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_TuxCeylone/) | SL |
+| Tux Ceylon Tailoring | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_TuxCeylon/) | SL |
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
