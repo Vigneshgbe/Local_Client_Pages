@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TUX•CEYLON | Luxury Bespoke Tailoring, Colombo</title>
+<meta name="description" content="Luxury bespoke tailoring in Colombo. Personalised suits, 300+ fabric choices, premium Italian and British fabrics. Visit One Galle Face Mall or Cambridge Terrace.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e1830; --navy2:#16233f; --ivory:#f8f5ee; --sand:#efe9dc; --white:#fffdf9; --ink:#171a22; --muted:#555b68;
+  --gold:#d9bb7a; --gold-d:#8a6a2a; --line:#e3dccb;
+  --shadow:0 22px 46px -28px rgba(14,24,48,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;font-size:1rem;line-height:1.7;color:var(--ink);background:var(--ivory)}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700;line-height:1.12;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:1rem}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:90px 0}
+.alt{background:var(--sand)}
+.label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px}
+.title{margin-bottom:42px;max-width:660px}
+.title.c{text-align:center;margin-left:auto;margin-right:auto}
+.title h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}
+.title p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:3px;font-weight:600;font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn-gold{background:var(--gold);color:#1a1405}
+.btn-gold:hover{background:#e6cb8f;transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#000;transform:translateY(-2px)}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn-light{border-color:rgba(255,255,255,.65);color:#fff}
+.btn-light:hover{background:#fff;color:var(--navy)}
+.btn-wa{background:#1fa855;color:#fff}
+.btn-wa:hover{background:#188a45;transform:translateY(-2px)}
+
+.demo-bar{background:#000;color:#cfcfcf;text-align:center;font-size:.82rem;padding:9px 14px}
+.demo-bar b{color:var(--gold)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(14,24,48,.97);backdrop-filter:blur(8px);border-bottom:1px solid #26345a}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;letter-spacing:.06em}
+.logo small{font-size:.62rem;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;margin-top:4px}
+nav ul{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:500}
+nav a{color:#d3d8e6;transition:color .2s}
+nav a:hover{color:var(--gold)}
+.right{display:flex;align-items:center;gap:10px}
+.menu-btn{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--gold)}
+
+/* hero */
+.hero{background:radial-gradient(circle at 80% 30%,#22345f 0%,transparent 55%),var(--navy);color:#fff;padding:92px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-bottom:72px}
+.hero .label{color:var(--gold)}
+.hero h1{color:#fff;font-size:clamp(2.8rem,6vw,4.8rem);margin:8px 0 18px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#dde2ee;font-size:1.08rem;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-card{border:1px solid #2c3d68;background:rgba(255,255,255,.04);border-radius:8px;padding:34px 30px}
+.hero-card h3{color:var(--gold);font-size:1.5rem;margin-bottom:6px}
+.hero-card p{font-size:.98rem;margin-bottom:18px}
+.hero-card ul{list-style:none}
+.hero-card li{padding:9px 0 9px 28px;position:relative;border-top:1px solid #26345a;color:#e8ecf5;font-size:.96rem}
+.hero-card li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.stats{background:#08102a;border-top:1px solid #26345a}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px 0;text-align:center}
+.stats b{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1.1}
+.stats span{font-size:.85rem;color:#c8cfdf}
+
+/* designer */
+.designer{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:start}
+.preview{background:linear-gradient(160deg,#eae3d3,#d9cfb8);border-radius:10px;padding:28px;position:sticky;top:96px;box-shadow:var(--shadow)}
+.preview svg{width:100%;max-height:520px}
+.pname{text-align:center;margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy)}
+.pname small{display:block;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:500;color:var(--muted)}
+.ctl{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:30px}
+.grp{margin-bottom:26px}
+.grp h4{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold-d);margin-bottom:10px}
+.grp h4 span{color:var(--ink);letter-spacing:0;text-transform:none;font-weight:500;margin-left:6px}
+.sw{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.sw button{aspect-ratio:1;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px #c9c0aa;cursor:pointer;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.sw button:hover{transform:scale(1.08)}
+.sw button.on{box-shadow:0 0 0 3px var(--navy)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{padding:10px 18px;border:1.5px solid var(--line);border-radius:30px;background:var(--white);cursor:pointer;font-weight:500;font-size:.92rem;color:var(--ink);transition:background .2s,color .2s,border-color .2s}
+.seg button:hover{border-color:var(--navy)}
+.seg button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.dots{display:flex;gap:12px}
+.dots button{width:36px;height:36px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px #c9c0aa;cursor:pointer}
+.dots button.on{box-shadow:0 0 0 3px var(--navy)}
+.dots button.none{background:repeating-linear-gradient(45deg,#fff,#fff 4px,#e4ded0 4px,#e4ded0 8px)}
+.sumbox{background:var(--sand);border-radius:8px;padding:18px 20px;margin:6px 0 20px;font-size:.95rem}
+.sumbox div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.sumbox span{color:var(--muted)}
+.sumbox b{font-weight:600;text-align:right}
+.ctl .btn{width:100%}
+.hint{font-size:.85rem;color:var(--muted);margin-top:10px;text-align:center}
+
+/* services */
+.srv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sc{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:34px 28px}
+.sc .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold-d);line-height:1;margin-bottom:10px}
+.sc h3{font-size:1.5rem;margin-bottom:6px}
+.sc p{color:var(--muted);font-size:.97rem}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:30px 24px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.3rem;margin-bottom:16px}
+.step h3{font-size:1.4rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.96rem}
+
+/* fabrics */
+.fab{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.fb{cursor:pointer;text-align:center;font-size:.9rem;font-weight:500}
+.fb i{display:block;aspect-ratio:1;border-radius:8px;margin-bottom:8px;border:1px solid rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s}
+.fb:hover i{transform:translateY(-4px);box-shadow:var(--shadow)}
+.note{font-size:.88rem;color:var(--muted);text-align:center;margin-top:24px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g{aspect-ratio:4/5;border-radius:10px;display:flex;align-items:flex-end;padding:18px;color:#fff;font-weight:600;position:relative;overflow:hidden}
+.g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.6))}
+.g span{position:relative;z-index:1}
+
+/* reviews */
+.rv3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px}
+.rev .st{color:#b8862b;letter-spacing:3px;margin-bottom:8px}
+.rev p{color:var(--ink)}
+.rev b{display:block;margin-top:12px;font-size:.84rem;color:var(--muted);font-weight:500}
+.rnote{font-size:.88rem;color:var(--muted);text-align:center;margin-top:20px}
+
+/* book */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.book p{color:var(--muted);margin-bottom:16px}
+.book ul{list-style:none}
+.book li{padding:6px 0}
+.form{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:34px}
+.form label{display:block;font-size:.86rem;font-weight:600;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:6px;margin-bottom:16px;background:var(--ivory);color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .btn{width:100%}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.vc{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:30px}
+.vc h3{font-size:1.5rem;margin-bottom:8px}
+.vc p{color:var(--muted);margin-bottom:6px}
+.vc .btn{margin-top:14px}
+
+/* pitch */
+.pitch{background:var(--navy);color:#fff;border-radius:12px;padding:54px 46px;border:1px solid #26345a}
+.pitch h2{color:var(--gold);font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:10px}
+.pitch>p{color:#dde2ee;max-width:640px;margin-bottom:28px}
+.pitch .label{color:var(--gold)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.pg div{border:1px solid #2c3d68;border-radius:8px;padding:20px 22px;background:rgba(255,255,255,.03)}
+.pg b{display:block;color:var(--gold);margin-bottom:4px;font-weight:600}
+.pg span{font-size:.95rem;color:#dde2ee}
+.pitch small{display:block;margin-top:18px;color:#aeb7cc;font-size:.85rem}
+
+footer{background:#060d20;color:#c0c8da;padding:44px 0 22px;margin-top:90px}
+.f{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer b{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.06em;display:block;margin-bottom:4px}
+.copy{border-top:1px solid #1c2a4c;margin-top:26px;padding-top:16px;text-align:center;font-size:.85rem}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);background:var(--navy);color:var(--gold);padding:12px 22px;border-radius:6px;font-size:.92rem;z-index:120;transition:transform .35s}
+.toast.show{transform:translate(-50%,0)}
+.wa{position:fixed;right:20px;bottom:20px;z-index:70;width:56px;height:56px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;font-size:1.5rem;box-shadow:0 10px 24px -8px rgba(31,168,85,.7)}
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rvl.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .hero-grid,.designer,.book,.visit{grid-template-columns:1fr}
+  .preview{position:static}
+  .srv,.rv3,.gal,.pg{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .fab{grid-template-columns:repeat(4,1fr)}
+  .stats-g{grid-template-columns:repeat(2,1fr)}
+  .pitch{padding:34px 22px}
+}
+@media(max-width:820px){
+  nav ul{position:absolute;top:76px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:6px 24px 14px;border-bottom:1px solid #26345a;display:none}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0;border-bottom:1px solid #26345a}
+  .menu-btn{display:block}
+  section{padding:60px 0}
+  .right .btn{display:none}
+}
+@media(max-width:520px){
+  .steps,.two{grid-template-columns:1fr}
+  .fab{grid-template-columns:repeat(3,1fr);gap:10px}
+  .ctl{padding:22px 18px}
+  .sw{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Design preview prepared for <b>TUX•CEYLON</b> by <b>Padak</b>. Sample layout, content and images for review.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><b>TUX•CEYLON</b><small>Luxury Bespoke</small></a>
+    <nav><ul id="menu">
+      <li><a href="#design">Design Your Suit</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#fabrics">Fabrics</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <div class="right">
+      <a href="#book" class="btn btn-gold">Book a Fitting</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding-bottom:0">
+  <div class="wrap hero-grid">
+    <div class="rvl">
+      <span class="label">Colombo · Est. showrooms in Colombo 07 &amp; Galle Face</span>
+      <h1>Luxury <span>bespoke</span> tailoring</h1>
+      <p>Personalised tailoring with 300+ fabric choices, including premium Italian and British fabrics. Every suit is made to feel truly yours.</p>
+      <div class="hero-cta">
+        <a href="#design" class="btn btn-gold">Design Your Suit</a>
+        <a href="#book" class="btn btn-light">Book a Fitting</a>
+      </div>
+    </div>
+    <div class="hero-card rvl">
+      <h3>The Tux•Ceylon promise</h3>
+      <p>From the first fabric to the final fitting, made around you.</p>
+      <ul><li>Personalised, made-to-measure tailoring</li><li>300+ fabric choices</li><li>Premium Italian and British fabrics</li><li>Two showrooms in Colombo</li></ul>
+    </div>
+  </div>
+  <div class="stats"><div class="wrap stats-g">
+    <div><b>18K</b><span>Facebook community</span></div>
+    <div><b>300+</b><span>Fabric choices</span></div>
+    <div><b>100%</b><span>Recommend (7 reviews)</span></div>
+    <div><b>2</b><span>Colombo showrooms</span></div>
+  </div></div>
+</section>
+
+<!-- DESIGNER -->
+<section id="design">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">Try it</span><h2>Design your suit</h2><p>Choose a fabric, style and details and watch your suit take shape. Then book a fitting with your choices already noted.</p></div>
+    <div class="designer rvl">
+      <div class="preview">
+        <div id="jacket"></div>
+        <div class="pname" id="pname"></div>
+      </div>
+      <div class="ctl">
+        <div class="grp"><h4>Fabric <span id="fabName"></span></h4><div class="sw" id="fabSw"></div></div>
+        <div class="grp"><h4>Style</h4><div class="seg" id="styleSeg"></div></div>
+        <div class="grp"><h4>Lapel</h4><div class="seg" id="lapelSeg"></div></div>
+        <div class="grp"><h4>Buttons <span id="btnName"></span></h4><div class="dots" id="btnDots"></div></div>
+        <div class="grp"><h4>Pocket square <span id="sqName"></span></h4><div class="dots" id="sqDots"></div></div>
+        <div class="sumbox" id="sumbox"></div>
+        <button class="btn btn-wa" id="sendDesign">Book a fitting with this design</button>
+        <p class="hint">Illustration only. Your tailor will refine every detail at the fitting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="alt" id="services">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">What we make</span><h2>Tailoring for every occasion</h2></div>
+    <div class="srv">
+      <div class="sc rvl"><div class="n">01</div><h3>Bespoke Suits</h3><p>Two and three piece suits cut to your measurements and your style.</p></div>
+      <div class="sc rvl"><div class="n">02</div><h3>Wedding &amp; Groom</h3><p>The groom and the groomsmen, dressed to match the day.</p></div>
+      <div class="sc rvl"><div class="n">03</div><h3>Tuxedos &amp; Evening Wear</h3><p>Formal wear for black tie, galas and special evenings.</p></div>
+      <div class="sc rvl"><div class="n">04</div><h3>Blazers &amp; Trousers</h3><p>Smart separates for business and everyday elegance.</p></div>
+      <div class="sc rvl"><div class="n">05</div><h3>Shirts</h3><p>Made-to-measure shirts that complete the look.</p></div>
+      <div class="sc rvl"><div class="n">06</div><h3>Alterations &amp; Care</h3><p>Adjustments so your garments fit as well as day one.</p></div>
+    </div>
+    <p class="note">Service list is a sample. Final offering to be confirmed by TUX•CEYLON.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">How it works</span><h2>From first fabric to final fitting</h2><p>Four simple steps, with a tailor beside you the whole way.</p></div>
+    <div class="steps">
+      <div class="step rvl"><h3>Consultation</h3><p>Tell us about the occasion, your style and your timeline.</p></div>
+      <div class="step rvl"><h3>Fabric &amp; design</h3><p>Choose from 300+ fabrics and shape every detail of the cut.</p></div>
+      <div class="step rvl"><h3>Measure &amp; fit</h3><p>Precise measurements and fittings so it sits perfectly.</p></div>
+      <div class="step rvl"><h3>Delivery</h3><p>Your finished garment, ready for the moment that matters.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FABRICS -->
+<section class="alt" id="fabrics">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">Fabrics</span><h2>300+ fabrics to choose from</h2><p>Premium Italian and British fabrics. Tap a swatch to try it on the suit above.</p></div>
+    <div class="fab" id="fab"></div>
+    <p class="note">A small sample of the range. Your full fabric library will be searchable on the live site.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">Gallery</span><h2>Made for real moments</h2></div>
+    <div class="gal" id="gal"></div>
+    <p class="note">Placeholders. Your own wedding and event photography will fill this gallery on the live site.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">Reviews</span><h2>100% recommend</h2><p>Based on 7 reviews on Facebook.</p></div>
+    <div class="rv3">
+      <div class="rev rvl"><div class="st">★★★★★</div><p>A genuine client review will appear here.</p><b>— Client name</b></div>
+      <div class="rev rvl"><div class="st">★★★★★</div><p>A genuine client review will appear here.</p><b>— Client name</b></div>
+      <div class="rev rvl"><div class="st">★★★★★</div><p>A genuine client review will appear here.</p><b>— Client name</b></div>
+    </div>
+    <p class="rnote">Sample text. Real reviews will be used on the live site.</p>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="wrap book">
+    <div class="rvl">
+      <span class="label">Book a fitting</span>
+      <div class="title" style="margin-bottom:18px"><h2>Let's start your suit</h2></div>
+      <p>Choose a showroom and a preferred date. We'll confirm your appointment on WhatsApp.</p>
+      <ul><li>📞 <a href="tel:+94777694959"><b>+94 77 769 4959</b></a></li><li>✉️ <a href="mailto:info@tuxceylon.com">info@tuxceylon.com</a></li></ul>
+    </div>
+    <form class="form rvl" id="form">
+      <label for="n">Your name</label><input id="n" required placeholder="Your name">
+      <div class="two"><div><label for="o">Occasion</label><select id="o"><option>Wedding</option><option>Business</option><option>Formal event</option><option>Groomsmen party</option><option>Other</option></select></div>
+      <div><label for="d">Preferred date</label><input type="date" id="d"></div></div>
+      <label for="s">Showroom</label>
+      <select id="s"><option>One Galle Face Mall (L3)</option><option>Cambridge Terrace, Colombo 07</option></select>
+      <label for="m">Anything to add?</label><textarea id="m" rows="3" placeholder="Fabric ideas, deadline, number of suits"></textarea>
+      <button class="btn btn-wa" type="submit">Request on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="alt" id="visit">
+  <div class="wrap">
+    <div class="title c rvl"><span class="label">Visit us</span><h2>Two showrooms in Colombo</h2></div>
+    <div class="visit">
+      <div class="vc rvl"><h3>One Galle Face Mall</h3><p>L3, One Galle Face Mall<br>Colombo 00200, Sri Lanka</p><p>Opening hours: to be confirmed</p>
+        <a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=TUX+Ceylon+One+Galle+Face+Mall+Colombo">Open in Google Maps</a></div>
+      <div class="vc rvl"><h3>Cambridge Terrace</h3><p>Cambridge Terrace<br>Colombo 07, Sri Lanka</p><p>Opening hours: to be confirmed</p>
+        <a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=TUX+Ceylon+Cambridge+Terrace+Colombo+07">Open in Google Maps</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PITCH -->
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="pitch rvl">
+      <span class="label">Your website</span>
+      <h2>From this preview to your own website</h2>
+      <p>This is a design preview. The full TUX•CEYLON website is built around your real photography, fabrics and showrooms.</p>
+      <div class="pg">
+        <div><b>Your own photography</b><span>Weddings, events and craftsmanship, shown the way they deserve.</span></div>
+        <div><b>Fitting booking</b><span>Clients book a showroom and time. You get the request instantly.</span></div>
+        <div><b>Fabric catalogue</b><span>Your 300+ fabrics, searchable by colour, weave and occasion.</span></div>
+        <div><b>Suit designer</b><span>A refined version of the tool above, using your real fabrics.</span></div>
+        <div><b>Online deposits</b><span>Optional secure payment gateway for deposits and orders.</span></div>
+        <div><b>Google visibility</b><span>Be found for bespoke tailoring and wedding suits in Colombo.</span></div>
+      </div>
+      <button class="btn btn-gold" id="pitchBtn">Let's discuss your website</button>
+      <small>Prepared by Padak · Web development &amp; digital marketing</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f">
+      <div><b>TUX•CEYLON</b>Luxury Bespoke Tailoring</div>
+      <div>One Galle Face Mall (L3) · Cambridge Terrace, Colombo 07<br>+94 77 769 4959 · info@tuxceylon.com</div>
+    </div>
+    <div class="copy">© <span id="yr"></span> TUX•CEYLON · Demo design preview by Padak</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/94777694959?text=Hi%20TUX%E2%80%A2CEYLON%2C%20I%27d%20like%20to%20book%20a%20fitting" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const STORE_WA='94777694959';
+/* Padak's own WhatsApp number for the pitch button, e.g. '94771234567' */
+const PADAK_WA='';
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
+function wa(t){toast('Opening WhatsApp…');window.open('https://wa.me/'+STORE_WA+'?text='+encodeURIComponent(t),'_blank')}
+$('pitchBtn').onclick=()=>{
+  if(!PADAK_WA){toast('Padak contact number not set yet');return}
+  window.open('https://wa.me/'+PADAK_WA+'?text='+encodeURIComponent('Hi Padak, I saw the website preview for TUX•CEYLON and would like to discuss it.'),'_blank');
+};
+
+/* options (sample fabrics, not the real range) */
+const FABRICS=[
+ {n:'Midnight Navy',c:'#1b2a4a'},{n:'Charcoal',c:'#3b3e44'},{n:'Classic Black',c:'#151515'},
+ {n:'Slate Grey',c:'#8b929b'},{n:'Sand',c:'#c9b794'},{n:'Ivory',c:'#efe9db'},
+ {n:'Burgundy',c:'#5f1b2b'},{n:'Navy Pinstripe',c:'#1f2f52',p:'stripe'},{n:'Grey Check',c:'#6c727b',p:'check'},
+ {n:'Blue Twill',c:'#3f5f8f',p:'twill'},{n:'Forest Green',c:'#25402f'},{n:'Chocolate Twill',c:'#4b3425',p:'twill'}
+];
+const STYLES=[['sb','Single-breasted'],['db','Double-breasted'],['tux','Tuxedo']];
+const LAPELS=[['notch','Notch'],['peak','Peak'],['shawl','Shawl']];
+const BTN=[['Black','#141414'],['Horn','#5a4030'],['Gold','#c9a24a'],['Pearl','#efe9dc']];
+const SQ=[['None',null],['White','#ffffff'],['Burgundy','#7a1f33'],['Gold','#d1ad5a'],['Blue','#3a6fb5']];
+let cfg={f:0,s:'sb',l:'notch',b:0,q:1};
+
+const lum=h=>{const n=parseInt(h.slice(1),16);return ((n>>16)*.3+((n>>8)&255)*.59+(n&255)*.11)};
+function swatchStyle(f){
+  const l=lum(f.c)<110?'rgba(255,255,255,.3)':'rgba(0,0,0,.22)';
+  if(f.p==='stripe')return `background:repeating-linear-gradient(90deg,${f.c} 0 5px,${l} 5px 6px)`;
+  if(f.p==='check')return `background:linear-gradient(90deg,transparent 11px,${l} 11px 12px,transparent 12px),linear-gradient(transparent 11px,${l} 11px 12px,transparent 12px),${f.c};background-size:24px 24px`;
+  if(f.p==='twill')return `background:repeating-linear-gradient(135deg,${f.c} 0 4px,${l} 4px 5px)`;
+  return `background:${f.c}`;
+}
+
+/* jacket illustration */
+function jacket(){
+  const f=FABRICS[cfg.f],base=f.c,tux=cfg.s==='tux',db=cfg.s==='db';
+  const lines=lum(base)<110?'rgba(255,255,255,.3)':'rgba(0,0,0,.24)';
+  const pat=f.p==='stripe'?`<pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><line x1="4.5" y1="0" x2="4.5" y2="9" stroke="${lines}" stroke-width="1"/></pattern>`
+    :f.p==='check'?`<pattern id="pt" width="24" height="24" patternUnits="userSpaceOnUse"><line x1="12" y1="0" x2="12" y2="24" stroke="${lines}" stroke-width="1"/><line x1="0" y1="12" x2="24" y2="12" stroke="${lines}" stroke-width="1"/></pattern>`
+    :f.p==='twill'?`<pattern id="pt" width="6" height="6" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="6" y2="0" stroke="${lines}" stroke-width="1"/></pattern>`:'';
+  const ov=(d)=>f.p?`<path d="${d}" fill="url(#pt)"/>`:'';
+  const edge=lum(base)<110?'rgba(255,255,255,.18)':'rgba(0,0,0,.28)';
+  const torso='M76 72 Q150 48 224 72 L212 150 L226 334 Q150 350 74 334 L88 150 Z';
+  const slL='M76 74 C50 82 38 112 33 172 L28 304 L68 310 L92 150 Z';
+  const slR='M224 74 C250 82 262 112 267 172 L272 304 L232 310 L208 150 Z';
+  const dbPanel='M150 190 L212 176 L226 334 Q190 344 150 342 Z';
+  const lap={notch:'M128 60 L102 98 L111 105 L94 126 L150 214 Z',peak:'M128 60 L108 90 L88 82 L100 128 L150 214 Z',shawl:'M128 60 Q94 92 100 134 Q110 176 150 214 Z'}[cfg.l];
+  const lapFill=tux?'#161616':base;
+  const tie=base==='#5f1b2b'?'#16233f':'#7a1f33';
+  const bc=BTN[cfg.b][1],sq=SQ[cfg.q][1];
+  let buttons='';
+  const bt=(x,y)=>`<circle cx="${x}" cy="${y}" r="5.5" fill="${bc}" stroke="rgba(0,0,0,.35)" stroke-width="1"/><circle cx="${x-1.2}" cy="${y-1.2}" r="1.6" fill="rgba(255,255,255,.35)"/>`;
+  if(db){buttons=[236,276,316].map(y=>bt(122,y)+bt(178,y)).join('')}
+  else if(tux){buttons=bt(150,266)}
+  else{buttons=bt(150,250)+bt(150,290)}
+  const cuff=[[40,292],[44,282],[48,272]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2.6" fill="${bc}" stroke="rgba(0,0,0,.3)"/>`).join('')+[[260,292],[256,282],[252,272]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2.6" fill="${bc}" stroke="rgba(0,0,0,.3)"/>`).join('');
+  const neck=tux
+   ?`<path d="M132 54 L150 68 L168 54 L164 64 L150 74 L136 64Z" fill="#f6f3ea"/><path d="M150 76 L130 66 L130 86Z M150 76 L170 66 L170 86Z" fill="#101010"/><circle cx="150" cy="76" r="4" fill="#1d1d1d"/>`
+   :`<path d="M132 54 L150 68 L168 54 L164 64 L150 76 L136 64Z" fill="#f6f3ea"/><path d="M144 72 L156 72 L154 86 L146 86Z" fill="${tie}"/><path d="M146 86 L154 86 L159 176 L150 190 L141 176Z" fill="${tie}"/>`;
+  const square=sq?`<path d="M172 152 L176 140 L184 147 L190 138 L198 154Z" fill="${sq}" stroke="rgba(0,0,0,.2)"/>`:'';
+  const sheen=tux?'<path d="M128 60 L108 100 L124 140" stroke="rgba(255,255,255,.25)" stroke-width="3" fill="none"/>':'';
+  return `<svg viewBox="0 0 300 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Suit preview">
+  <defs>${pat}<linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset=".3" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient></defs>
+  <ellipse cx="150" cy="360" rx="104" ry="8" fill="rgba(0,0,0,.18)"/>
+  <path d="${slL}" fill="${base}" stroke="${edge}" stroke-width="1.5"/>${ov(slL)}
+  <path d="${slR}" fill="${base}" stroke="${edge}" stroke-width="1.5"/>${ov(slR)}
+  <path d="${torso}" fill="${base}" stroke="${edge}" stroke-width="1.5"/>${ov(torso)}
+  <path d="M128 60 L172 60 L150 214Z" fill="#f2efe6"/>
+  ${neck}
+  ${db?`<path d="${dbPanel}" fill="${base}" stroke="${edge}" stroke-width="1.5"/>${ov(dbPanel)}`:''}
+  <path d="${lap}" fill="${lapFill}" stroke="${edge}" stroke-width="1.5"/>${tux?'':ov(lap)}
+  <g transform="translate(300,0) scale(-1,1)"><path d="${lap}" fill="${lapFill}" stroke="${edge}" stroke-width="1.5"/>${tux?'':ov(lap)}</g>
+  ${sheen}
+  <path d="M98 270 L134 272 L133 284 L97 282Z M166 272 L202 270 L203 282 L167 284Z M168 152 L204 156 L203 166 L167 162Z" fill="${base}" stroke="${edge}" stroke-width="1.4"/>
+  ${square}${buttons}${cuff}
+  <path d="${torso}" fill="url(#sh)"/>
+  </svg>`;
+}
+
+/* UI */
+function build(){
+  $('fabSw').innerHTML=FABRICS.map((f,i)=>`<button style="${swatchStyle(f)}" data-i="${i}" title="${f.n}" aria-label="${f.n}"></button>`).join('');
+  $('styleSeg').innerHTML=STYLES.map(([k,n])=>`<button data-k="${k}">${n}</button>`).join('');
+  $('lapelSeg').innerHTML=LAPELS.map(([k,n])=>`<button data-k="${k}">${n}</button>`).join('');
+  $('btnDots').innerHTML=BTN.map(([n,c],i)=>`<button style="background:${c}" data-i="${i}" title="${n}" aria-label="${n}"></button>`).join('');
+  $('sqDots').innerHTML=SQ.map(([n,c],i)=>`<button class="${c?'':'none'}" style="${c?'background:'+c:''}" data-i="${i}" title="${n}" aria-label="${n}"></button>`).join('');
+  $('fabSw').onclick=e=>{const b=e.target.closest('button');if(b){cfg.f=+b.dataset.i;draw()}};
+  $('styleSeg').onclick=e=>{const b=e.target.closest('button');if(b){cfg.s=b.dataset.k;if(cfg.s==='tux')cfg.l='shawl';draw()}};
+  $('lapelSeg').onclick=e=>{const b=e.target.closest('button');if(b){cfg.l=b.dataset.k;draw()}};
+  $('btnDots').onclick=e=>{const b=e.target.closest('button');if(b){cfg.b=+b.dataset.i;draw()}};
+  $('sqDots').onclick=e=>{const b=e.target.closest('button');if(b){cfg.q=+b.dataset.i;draw()}};
+}
+const sName=()=>STYLES.find(s=>s[0]===cfg.s)[1],lName=()=>LAPELS.find(l=>l[0]===cfg.l)[1];
+function draw(){
+  $('jacket').innerHTML=jacket();
+  document.querySelectorAll('#fabSw button').forEach(b=>b.classList.toggle('on',+b.dataset.i===cfg.f));
+  document.querySelectorAll('#styleSeg button').forEach(b=>b.classList.toggle('on',b.dataset.k===cfg.s));
+  document.querySelectorAll('#lapelSeg button').forEach(b=>b.classList.toggle('on',b.dataset.k===cfg.l));
+  document.querySelectorAll('#btnDots button').forEach(b=>b.classList.toggle('on',+b.dataset.i===cfg.b));
+  document.querySelectorAll('#sqDots button').forEach(b=>b.classList.toggle('on',+b.dataset.i===cfg.q));
+  $('fabName').textContent='· '+FABRICS[cfg.f].n;$('btnName').textContent='· '+BTN[cfg.b][0];$('sqName').textContent='· '+SQ[cfg.q][0];
+  $('pname').innerHTML=`${FABRICS[cfg.f].n} ${sName()}<small>${lName()} lapel · ${BTN[cfg.b][0]} buttons</small>`;
+  $('sumbox').innerHTML=`<div><span>Fabric</span><b>${FABRICS[cfg.f].n}</b></div><div><span>Style</span><b>${sName()}</b></div><div><span>Lapel</span><b>${lName()}</b></div><div><span>Buttons</span><b>${BTN[cfg.b][0]}</b></div><div><span>Pocket square</span><b>${SQ[cfg.q][0]}</b></div>`;
+}
+$('sendDesign').onclick=()=>wa(`Hi TUX•CEYLON! I designed a suit on your website and would like to book a fitting:\n• Fabric: ${FABRICS[cfg.f].n}\n• Style: ${sName()}\n• Lapel: ${lName()}\n• Buttons: ${BTN[cfg.b][0]}\n• Pocket square: ${SQ[cfg.q][0]}\nPlease share available appointment times.`);
+build();draw();
+
+/* fabrics section */
+$('fab').innerHTML=FABRICS.map((f,i)=>`<div class="fb rvl" data-i="${i}"><i style="${swatchStyle(f)}"></i>${f.n}</div>`).join('');
+$('fab').onclick=e=>{const d=e.target.closest('.fb');if(!d)return;cfg.f=+d.dataset.i;draw();$('design').scrollIntoView({behavior:'smooth'});toast(FABRICS[cfg.f].n+' selected')};
+
+/* gallery placeholders */
+const gal=[['#1b2a4a','#3b4f80','Wedding suits'],['#2c2c30','#55555c','Business tailoring'],['#151515','#3a3a3a','Tuxedos'],['#5f1b2b','#8a3a4c','Groomsmen'],['#3f5f8f','#6f8fbb','Blazers'],['#c9b794','#a89570','Shirts &amp; trousers']];
+$('gal').innerHTML=gal.map(([a,b,n])=>`<div class="g rvl" style="background:linear-gradient(160deg,${b},${a})"><span>${n}</span></div>`).join('');
+
+/* booking form */
+$('form').onsubmit=e=>{
+  e.preventDefault();
+  wa(`Hi TUX•CEYLON! I'd like to book a fitting.\n• Name: ${$('n').value}\n• Occasion: ${$('o').value}\n• Preferred date: ${$('d').value||'flexible'}\n• Showroom: ${$('s').value}\n${$('m').value?'• Note: '+$('m').value:''}`);
+};
+
+/* misc */
+$('menuBtn').onclick=()=>$('menu').classList.toggle('open');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('menu').classList.remove('open'));
+$('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rvl').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
