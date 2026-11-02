@@ -1,4 +1,4 @@
-# Local_Client_Pages
+# Client_Demo_Pages
 # Community Sites
 
 Free websites built for local clients in around the world.
@@ -21,6 +21,7 @@ Free websites built for local clients in around the world.
 | Obias Areem Towels store | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_ObiasAreem/) | SL |
 | Benzo Online Store E-Commerce | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_BenzoOnlineStore/) | SL |
 | Aurelia Shop | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Aurelia/) | SL |
+| Cura Beauty & Wellness | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_CuraBeautyWellness/) | SL |
 | Palm and Paint Kabalana | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_PalmPaint/) | SL |
 | Herbvita Products | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Herbvita/) | SL |
 | Green Grass DIY School Projects | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_GreenGrass/) | SL |
