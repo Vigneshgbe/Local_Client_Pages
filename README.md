@@ -19,6 +19,7 @@ Free websites built for local clients in around the world.
 | Mikee Sweets | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_MikeeSweets/) | SL |
 | Fathi Deluxe Perfumes | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_FATHI_Perfumes/) | SL |
 | Obias Areem Towels store | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_ObiasAreem/) | SL |
+| Benzo Online Store E-Commerce | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_BenzoOnlineStore/) | SL |
 | Aurelia Shop | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Aurelia/) | SL |
 | Palm and Paint Kabalana | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_PalmPaint/) | SL |
 | Herbvita Products | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Herbvita/) | SL |
