@@ -23,6 +23,7 @@ Free websites built for local clients in around the world.
 | Palm and Paint Kabalana | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_PalmPaint/) | SL |
 | Herbvita Products | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_Herbvita/) | SL |
 | Green Grass DIY School Projects | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_GreenGrass/) | SL |
+| Pathum Wedding Planner | [View](https://Vigneshgbe.github.io/Local_Client_Pages/Free_Demo_PathumWedding/) | SL |
 
 All sites built as a social service — no charge to clients. Everything licenced by Vignesh G
 
