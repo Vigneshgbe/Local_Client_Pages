@@ -3,219 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f3d2a">
-<title>Tharun Ceylon Ride & Tours | Private Tours, Sri Lanka</title>
-<meta name="description" content="Private tours and airport transfers across Sri Lanka. Safe, reliable and comfortable, with an experienced English-speaking driver. Get a free itinerary and quote.">
+<title>Tharun Ceylon Ride & Tours | Private Tours in Sri Lanka</title>
+<meta name="description" content="Private tours, airport transfers and multi-day round tours across Sri Lanka with a safe, English-speaking driver. Tharun Ceylon Ride & Tours, Anuradhapura.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#0f3d2a; --green2:#1d5a3f; --leaf:#e8f1ea; --gold:#b8892f; --gold-l:#e6bf68; --cream:#fbf8f1; --sand:#f3ecdc;
-  --ink:#17201b; --muted:#53605a; --line:#e3dcc9; --white:#fff;
-  --shadow:0 16px 36px -22px rgba(10,40,25,.5);
+  --green:#0f3d2b; --green2:#1d5a41; --gold:#b8923a; --gold-d:#7d5f1c; --gold-l:#e6c982;
+  --cream:#fbf7ec; --sand:#f1ead6; --white:#fffdf7; --ink:#18221c; --muted:#56635b; --line:#e3dcc6;
+  --shadow:0 20px 44px -26px rgba(15,61,43,.5);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:var(--ink);background:var(--cream);padding-bottom:calc(68px + env(safe-area-inset-bottom));overflow-x:hidden}
+body{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:var(--ink);background:var(--cream);overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;line-height:1.18;color:var(--green)}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font-family:inherit;font-size:1rem}
-img,svg{max-width:100%}
-.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
-section{padding:56px 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
 .alt{background:var(--sand)}
-.label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.title{margin-bottom:28px}
-.title.c{text-align:center}
-.title h2{font-size:clamp(1.7rem,6vw,2.6rem);margin-bottom:8px}
-.title p{color:var(--muted);max-width:580px}
-.title.c p{margin:0 auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:12px;font-weight:600;border:2px solid transparent;cursor:pointer;transition:background .2s,transform .2s,color .2s;text-align:center}
-.btn-gold{background:var(--gold-l);color:#2a1e05}
-.btn-gold:hover{background:#efcd85;transform:translateY(-2px)}
+.label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+.title{margin-bottom:34px;max-width:680px}
+.title.c{text-align:center;margin-left:auto;margin-right:auto}
+.title h2{font-size:clamp(1.8rem,4.4vw,2.7rem);margin-bottom:8px}
+.title p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 26px;border-radius:30px;font-weight:600;border:2px solid transparent;cursor:pointer;transition:background .2s,transform .2s,color .2s;text-align:center}
+.btn-gold{background:var(--gold);color:#1a1405}
+.btn-gold:hover{background:#c9a24a;transform:translateY(-2px)}
 .btn-green{background:var(--green);color:#fff}
 .btn-green:hover{background:var(--green2);transform:translateY(-2px)}
 .btn-line{border-color:var(--green);color:var(--green)}
 .btn-line:hover{background:var(--green);color:#fff}
-.btn-light{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-light{border-color:rgba(255,255,255,.75);color:#fff}
 .btn-light:hover{background:#fff;color:var(--green)}
 .btn-wa{background:#1fa855;color:#fff}
 .btn-wa:hover{background:#188a45;transform:translateY(-2px)}
-.btn.full{width:100%}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
 
-.demo-bar{background:#000;color:#d6d6d6;text-align:center;font-size:.8rem;padding:8px 12px;line-height:1.4}
+.demo-bar{background:#08241a;color:#d5e6dc;text-align:center;font-size:.82rem;padding:9px 14px}
 .demo-bar b{color:var(--gold-l)}
 
-header{position:sticky;top:0;z-index:60;background:rgba(15,61,42,.98);border-bottom:1px solid #1d5a3f}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+header{position:sticky;top:0;z-index:60;background:rgba(251,247,236,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;min-width:0}
-.logo .m{flex:0 0 40px;width:40px;height:40px;border-radius:50%;border:2px solid var(--gold-l);display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--gold-l);font-size:.95rem}
-.logo b{display:block;font-family:'Playfair Display',serif;color:#fff;font-size:1.05rem;line-height:1.1;white-space:nowrap}
-.logo small{font-size:.66rem;letter-spacing:.2em;color:var(--gold-l);text-transform:uppercase}
-nav ul{position:absolute;top:64px;left:0;right:0;background:var(--green);list-style:none;padding:6px 18px 14px;display:none;border-bottom:1px solid #1d5a3f}
-nav ul.open{display:block}
-nav li{border-bottom:1px solid #1d5a3f}
-nav a{display:block;padding:14px 0;color:#e1ece5;font-weight:500}
-.menu-btn{background:none;border:0;color:var(--gold-l);font-size:1.8rem;cursor:pointer;min-width:44px;min-height:44px}
-.nav-cta{display:none}
+.mark{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);background:var(--white);display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--green);font-size:1rem;flex-shrink:0}
+.logo b{display:block;font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--green);line-height:1.1;white-space:nowrap}
+.logo small{font-size:.64rem;letter-spacing:.2em;color:var(--gold-d);font-weight:600;text-transform:uppercase}
+nav ul{display:flex;gap:24px;list-style:none;font-weight:500;font-size:.93rem}
+nav a{color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--green)}
+.right{display:flex;align-items:center;gap:10px}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--green);width:44px;height:44px}
 
 /* hero */
-.hero{background:linear-gradient(180deg,rgba(15,61,42,.72),rgba(15,61,42,.92)),radial-gradient(circle at 80% 20%,#3f7d5a,transparent 55%),#14543a;color:#fff;padding:54px 0 0;overflow:hidden}
+.hero{position:relative;background:var(--green);color:#fff;overflow:hidden}
+.hero-art{position:absolute;inset:0}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,36,26,.92) 0%,rgba(8,36,26,.72) 45%,rgba(8,36,26,.15) 100%)}
+.hero-in{position:relative;z-index:2;padding:96px 0 84px;max-width:620px}
 .hero .label{color:var(--gold-l)}
-.hero h1{color:#fff;font-size:clamp(2.3rem,9vw,4.4rem);margin:6px 0 12px}
-.hero h1 em{font-style:normal;color:var(--gold-l)}
-.hero p{color:#e3eee7;font-size:1.05rem;max-width:520px}
-.hero-cta{display:grid;gap:12px;margin:26px 0 24px}
+.hero h1{color:#fff;font-size:clamp(2.4rem,7vw,4.4rem);margin:8px 0 16px}
+.hero h1 span{color:var(--gold-l)}
+.hero p{color:#e6efe9;font-size:1.1rem;max-width:520px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 22px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
-.chips span{border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:30px;font-size:.88rem;color:#f3f8f5}
-.hero-art{margin-top:30px;display:flex;justify-content:center}
-.hero-art svg{width:min(430px,100%);height:auto;filter:drop-shadow(0 20px 20px rgba(0,0,0,.35))}
-.strip{background:#08281b;border-top:1px solid #1d5a3f}
-.strip-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1d5a3f}
-.strip-g div{background:#08281b;color:#e1ece5;text-align:center;padding:14px 8px;font-size:.88rem;font-weight:500}
-.strip-g b{display:block;color:var(--gold-l);font-family:'Playfair Display',serif;font-size:1.15rem}
+.chips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:7px 14px;border-radius:30px;font-size:.88rem}
+
+.strip{background:var(--gold)}
+.strip-g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:16px 0;text-align:center;font-weight:600;font-size:.9rem;color:#1a1405}
 
 /* services */
-.cards{display:grid;gap:14px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px 22px;transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.card .ic{width:50px;height:50px;border-radius:14px;background:var(--leaf);display:grid;place-items:center;font-size:1.6rem;margin-bottom:12px}
-.card h3{font-size:1.25rem;margin-bottom:6px}
-.card p{color:var(--muted);font-size:.97rem}
-.note{font-size:.86rem;color:var(--muted);text-align:center;margin-top:18px}
+.srv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:transform .25s,box-shadow .25s}
+.sc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.sc i{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--green);color:var(--gold-l);font-style:normal;font-size:1.5rem;margin-bottom:14px}
+.sc h3{font-size:1.25rem;margin-bottom:6px}
+.sc p{color:var(--muted);font-size:.96rem}
 
 /* planner */
-.planner{display:grid;gap:18px}
-.mapbox{background:linear-gradient(160deg,#eaf3ec,#d7e8dc);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
-.mapbox svg{width:100%;height:auto;max-height:560px;display:block;margin:0 auto}
-.ctl{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px}
-.grp{margin-bottom:18px}
-.grp h4{font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
-.presets{display:flex;gap:8px;flex-wrap:wrap}
-.pr{min-height:44px;padding:8px 16px;border-radius:30px;border:1.5px solid var(--green);background:#fff;color:var(--green);font-weight:600;font-size:.9rem;cursor:pointer}
-.pr:hover,.pr.on{background:var(--green);color:#fff}
-.dests{display:flex;gap:8px;flex-wrap:wrap}
-.ds{min-height:44px;padding:8px 14px;border-radius:30px;border:1.5px solid var(--line);background:var(--white);font-size:.92rem;font-weight:500;cursor:pointer;color:var(--ink);transition:background .15s,border-color .15s}
-.ds.on{background:var(--gold-l);border-color:var(--gold);color:#2a1e05;font-weight:600}
-.row2{display:grid;gap:12px}
-.ctl label{display:block;font-size:.88rem;font-weight:600;margin-bottom:6px}
-.ctl input,.ctl select{width:100%;min-height:48px;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--cream);color:var(--ink)}
-.ctl input:focus,.ctl select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
-.sumbox{background:var(--leaf);border-radius:12px;padding:14px 16px;margin:4px 0 16px;font-size:.95rem}
-.sumbox b{color:var(--green)}
-.route{margin-top:6px;color:var(--muted);font-size:.9rem}
-.hint{font-size:.84rem;color:var(--muted);margin-top:10px;text-align:center}
+.planner{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+.mapbox{background:linear-gradient(160deg,#eaf1e6,#d9e6d3);border:1px solid var(--line);border-radius:20px;padding:16px;position:sticky;top:90px}
+.mapbox svg{width:100%;max-height:640px;display:block;touch-action:manipulation}
+.maphint{text-align:center;font-size:.86rem;color:var(--muted);margin-top:6px}
+.pin{cursor:pointer}
+.pin circle.dot{fill:#fff;stroke:var(--green);stroke-width:2;transition:fill .2s,r .2s}
+.pin.on circle.dot{fill:var(--gold);stroke:var(--green)}
+.pin text.num{font:700 9px 'Inter';fill:#1a1405;text-anchor:middle;pointer-events:none}
+.pin text.nm{font:600 9.5px 'Inter';fill:var(--green);paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none;opacity:0;transition:opacity .2s}
+.pin.on text.nm,.pin:hover text.nm{opacity:1}
+.route{fill:none;stroke:var(--gold-d);stroke-width:2.4;stroke-dasharray:6 5;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:26px}
+.panel h3{font-size:1.3rem;margin-bottom:14px}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.preset{padding:10px 16px;border:1.5px solid var(--line);border-radius:30px;background:var(--white);cursor:pointer;font-weight:500;font-size:.88rem;color:var(--green);min-height:44px}
+.preset:hover{border-color:var(--gold);background:#fbf3df}
+.lab{display:block;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);margin:0 0 8px}
+.dchips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.dc{padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);cursor:pointer;font-weight:500;font-size:.9rem;display:flex;align-items:center;gap:8px;min-height:44px;color:var(--ink)}
+.dc b{display:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#1a1405;font-size:.75rem;place-items:center}
+.dc.on{border-color:var(--green);background:#eaf3ed}
+.dc.on b{display:grid}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px}
+.step{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:12px;padding:6px;background:var(--white)}
+.step button{width:44px;height:44px;border-radius:10px;border:0;background:var(--sand);cursor:pointer;font-size:1.3rem;color:var(--green)}
+.step button:active{background:var(--gold-l)}
+.step span{font-weight:600;font-size:1.05rem}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.seg button{flex:1;min-width:110px;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);cursor:pointer;font-weight:500;color:var(--ink);min-height:46px}
+.seg button.on{background:var(--green);border-color:var(--green);color:#fff}
+.panel select,.panel input[type=date],.panel textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink);margin-bottom:22px;min-height:46px}
+.panel select:focus,.panel input:focus,.panel textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.warn{background:#fff5da;border:1px solid #ecd48a;color:#6b5210;border-radius:10px;padding:10px 14px;font-size:.9rem;margin:-10px 0 18px;display:none}
+.warn.on{display:block}
+.itin{background:var(--green);color:#fff;border-radius:16px;padding:24px;margin-top:6px}
+.itin h3{color:var(--gold-l);font-size:1.3rem;margin-bottom:4px}
+.itin .meta{font-size:.92rem;color:#cfe0d6;margin-bottom:14px}
+.day{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+.day b{font-family:'Playfair Display',serif;color:var(--gold-l);font-size:1.05rem}
+.day p{font-size:.95rem;color:#eaf2ed}
+.day small{display:block;color:#b5cabd;font-size:.85rem}
+.empty{color:#cfe0d6;padding:6px 0}
+.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.cta-row .btn{width:100%}
+.free{font-size:.86rem;color:var(--muted);text-align:center;margin-top:10px}
 
-/* loop */
-.loop{background:var(--green);color:#fff;border-radius:22px;padding:28px 20px;overflow:hidden;position:relative}
-.loop h2{color:#fff;font-size:clamp(1.8rem,7vw,2.8rem);margin:6px 0 8px}
-.loop .label{color:var(--gold-l)}
-.loop p{color:#dfeae3}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-.tags span{background:rgba(255,255,255,.12);padding:6px 14px;border-radius:30px;font-size:.88rem}
-.inc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 22px}
-.inc div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 12px;font-size:.9rem;display:flex;gap:8px;align-items:center}
-.inc i{font-style:normal;font-size:1.2rem}
+/* explorer */
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.exp-card{background:var(--green);color:#fff;border-radius:22px;padding:34px}
+.exp-card h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin:4px 0 10px}
+.exp-card .label{color:var(--gold-l)}
+.exp-card p{color:#dcebe2;margin-bottom:16px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:30px;font-size:.88rem}
+.incl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.incl div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 10px;text-align:center;font-size:.88rem;font-weight:500;line-height:1.35}
+.incl i{display:block;font-style:normal;font-size:1.5rem;margin-bottom:6px}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.facts div{background:var(--gold-l);color:#1a1405;border-radius:12px;padding:10px 16px;font-weight:600;font-size:.9rem}
 
-/* vehicles */
-.veh{display:grid;gap:14px}
-.vc{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.vc .vi{background:linear-gradient(160deg,#eef5f0,#d9e8de);padding:20px;display:grid;place-items:center}
-.vc svg{width:min(280px,100%);height:auto}
-.vc .vb{padding:18px 20px 22px}
-.vc h3{font-size:1.25rem;margin-bottom:4px}
-.vc p{color:var(--muted);font-size:.96rem}
-.vc ul{list-style:none;margin-top:10px}
-.vc li{padding:3px 0 3px 24px;position:relative;font-size:.94rem}
-.vc li::before{content:"✓";position:absolute;left:0;color:var(--green2);font-weight:700}
+/* fleet */
+.fleet{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.fl{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;grid-template-columns:1fr;gap:12px}
+.fl .img{background:linear-gradient(160deg,#eef3ea,#dbe7d6);border-radius:14px;padding:18px;display:grid;place-items:center}
+.fl svg{width:100%;max-width:300px}
+.fl h3{font-size:1.4rem}
+.fl ul{list-style:none;color:var(--muted);font-size:.95rem}
+.fl li{padding:3px 0 3px 22px;position:relative}
+.fl li::before{content:"✓";position:absolute;left:0;color:var(--green2);font-weight:700}
 
-/* why */
-.why{display:grid;gap:12px}
-.why div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 18px;display:flex;gap:14px;align-items:flex-start}
-.why i{font-style:normal;flex:0 0 44px;height:44px;border-radius:12px;background:var(--leaf);display:grid;place-items:center;font-size:1.4rem}
-.why h3{font-size:1.1rem;margin-bottom:2px}
-.why p{color:var(--muted);font-size:.94rem}
-
-/* gallery */
-.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.g{aspect-ratio:1;border-radius:14px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:600;font-size:.92rem;position:relative;overflow:hidden}
-.g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.55))}
-.g span{position:relative;z-index:1}
-
-/* reviews */
-.revs{display:grid;gap:12px}
-.rev{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px}
-.rev .st{color:#c28a1b;letter-spacing:3px;margin-bottom:6px}
-.rev b{display:block;margin-top:10px;font-size:.86rem;color:var(--muted);font-weight:500}
+/* how / compare */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.st{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 20px}
+.st::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--green);color:var(--gold-l);font-family:'Playfair Display',serif;font-weight:700;margin-bottom:12px}
+.st h3{font-size:1.15rem;margin-bottom:4px}
+.st p{color:var(--muted);font-size:.94rem}
+.rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px}
+.rev .s{color:#b8862b;letter-spacing:3px;margin-bottom:8px}
+.rev b{display:block;margin-top:10px;font-size:.84rem;color:var(--muted);font-weight:500}
+.note{font-size:.86rem;color:var(--muted);text-align:center;margin-top:18px}
+.faq{max-width:760px;margin:0 auto}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;background:none;border:0;text-align:left;padding:18px 4px;font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;color:var(--green);cursor:pointer;display:flex;justify-content:space-between;gap:12px;min-height:56px;align-items:center}
+.q button span{color:var(--gold-d);transition:transform .3s;font-family:'Inter';font-size:1.4rem}
+.q .a{max-height:0;overflow:hidden;transition:max-height .35s;color:var(--muted)}
+.q.open .a{max-height:260px;padding-bottom:16px}
+.q.open button span{transform:rotate(45deg)}
 
 /* contact */
-.ct{display:grid;gap:12px}
-.cc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px}
-.cc h3{font-size:1.1rem;margin-bottom:4px}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px}
+.cc h3{font-size:1.15rem;margin-bottom:6px}
 .cc p,.cc a{color:var(--muted);word-break:break-word}
-.cc a.l{color:var(--green2);font-weight:600}
+.cc a.l{color:var(--green);font-weight:600}
 
 /* pitch */
-.pitch{background:#0a2a1d;color:#fff;border-radius:22px;padding:30px 20px;border:1px solid #1d5a3f}
-.pitch h2{color:var(--gold-l);font-size:clamp(1.7rem,6vw,2.5rem);margin-bottom:8px}
-.pitch>p{color:#dfeae3;margin-bottom:20px}
+.pitch{background:var(--green);color:#fff;border-radius:22px;padding:48px 40px}
+.pitch h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:10px}
+.pitch>p{color:#dcebe2;max-width:660px;margin-bottom:26px}
 .pitch .label{color:var(--gold-l)}
-.pg{display:grid;gap:10px;margin-bottom:22px}
-.pg div{border:1px solid #1d5a3f;border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.03)}
-.pg b{display:block;color:var(--gold-l);margin-bottom:2px}
-.pg span{font-size:.94rem;color:#dfeae3}
-.pitch small{display:block;margin-top:16px;color:#a9bdb1;font-size:.84rem}
+.cmp{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:.95rem}
+.cmp th,.cmp td{padding:12px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.16);vertical-align:top}
+.cmp th{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-l);font-weight:600}
+.cmp td:nth-child(2){color:#b5cabd}
+.cmp td:nth-child(3){color:#fff;font-weight:500}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.pg div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px}
+.pg b{display:block;color:var(--gold-l);margin-bottom:4px}
+.pg span{font-size:.93rem;color:#dcebe2}
+.pitch small{display:block;margin-top:16px;color:#b5cabd;font-size:.85rem}
 
-footer{background:#061c13;color:#b6c7bc;padding:36px 0 24px;margin-top:56px}
-footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;display:block;margin-bottom:4px}
-.copy{border-top:1px solid #16382a;margin-top:20px;padding-top:14px;text-align:center;font-size:.82rem}
+footer{background:#08241a;color:#bcd0c4;padding:40px 0 90px;margin-top:80px}
+.f{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem}
+.copy{border-top:1px solid #1b3b2d;margin-top:22px;padding-top:16px;text-align:center;font-size:.85rem}
 
-/* mobile action bar */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -8px 20px -14px rgba(0,0,0,.4)}
-.bar .btn{min-height:46px;padding:10px 12px;font-size:.95rem}
-.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,140px);background:var(--green);color:#fff;padding:12px 20px;border-radius:30px;font-size:.92rem;z-index:120;transition:transform .35s;max-width:92%;text-align:center}
+.wa{position:fixed;right:18px;bottom:18px;z-index:70;width:58px;height:58px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 10px 24px -8px rgba(31,168,85,.7)}
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,160px);background:var(--green);color:var(--gold-l);padding:12px 22px;border-radius:30px;font-size:.92rem;z-index:120;transition:transform .35s;max-width:92%;text-align:center}
 .toast.show{transform:translate(-50%,0)}
-.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
 .rv.in{opacity:1;transform:none}
 
-/* tablet and up */
-@media(min-width:760px){
-  body{padding-bottom:0}
-  .wrap{padding:0 24px}
-  section{padding:84px 0}
-  .bar{display:none}
-  .toast{bottom:26px}
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .strip-g{grid-template-columns:repeat(4,1fr)}
-  .inc{grid-template-columns:repeat(3,1fr)}
-  .veh{grid-template-columns:1fr 1fr}
-  .why{grid-template-columns:repeat(2,1fr)}
-  .gal{grid-template-columns:repeat(3,1fr)}
-  .revs{grid-template-columns:repeat(3,1fr)}
-  .ct{grid-template-columns:repeat(3,1fr)}
-  .pg{grid-template-columns:repeat(3,1fr)}
-  .row2{grid-template-columns:1fr 1fr}
-  .hero-cta{display:flex}
-  .loop,.pitch{padding:44px}
+@media(max-width:1000px){
+  .planner,.exp{grid-template-columns:1fr}
+  .mapbox{position:static}
+  .mapbox svg{max-height:520px;margin:0 auto}
+  .srv{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .rev3,.contact,.pg{grid-template-columns:1fr}
+  .fleet{grid-template-columns:1fr}
+  .pitch{padding:32px 20px}
+  .hero-art::after{background:linear-gradient(180deg,rgba(8,36,26,.88),rgba(8,36,26,.7))}
 }
-@media(min-width:1000px){
-  .nav{height:76px}
-  .logo b{font-size:1.2rem}
-  nav ul{position:static;display:flex;gap:26px;background:none;padding:0;border:0}
+@media(max-width:820px){
+  nav ul{position:absolute;top:70px;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:6px 20px 14px;border-bottom:1px solid var(--line);display:none}
   nav ul.open{display:flex}
-  nav li{border:0}
-  nav a{padding:6px 0;font-size:.93rem}
-  nav a:hover{color:var(--gold-l)}
-  .menu-btn{display:none}
-  .nav-cta{display:inline-flex}
-  .hero{padding:80px 0 0}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-  .hero-art{margin:0 0 40px}
-  .cards{grid-template-columns:repeat(4,1fr)}
-  .planner{grid-template-columns:.95fr 1.05fr;align-items:start}
-  .mapbox{position:sticky;top:96px}
-  .loop{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-  .inc{grid-template-columns:repeat(3,1fr);margin-bottom:0}
+  nav li{padding:14px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .right .btn{display:none}
+  section{padding:56px 0}
+  .hero-in{padding:64px 0 56px}
+  .wa{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(251,247,236,.97);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+  .mbar .btn{min-height:46px;padding:10px 12px;font-size:.92rem}
+  .toast{bottom:84px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 16px}
+  .srv,.steps,.row2,.cta-row{grid-template-columns:1fr}
+  .strip-g{grid-template-columns:repeat(2,1fr)}
+  .incl{grid-template-columns:repeat(2,1fr)}
+  .panel{padding:20px 16px}
+  .exp-card{padding:26px 20px}
+  .logo small{display:none}
+  .cmp th:nth-child(2),.cmp td:nth-child(2){display:none}
+  .day{grid-template-columns:54px 1fr}
 }
 </style>
 </head>
@@ -225,60 +249,69 @@ footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;displa
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo"><div class="m">TCR</div><div><b>Tharun Ceylon</b><small>Ride &amp; Tours</small></div></a>
+    <a href="#top" class="logo"><div class="mark">TCR</div><div><b>Tharun Ceylon</b><small>Ride &amp; Tours</small></div></a>
     <nav><ul id="menu">
       <li><a href="#services">Services</a></li>
       <li><a href="#planner">Plan Your Trip</a></li>
-      <li><a href="#loop">Island Explorer Loop</a></li>
-      <li><a href="#vehicles">Vehicles</a></li>
+      <li><a href="#explorer">Island Explorer</a></li>
+      <li><a href="#fleet">Our Vehicles</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul></nav>
-    <a href="#planner" class="btn btn-gold nav-cta">Get a Free Quote</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <div class="right">
+      <a href="#planner" class="btn btn-gold">Get a Free Quote</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="rv">
-      <span class="label">Private tours · Travel Sri Lanka</span>
-      <h1>Discover Sri Lanka, <em>your way.</em></h1>
-      <p>Your trusted travel partner. Safe, reliable and comfortable private tours with an experienced English-speaking driver.</p>
+<section class="hero" id="top" style="padding:0">
+  <div class="hero-art">
+    <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3c66d"/><stop offset=".6" stop-color="#fbe5b8"/><stop offset="1" stop-color="#fff3d9"/></linearGradient>
+      </defs>
+      <rect width="600" height="400" fill="url(#sky)"/>
+      <circle cx="450" cy="118" r="78" fill="#f2b84b" opacity=".25"/><circle cx="450" cy="118" r="48" fill="#f0a93a"/>
+      <path d="M0 240 Q80 190 170 225 T330 215 T470 235 T600 205 V400 H0Z" fill="#7fa88b"/>
+      <path d="M395 232 L412 168 Q440 160 468 168 L486 232Z" fill="#b98558"/><path d="M386 236 Q440 222 496 236 L496 250 L386 250Z" fill="#4a8a63"/>
+      <path d="M0 270 Q110 225 220 262 T430 252 T600 262 V400 H0Z" fill="#3f7a5a"/>
+      <path d="M0 305 Q140 270 260 300 T600 298 V400 H0Z" fill="#1f5a40"/>
+      <path d="M235 400 Q330 345 300 312 Q272 282 330 262 L344 264 Q302 290 332 318 Q372 350 392 400Z" fill="#5d5d5d"/>
+      <path d="M312 400 Q338 350 322 318 Q306 292 336 270" fill="none" stroke="#f1e7c9" stroke-width="2.5" stroke-dasharray="9 8"/>
+      <g transform="translate(318 340) scale(.9)"><path d="M0 16 Q2 4 14 3 L24 0 Q30 -4 40 0 L50 3 Q62 4 64 16 L64 22 L0 22Z" fill="#fff"/><path d="M22 3 L30 -3 L42 -3 L50 3Z" fill="#cfe3ef"/><circle cx="14" cy="23" r="6" fill="#222"/><circle cx="50" cy="23" r="6" fill="#222"/></g>
+      <g stroke="#2f2a22" stroke-width="5" fill="none" stroke-linecap="round"><path d="M70 330 Q60 270 78 214"/><path d="M130 330 Q124 290 138 248"/></g>
+      <g stroke="#13402c" stroke-width="4" fill="none" stroke-linecap="round"><path d="M78 214 Q50 196 36 208 M78 214 Q62 188 40 190 M78 214 Q88 190 112 196 M78 214 Q106 206 118 224"/><path d="M138 248 Q114 236 102 248 M138 248 Q126 226 108 228 M138 248 Q150 228 170 234 M138 248 Q162 246 172 260"/></g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-in rv">
+      <span class="label">Anuradhapura · Island-wide private tours</span>
+      <h1>Discover Sri Lanka, <span>your way.</span></h1>
+      <p>Private tours, airport transfers and multi-day round tours with a safe, experienced English-speaking driver. Free itinerary planning and a quick quote.</p>
       <div class="hero-cta">
         <a href="#planner" class="btn btn-gold">Plan My Trip</a>
-        <a class="btn btn-light" href="https://wa.me/94713388999?text=Hi%20Tharun%20Ceylon%2C%20I%27d%20like%20a%20free%20quote" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a href="https://wa.me/94713388999?text=Hi%20Tharun%20Ceylon%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener" class="btn btn-light">WhatsApp Us</a>
       </div>
       <div class="chips"><span>Safe</span><span>Reliable</span><span>Comfortable</span></div>
     </div>
-    <div class="hero-art rv">
-      <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Car on a Sri Lankan road">
-        <circle cx="236" cy="38" r="22" fill="#e6bf68"/>
-        <path d="M0 110 Q50 60 100 90 T200 76 T300 96 V160 H0Z" fill="#1d5a3f"/>
-        <path d="M0 128 Q70 96 140 116 T300 112 V160 H0Z" fill="#14432f"/>
-        <path d="M40 100 l10 -22 l10 22 M62 104 l9 -18 l9 18" stroke="#2f7a55" stroke-width="3" fill="none"/>
-        <path d="M30 140 Q150 120 290 140" stroke="#cfd8d2" stroke-width="3" fill="none" stroke-dasharray="8 8"/>
-        <g transform="translate(88 84)"><path d="M6 44 L6 32 Q8 22 22 20 L44 8 Q52 4 66 6 Q84 8 92 24 Q106 26 108 36 L108 44 Z" fill="#f6f6f2" stroke="#cfcfc8" stroke-width="1.5"/><path d="M48 12 L70 10 Q82 12 86 24 L50 24Z" fill="#9fc2d6"/><path d="M24 24 L44 12 L46 24Z" fill="#9fc2d6"/><circle cx="30" cy="46" r="11" fill="#222"/><circle cx="30" cy="46" r="5" fill="#bbb"/><circle cx="86" cy="46" r="11" fill="#222"/><circle cx="86" cy="46" r="5" fill="#bbb"/></g>
-      </svg>
-    </div>
   </div>
-  <div class="strip"><div class="strip-g">
-    <div><b>24/7</b>Airport pick-up &amp; drop-off</div>
-    <div><b>English</b>speaking driver</div>
-    <div><b>A/C</b>insured vehicles</div>
-    <div><b>Free</b>itinerary &amp; quote</div>
-  </div></div>
 </section>
+
+<div class="strip"><div class="wrap strip-g"><div>Airport pick-up 24/7</div><div>English-speaking drivers</div><div>A/C cars &amp; vans</div><div>Free itinerary planning</div></div></div>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="wrap">
-    <div class="title c rv"><span class="label">What we offer</span><h2>Travel made simple</h2><p>From the airport to the hill country, one trusted driver for your whole journey.</p></div>
-    <div class="cards">
-      <div class="card rv"><div class="ic">✈️</div><h3>Airport Transfers</h3><p>Pick-up and drop-off, 24 hours a day, 7 days a week.</p></div>
-      <div class="card rv"><div class="ic">🗺️</div><h3>Multi-day Round Tours</h3><p>Customised tours covering culture, wildlife, beaches and hill country.</p></div>
-      <div class="card rv"><div class="ic">🌅</div><h3>Day Excursions &amp; City Tours</h3><p>Single-day trips and city tours, planned around your time.</p></div>
-      <div class="card rv"><div class="ic">🏨</div><h3>Hotel Transfers</h3><p>Smooth, comfortable rides between your stays.</p></div>
+    <div class="title c rv"><span class="label">What we do</span><h2>Travel Sri Lanka with confidence</h2><p>Your safety, comfort and happiness are our top priorities.</p></div>
+    <div class="srv">
+      <div class="sc rv"><i>✈️</i><h3>Airport Pick-up &amp; Drop-off</h3><p>Available 24/7, so you never have to worry about arriving or leaving.</p></div>
+      <div class="sc rv"><i>🗺️</i><h3>Customized Multi-day Tours</h3><p>Round tours built around you: cultural, wildlife, beach and hill country.</p></div>
+      <div class="sc rv"><i>🏛️</i><h3>Day Excursions &amp; City Tours</h3><p>Single-day trips and city tours with flexible stops.</p></div>
+      <div class="sc rv"><i>👨‍✈️</i><h3>Experienced Drivers</h3><p>Safe, experienced and English-speaking drivers who know the island.</p></div>
+      <div class="sc rv"><i>🚗</i><h3>Cars &amp; Vans</h3><p>Well-maintained, fully insured, air-conditioned vehicles.</p></div>
+      <div class="sc rv"><i>💬</i><h3>Free Itinerary Planning</h3><p>Send us a message and get a free itinerary and a quick quote.</p></div>
     </div>
   </div>
 </section>
@@ -286,113 +319,123 @@ footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;displa
 <!-- PLANNER -->
 <section class="alt" id="planner">
   <div class="wrap">
-    <div class="title c rv"><span class="label">Try it</span><h2>Plan your trip in a minute</h2><p>Pick your stops and watch your route appear. Send it to us for a free itinerary and a quick quote.</p></div>
+    <div class="title c rv"><span class="label">Try it</span><h2>Plan your trip in minutes</h2><p>Tap places on the map, set your days and travellers, and see a draft itinerary instantly. Then send it to us for a free quote.</p></div>
     <div class="planner rv">
-      <div class="mapbox"><svg id="map" viewBox="0 0 270 450" role="img" aria-label="Map of Sri Lanka with your route"></svg></div>
-      <div class="ctl">
-        <div class="grp"><h4>Quick start</h4><div class="presets" id="presets"></div></div>
-        <div class="grp"><h4>Choose your stops</h4><div class="dests" id="dests"></div></div>
-        <div class="sumbox" id="sum"></div>
+      <div class="mapbox">
+        <svg id="map" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Sri Lanka with destinations"></svg>
+        <p class="maphint">Tap a pin to add or remove a stop</p>
+      </div>
+      <div class="panel">
+        <h3>1. Choose a ready route or build your own</h3>
+        <div class="presets" id="presets"></div>
+        <span class="lab">Places you'd like to visit</span>
+        <div class="dchips" id="chips"></div>
         <div class="row2">
-          <div><label for="np">Passengers</label><select id="np"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5 or more (van)</option></select></div>
-          <div><label for="dt">Start date</label><input type="date" id="dt"></div>
+          <div><span class="lab">Days</span><div class="step"><button id="dm" aria-label="Fewer days">−</button><span id="dv">5</span><button id="dp" aria-label="More days">+</button></div></div>
+          <div><span class="lab">Travellers</span><div class="step"><button id="pm" aria-label="Fewer travellers">−</button><span id="pv">2</span><button id="pp" aria-label="More travellers">+</button></div></div>
         </div>
-        <div class="grp" style="margin-top:14px"><label for="nm">Your name</label><input id="nm" placeholder="Your name" autocomplete="name"></div>
-        <button class="btn btn-wa full" id="send">Request free quote on WhatsApp</button>
-        <p class="hint">Suggested route and length only. Every itinerary is tailored to you.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOOP -->
-<section id="loop">
-  <div class="wrap">
-    <div class="loop rv">
-      <div>
-        <span class="label">Featured tour</span>
-        <h2>Island Explorer Loop</h2>
-        <p>Ride the highlands and discover Sri Lanka: winding mountain roads, lush tea plantations, historic towns and breathtaking viewpoints, in the comfort of a private, air-conditioned hybrid car.</p>
-        <div class="tags"><span>Tea country</span><span>Coastal roads</span><span>Ancient cities</span><span>1 day to multi-day</span><span>Flexible itineraries</span></div>
-        <button class="btn btn-gold" id="loopBtn">Plan this loop</button>
-      </div>
-      <div>
-        <div class="inc">
-          <div><i>🚗</i>Comfortable car</div>
-          <div><i>⛽</i>Fuel &amp; tolls</div>
-          <div><i>🧑‍✈️</i>English-speaking driver</div>
-          <div><i>❄️</i>Air conditioning</div>
-          <div><i>✈️</i>Airport pick-up &amp; drop-off</div>
-          <div><i>⏱️</i>Flexible stops</div>
-          <div><i>🏨</i>Hotel transfers</div>
-          <div><i>⛑️</i>First aid</div>
-          <div><i>💧</i>Mineral water</div>
+        <span class="lab">Vehicle</span>
+        <div class="seg" id="veh"><button data-v="car" class="on">Car (up to 4)</button><button data-v="van">Van (larger groups)</button></div>
+        <div class="warn" id="warn"></div>
+        <span class="lab">Trip style</span>
+        <div class="dchips" id="styles"></div>
+        <div class="row2">
+          <div><span class="lab">Pick-up</span><select id="pick"><option>Airport (Katunayake)</option><option>Colombo hotel</option><option>Anuradhapura</option><option>Other (tell us)</option></select></div>
+          <div><span class="lab">Approx. start date</span><input type="date" id="date"></div>
         </div>
+        <div class="itin" id="itin"></div>
+        <div class="cta-row">
+          <button class="btn btn-wa" id="sendWa">Send plan on WhatsApp</button>
+          <button class="btn btn-line" id="sendMail">Email my plan</button>
+        </div>
+        <p class="free">Free itinerary planning and a quick quote. No payment needed.</p>
       </div>
     </div>
-    <p class="note">Maximum 4 passengers per vehicle on this tour. Inclusions as listed on your current tour poster.</p>
   </div>
 </section>
 
-<!-- VEHICLES -->
-<section class="alt" id="vehicles">
-  <div class="wrap">
-    <div class="title c rv"><span class="label">Our vehicles</span><h2>Comfortable, well-maintained, insured</h2><p>Cars and vans, fully insured and air-conditioned.</p></div>
-    <div class="veh">
-      <div class="vc rv"><div class="vi">
-        <svg viewBox="0 0 220 100"><path d="M10 70 L10 54 Q12 42 30 40 L66 18 Q80 10 104 12 Q138 14 150 38 Q176 40 182 56 L182 70Z" fill="#f6f6f2" stroke="#c8c8c0" stroke-width="2"/><path d="M72 20 L108 17 Q132 20 140 38 L76 38Z" fill="#a8c8da"/><path d="M34 40 L66 22 L70 38Z" fill="#a8c8da"/><circle cx="50" cy="72" r="15" fill="#222"/><circle cx="50" cy="72" r="7" fill="#bbb"/><circle cx="148" cy="72" r="15" fill="#222"/><circle cx="148" cy="72" r="7" fill="#bbb"/></svg></div>
-        <div class="vb"><h3>Private A/C Car</h3><p>Ideal for couples, friends and small families.</p><ul><li>Air-conditioned and comfortable</li><li>Up to 4 passengers</li><li>Experienced English-speaking driver</li></ul></div></div>
-      <div class="vc rv"><div class="vi">
-        <svg viewBox="0 0 220 100"><path d="M8 74 L8 30 Q8 20 20 20 L146 20 Q164 22 176 40 L190 52 Q196 58 196 66 L196 74Z" fill="#f6f6f2" stroke="#c8c8c0" stroke-width="2"/><path d="M22 28 H64 V50 H22Z M70 28 H112 V50 H70Z M118 28 H146 Q158 30 166 42 L170 50 H118Z" fill="#a8c8da"/><circle cx="56" cy="76" r="15" fill="#222"/><circle cx="56" cy="76" r="7" fill="#bbb"/><circle cx="154" cy="76" r="15" fill="#222"/><circle cx="154" cy="76" r="7" fill="#bbb"/></svg></div>
-        <div class="vb"><h3>Van for Groups</h3><p>More space for larger groups and extra luggage.</p><ul><li>Air-conditioned and insured</li><li>Capacity on request</li><li>Same trusted driver service</li></ul></div></div>
+<!-- EXPLORER -->
+<section id="explorer">
+  <div class="wrap exp">
+    <div class="exp-card rv">
+      <span class="label">Signature tour</span>
+      <h2>Island Explorer Loop</h2>
+      <p>Ride the highlands and discover Sri Lanka by private, air-conditioned car, led by an expert English-speaking driver.</p>
+      <div class="tags"><span>Tea country</span><span>Coastal roads</span><span>Ancient cities</span></div>
+      <div class="facts" style="margin-top:18px"><div>Max 4 passengers per vehicle</div><div>1 day to multi-day</div><div>Flexible itineraries</div></div>
+      <button class="btn btn-gold" id="loopBtn">Use this route in the planner</button>
     </div>
-    <p class="note">Illustrations only. Your real vehicle photos will be used on the live site.</p>
+    <div class="rv">
+      <div class="title" style="margin-bottom:18px"><span class="label">What's included</span><h2>Everything for a smooth journey</h2></div>
+      <div class="incl">
+        <div><i>🚗</i>Comfortable car</div><div><i>⛽</i>Fuel &amp; tolls</div><div><i>👨‍✈️</i>English-speaking driver</div>
+        <div><i>❄️</i>Air conditioning</div><div><i>✈️</i>Airport pick-up &amp; drop-off</div><div><i>📍</i>Flexible stops</div>
+        <div><i>🏨</i>Hotel transfers</div><div><i>⛑️</i>First aid</div><div><i>💧</i>Mineral water</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- WHY -->
+<!-- FLEET -->
+<section class="alt" id="fleet">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Our vehicles</span><h2>Comfortable, well-maintained, insured</h2></div>
+    <div class="fleet">
+      <div class="fl rv"><div class="img" id="carArt"></div><h3>Private Car</h3><ul><li>Up to 4 passengers per vehicle</li><li>Air-conditioned</li><li>Ideal for couples, small families and friends</li></ul></div>
+      <div class="fl rv"><div class="img" id="vanArt"></div><h3>Van</h3><ul><li>For larger groups</li><li>Air-conditioned and fully insured</li><li>Space for luggage and longer journeys</li></ul></div>
+    </div>
+    <p class="note">Illustrations only. Your real vehicle photos will be shown on the live site.</p>
+  </div>
+</section>
+
+<!-- HOW -->
 <section>
   <div class="wrap">
-    <div class="title c rv"><span class="label">Why Tharun Ceylon</span><h2>Your safety and comfort come first</h2></div>
-    <div class="why">
-      <div class="rv"><i>🧑‍✈️</i><div><h3>Experienced, English-speaking driver</h3><p>A safe, friendly driver who knows the island.</p></div></div>
-      <div class="rv"><i>🛡️</i><div><h3>Well-maintained and fully insured</h3><p>A/C cars and vans you can trust on every road.</p></div></div>
-      <div class="rv"><i>🧭</i><div><h3>Flexible itineraries</h3><p>Stop where you like. Change the plan along the way.</p></div></div>
-      <div class="rv"><i>💬</i><div><h3>Free itinerary planning</h3><p>Send us a message for a quick quote.</p></div></div>
+    <div class="title c rv"><span class="label">Simple</span><h2>How it works</h2></div>
+    <div class="steps">
+      <div class="st rv"><h3>Tell us your plan</h3><p>Choose places and dates, or just message us your ideas.</p></div>
+      <div class="st rv"><h3>Get a free quote</h3><p>We plan your itinerary and send a quick quote.</p></div>
+      <div class="st rv"><h3>Confirm</h3><p>Adjust anything you like, then confirm your trip.</p></div>
+      <div class="st rv"><h3>Travel</h3><p>Relax while your driver takes care of the road.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="alt">
-  <div class="wrap">
-    <div class="title c rv"><span class="label">Gallery</span><h2>Moments from the road</h2></div>
-    <div class="gal" id="gal"></div>
-    <p class="note">Placeholders. Your own guest photos and landscapes will be used on the live site.</p>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="title c rv"><span class="label">Reviews</span><h2>What travellers say</h2></div>
-    <div class="revs">
-      <div class="rev rv"><div class="st">★★★★★</div><p>A genuine traveller review will appear here.</p><b>— Traveller name, country</b></div>
-      <div class="rev rv"><div class="st">★★★★★</div><p>A genuine traveller review will appear here.</p><b>— Traveller name, country</b></div>
-      <div class="rev rv"><div class="st">★★★★★</div><p>A genuine traveller review will appear here.</p><b>— Traveller name, country</b></div>
+    <div class="rev3">
+      <div class="rev rv"><div class="s">★★★★★</div><p>A genuine traveller review will appear here.</p><b>— Traveller name, country</b></div>
+      <div class="rev rv"><div class="s">★★★★★</div><p>A genuine traveller review will appear here.</p><b>— Traveller name, country</b></div>
+      <div class="rev rv"><div class="s">★★★★★</div><p>A genuine traveller review will appear here.</p><b>— Traveller name, country</b></div>
     </div>
-    <p class="note">Sample text. Real reviews (for example from Tripadvisor and Facebook) will be used on the live site.</p>
+    <p class="note">Sample layout. Real reviews, including any from Tripadvisor, will be shown on the live site.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="title c rv"><span class="label">Good to know</span><h2>Questions</h2></div>
+    <div class="faq rv" id="faqBox">
+      <div class="q"><button>How do I get a quote?<span>+</span></button><div class="a">Use the trip planner above and send your plan, or message us on WhatsApp with your dates and the places you'd like to visit. Itinerary planning and quotes are free.</div></div>
+      <div class="q"><button>Can you customise the route?<span>+</span></button><div class="a">Yes. Every tour is customised: cultural, wildlife, beach or hill country, from a single day to many days.</div></div>
+      <div class="q"><button>Do you do airport transfers?<span>+</span></button><div class="a">Yes, airport pick-up and drop-off is available 24/7.</div></div>
+      <div class="q"><button>How many people can travel together?<span>+</span></button><div class="a">Our cars carry up to 4 passengers. For larger groups we have vans. Tell us your group size and we'll recommend the right vehicle.</div></div>
+      <div class="q"><button>Is the driver English-speaking?<span>+</span></button><div class="a">Yes. Our drivers are experienced, safe and English-speaking.</div></div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="alt" id="contact">
   <div class="wrap">
-    <div class="title c rv"><span class="label">Contact</span><h2>Let's plan your journey</h2><p>Drop us a message for free itinerary planning and a quick quote.</p></div>
-    <div class="ct">
+    <div class="title c rv"><span class="label">Contact</span><h2>Talk to Tharun Ceylon</h2></div>
+    <div class="contact">
       <div class="cc rv"><h3>WhatsApp / Call</h3><a class="l" href="https://wa.me/94713388999" target="_blank" rel="noopener">+94 71 338 8999</a></div>
       <div class="cc rv"><h3>Email</h3><a class="l" href="mailto:virajvindana@gmail.com">virajvindana@gmail.com</a></div>
-      <div class="cc rv"><h3>Base</h3><p>No 120, Jayanthigramaya, Saliyapura, Anuradhapura, Sri Lanka 50000</p></div>
+      <div class="cc rv"><h3>Base</h3><p>No 120, Jayanthigramaya, Saliyapura, Anuradhapura 50000, Sri Lanka</p><a class="l" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jayanthigramaya+Saliyapura+Anuradhapura">Open in Google Maps</a></div>
     </div>
   </div>
 </section>
@@ -402,17 +445,27 @@ footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;displa
   <div class="wrap">
     <div class="pitch rv">
       <span class="label">Your website</span>
-      <h2>From this preview to your own tour website</h2>
-      <p>This is a design preview. The full Tharun Ceylon website is built around your real photos, tours and travellers.</p>
+      <h2>Turn your Facebook page into a booking machine</h2>
+      <p>Travellers plan on their phones, often before they ever contact anyone. This preview shows how your own website can capture them.</p>
+      <table class="cmp">
+        <thead><tr><th>Need</th><th>Facebook page today</th><th>Your own website</th></tr></thead>
+        <tbody>
+          <tr><td>Trip enquiries</td><td>Back-and-forth messages</td><td>Complete trip plan sent in one tap</td></tr>
+          <tr><td>Showing your routes</td><td>Posts that get buried</td><td>Permanent tour pages and a route planner</td></tr>
+          <tr><td>Found on Google</td><td>Rarely</td><td>Rank for "private tours Anuradhapura" and more</td></tr>
+          <tr><td>Trust</td><td>1 review visible</td><td>Reviews, vehicles and tours in one place</td></tr>
+          <tr><td>Deposits</td><td>Manual transfers</td><td>Optional secure online payments</td></tr>
+        </tbody>
+      </table>
       <div class="pg">
-        <div><b>Trip planner with quotes</b><span>Travellers build a route and send it straight to your WhatsApp.</span></div>
-        <div><b>Your real photography</b><span>Your vehicles, drivers and guests on every page.</span></div>
-        <div><b>Tour pages</b><span>Island Explorer Loop and every other tour, each with its own page.</span></div>
-        <div><b>Reviews in one place</b><span>Show your best travel reviews to build trust.</span></div>
-        <div><b>Found on Google</b><span>Reach travellers searching for a private driver in Sri Lanka.</span></div>
-        <div><b>Online deposits</b><span>Optional secure payment gateway to confirm bookings.</span></div>
+        <div><b>Trip planner</b><span>A polished version of the tool above, with your real routes.</span></div>
+        <div><b>Quote and booking requests</b><span>Dates, group size and places arrive neatly on your phone.</span></div>
+        <div><b>Your own photography</b><span>Your cars, drivers and guests, not stock images.</span></div>
+        <div><b>Multi-language</b><span>Reach more travellers in the languages they speak.</span></div>
+        <div><b>Tour pages for SEO</b><span>Pages for each route that bring in travellers from Google.</span></div>
+        <div><b>Admin panel</b><span>Update tours, photos and availability yourself.</span></div>
       </div>
-      <button class="btn btn-gold" id="pitchBtn">Let's discuss your website</button>
+      <button class="btn btn-gold" id="pitchBtn">Let's build your website</button>
       <small>Prepared by Padak · Web development &amp; digital marketing</small>
     </div>
   </div>
@@ -420,105 +473,150 @@ footer b{color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;displa
 
 <footer>
   <div class="wrap">
-    <b>Tharun Ceylon Ride &amp; Tours</b>
-    Your trusted travel partner in Sri Lanka.<br>
-    +94 71 338 8999 · virajvindana@gmail.com
+    <div class="f">
+      <div><b>Tharun Ceylon Ride &amp; Tours</b><br>Your trusted travel partner in Sri Lanka.</div>
+      <div>No 120, Jayanthigramaya, Saliyapura, Anuradhapura<br>+94 71 338 8999 · virajvindana@gmail.com</div>
+    </div>
     <div class="copy">© <span id="yr"></span> Tharun Ceylon Ride &amp; Tours · Demo design preview by Padak</div>
   </div>
 </footer>
 
-<div class="bar">
-  <a class="btn btn-wa" href="https://wa.me/94713388999?text=Hi%20Tharun%20Ceylon%2C%20I%27d%20like%20a%20free%20quote" target="_blank" rel="noopener">WhatsApp</a>
-  <a class="btn btn-green" href="#planner">Plan my trip</a>
-</div>
+<a class="wa" href="https://wa.me/94713388999?text=Hi%20Tharun%20Ceylon%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="mbar"><a class="btn btn-gold" href="#planner">Plan My Trip</a><a class="btn btn-wa" href="https://wa.me/94713388999?text=Hi%20Tharun%20Ceylon%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener">WhatsApp</a></div>
 <div class="toast" id="toast"></div>
 
 <script>
 const $=id=>document.getElementById(id);
-const WA='94713388999';
+const BIZ_WA='94713388999',BIZ_MAIL='virajvindana@gmail.com';
 /* Padak's own WhatsApp number for the pitch button, e.g. '94771234567' */
 const PADAK_WA='';
-function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2300)}
 $('pitchBtn').onclick=()=>{
   if(!PADAK_WA){toast('Padak contact number not set yet');return}
-  window.open('https://wa.me/'+PADAK_WA+'?text='+encodeURIComponent('Hi Padak, I saw the website preview for Tharun Ceylon Ride & Tours and would like to discuss it.'),'_blank');
+  window.open('https://wa.me/'+PADAK_WA+'?text='+encodeURIComponent('Hi Padak, I saw the website preview for Tharun Ceylon Ride & Tours and would like to build it.'),'_blank');
 };
 
-/* map data: route order is a sensible circuit */
-const START={id:'airport',n:'Airport (Negombo)',lon:79.84,lat:7.2};
+/* destinations (map positions are approximate) */
 const D=[
- {id:'wilpattu',n:'Wilpattu',lon:80.0,lat:8.45},
- {id:'anuradhapura',n:'Anuradhapura',lon:80.41,lat:8.35},
- {id:'sigiriya',n:'Sigiriya',lon:80.76,lat:7.96},
- {id:'polonnaruwa',n:'Polonnaruwa',lon:81.0,lat:7.94},
- {id:'kandy',n:'Kandy',lon:80.63,lat:7.29},
- {id:'nuwaraeliya',n:'Nuwara Eliya',lon:80.77,lat:6.97},
- {id:'ella',n:'Ella',lon:81.05,lat:6.87},
- {id:'yala',n:'Yala',lon:81.4,lat:6.37},
- {id:'mirissa',n:'Mirissa',lon:80.46,lat:5.95},
- {id:'galle',n:'Galle',lon:80.22,lat:6.03}
+ {id:'jaffna',n:'Jaffna',lon:80.01,lat:9.66,h:'Northern culture and cuisine'},
+ {id:'trinco',n:'Trincomalee',lon:81.23,lat:8.57,h:'East coast beaches and bays'},
+ {id:'anuradhapura',n:'Anuradhapura',lon:80.41,lat:8.31,h:'Ancient city and sacred sites'},
+ {id:'polonnaruwa',n:'Polonnaruwa',lon:81.00,lat:7.94,h:'Medieval capital ruins'},
+ {id:'sigiriya',n:'Sigiriya',lon:80.76,lat:7.96,h:'Sigiriya Rock Fortress'},
+ {id:'dambulla',n:'Dambulla',lon:80.65,lat:7.86,h:'Cave temple complex'},
+ {id:'kandy',n:'Kandy',lon:80.63,lat:7.29,h:'Hill capital and Temple of the Tooth'},
+ {id:'nuwaraeliya',n:'Nuwara Eliya',lon:80.77,lat:6.97,h:'Tea plantations and cool highlands'},
+ {id:'ella',n:'Ella',lon:81.05,lat:6.87,h:'Scenic viewpoints and train views'},
+ {id:'yala',n:'Yala',lon:81.38,lat:6.37,h:'Wildlife safari country'},
+ {id:'arugam',n:'Arugam Bay',lon:81.84,lat:6.84,h:'East coast surf beach'},
+ {id:'galle',n:'Galle',lon:80.22,lat:6.03,h:'Galle Fort and the south coast'},
+ {id:'mirissa',n:'Mirissa',lon:80.46,lat:5.95,h:'Beaches on the south coast'},
+ {id:'colombo',n:'Colombo',lon:79.86,lat:6.93,h:'City tour of the capital'},
+ {id:'negombo',n:'Negombo',lon:79.84,lat:7.21,h:'Beach town near the airport'}
 ];
+const STYLES=['Culture','Wildlife','Beach','Hill country','Tea country','Ancient cities'];
 const PRESETS=[
- ['Cultural Triangle',['anuradhapura','sigiriya','polonnaruwa','kandy']],
- ['Hill Country & Tea',['kandy','nuwaraeliya','ella']],
- ['Wildlife',['wilpattu','yala']],
- ['South Coast',['galle','mirissa']],
- ['Island Explorer Loop',['anuradhapura','sigiriya','kandy','nuwaraeliya','ella','yala','mirissa','galle']]
+ {n:'Island Explorer Loop',s:['sigiriya','kandy','nuwaraeliya','ella','galle'],d:6},
+ {n:'Cultural Triangle',s:['anuradhapura','sigiriya','polonnaruwa','dambulla','kandy'],d:5},
+ {n:'Hill Country & Ella',s:['kandy','nuwaraeliya','ella'],d:4},
+ {n:'Wildlife & Beach',s:['yala','mirissa','galle'],d:4}
 ];
-const COAST=[[79.95,9.72],[80.2,9.82],[80.42,9.55],[80.82,9.27],[81.22,8.55],[81.7,7.72],[81.83,6.87],[81.3,6.22],[81.12,6.12],[80.8,6.02],[80.55,5.94],[80.22,6.03],[79.99,6.43],[79.84,6.92],[79.83,7.2],[79.8,7.58],[79.82,8.03],[79.72,8.3],[79.9,9.0],[79.75,9.1],[79.85,9.5]];
-const sc=105,px=l=>(l-79.55)*sc,py=l=>(10-l)*sc;
-let sel=new Set();
+const X=lon=>(lon-79.5)/2.45*300,Y=lat=>(9.95-lat)/4.1*500;
+const OUT=[[80.23,9.83],[80.45,9.60],[80.80,9.20],[80.95,8.80],[81.22,8.55],[81.38,8.20],[81.55,7.90],[81.72,7.60],[81.85,7.30],[81.88,7.00],[81.75,6.65],[81.55,6.35],[81.30,6.20],[81.05,6.12],[80.80,6.05],[80.60,5.93],[80.35,5.96],[80.15,6.08],[80.00,6.40],[79.88,6.70],[79.83,7.00],[79.82,7.35],[79.80,7.70],[79.78,8.05],[79.85,8.35],[79.90,8.65],[79.88,9.00],[79.95,9.25],[80.00,9.55],[80.10,9.80]];
+const st={sel:[],days:5,pax:2,veh:'car',pick:'Airport (Katunayake)',styles:new Set(),date:''};
+$('date').value=''; 
 
-/* controls */
-$('presets').innerHTML=PRESETS.map((p,i)=>`<button class="pr" data-i="${i}">${p[0]}</button>`).join('');
-$('dests').innerHTML=D.map(d=>`<button class="ds" data-id="${d.id}">${d.n}</button>`).join('');
-$('presets').onclick=e=>{const b=e.target.closest('.pr');if(!b)return;sel=new Set(PRESETS[+b.dataset.i][1]);draw(+b.dataset.i)};
-$('dests').onclick=e=>{const b=e.target.closest('.ds');if(!b)return;toggle(b.dataset.id)};
-function toggle(id){sel.has(id)?sel.delete(id):sel.add(id);draw()}
-$('loopBtn').onclick=()=>{sel=new Set(PRESETS[4][1]);draw(4);$('planner').scrollIntoView({behavior:'smooth'})};
+/* map */
+(function(){
+  const pts=OUT.map(([lo,la])=>X(lo).toFixed(1)+','+Y(la).toFixed(1)).join(' ');
+  $('map').innerHTML=`<defs><linearGradient id="land" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fbf95"/><stop offset="1" stop-color="#5f9a72"/></linearGradient></defs>
+  <polygon points="${pts}" fill="url(#land)" stroke="#b8923a" stroke-width="2.5" stroke-linejoin="round"/>
+  <polyline id="route" class="route" points=""/>
+  <g id="pins">${D.map(d=>`<g class="pin" data-id="${d.id}"><circle cx="${X(d.lon)}" cy="${Y(d.lat)}" r="18" fill="transparent"/><circle class="dot" cx="${X(d.lon)}" cy="${Y(d.lat)}" r="7"/><text class="num" x="${X(d.lon)}" y="${Y(d.lat)+3.2}"></text><text class="nm" x="${X(d.lon)+(d.lon>80.9?-12:12)}" y="${Y(d.lat)+3}" text-anchor="${d.lon>80.9?'end':'start'}">${d.n}</text></g>`).join('')}</g>`;
+  $('map').addEventListener('click',e=>{const p=e.target.closest('.pin');if(p)toggle(p.dataset.id)});
+  $('chips').innerHTML=D.map(d=>`<button class="dc" data-id="${d.id}">${d.n}<b></b></button>`).join('');
+  $('chips').addEventListener('click',e=>{const b=e.target.closest('.dc');if(b)toggle(b.dataset.id)});
+  $('styles').innerHTML=STYLES.map(s=>`<button class="dc" data-s="${s}">${s}</button>`).join('');
+  $('styles').addEventListener('click',e=>{const b=e.target.closest('.dc');if(!b)return;const s=b.dataset.s;st.styles.has(s)?st.styles.delete(s):st.styles.add(s);render()});
+  $('presets').innerHTML=PRESETS.map((p,i)=>`<button class="preset" data-i="${i}">${p.n}</button>`).join('');
+  $('presets').addEventListener('click',e=>{const b=e.target.closest('.preset');if(!b)return;const p=PRESETS[+b.dataset.i];st.sel=[...p.s];st.days=p.d;render();toast(p.n+' loaded. Edit anything you like.')});
+})();
+function toggle(id){const i=st.sel.indexOf(id);i>-1?st.sel.splice(i,1):st.sel.push(id);render()}
 
-function draw(presetIdx){
-  const stops=D.filter(d=>sel.has(d.id));
-  document.querySelectorAll('.ds').forEach(b=>b.classList.toggle('on',sel.has(b.dataset.id)));
-  document.querySelectorAll('.pr').forEach((b,i)=>b.classList.toggle('on',i===presetIdx));
-  const pts=[START,...stops,START];
-  const land=COAST.map(c=>px(c[0]).toFixed(1)+','+py(c[1]).toFixed(1)).join(' ');
-  let svg=`<defs><linearGradient id="ld" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f9f5"/><stop offset="1" stop-color="#cfe3d6"/></linearGradient></defs>
-  <polygon points="${land}" fill="url(#ld)" stroke="#1d5a3f" stroke-width="2" stroke-linejoin="round"/>`;
-  if(stops.length){
-    const line=pts.map(p=>px(p.lon).toFixed(1)+','+py(p.lat).toFixed(1)).join(' ');
-    svg+=`<polyline points="${line}" fill="none" stroke="#b8892f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 7"/>`;
-  }
-  D.forEach(d=>{
-    const on=sel.has(d.id),n=stops.findIndex(s=>s.id===d.id)+1,x=px(d.lon),y=py(d.lat);
-    svg+=`<g data-id="${d.id}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="16" fill="transparent"/><circle cx="${x}" cy="${y}" r="${on?9:5}" fill="${on?'#e6bf68':'#fff'}" stroke="${on?'#8a5f10':'#1d5a3f'}" stroke-width="2"/>${on?`<text x="${x}" y="${y+3.5}" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#2a1e05">${n}</text>`:''}
-    <text x="${x+(d.lon>80.9?-12:12)}" y="${y+3.5}" text-anchor="${d.lon>80.9?'end':'start'}" font-family="Inter,sans-serif" font-size="9.5" font-weight="${on?600:500}" fill="${on?'#0f3d2a':'#53605a'}">${d.n}</text></g>`;
-  });
-  const sx=px(START.lon),sy=py(START.lat);
-  svg+=`<circle cx="${sx}" cy="${sy}" r="7" fill="#0f3d2a" stroke="#fff" stroke-width="2"/><text x="${sx-11}" y="${sy+3.5}" text-anchor="end" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" fill="#0f3d2a">Airport</text>`;
-  $('map').innerHTML=svg;
-  const days=stops.length?stops.length+1:0;
-  $('sum').innerHTML=stops.length
-   ?`<b>${stops.length} stop${stops.length>1?'s':''}</b> · suggested <b>${days} days</b><div class="route">${['Airport',...stops.map(s=>s.n),'Airport'].join(' → ')}</div>`
-   :`<b>Choose your stops</b> or tap a quick start to see a suggested route.`;
+/* steppers, vehicle, inputs */
+$('dm').onclick=()=>{st.days=Math.max(1,st.days-1);render()};
+$('dp').onclick=()=>{st.days=Math.min(21,st.days+1);render()};
+$('pm').onclick=()=>{st.pax=Math.max(1,st.pax-1);render()};
+$('pp').onclick=()=>{st.pax=Math.min(14,st.pax+1);render()};
+$('veh').addEventListener('click',e=>{const b=e.target.closest('button');if(b){st.veh=b.dataset.v;render()}});
+$('pick').onchange=e=>{st.pick=e.target.value;render()};
+$('date').onchange=e=>{st.date=e.target.value;render()};
+
+/* itinerary */
+function plan(){
+  const n=st.sel.length,days=Array.from({length:st.days},()=>[]);
+  const stops=st.sel.map(id=>D.find(d=>d.id===id));
+  if(!n)return days;
+  if(st.days>=n){
+    const base=Math.floor(st.days/n),rem=st.days%n;let day=0;
+    stops.forEach((s,i)=>{const len=base+(i<rem?1:0);for(let k=0;k<len;k++)days[day++].push({s,first:k===0})});
+  }else{stops.forEach((s,i)=>days[Math.floor(i*st.days/n)].push({s,first:true}))}
+  return days;
 }
-$('map').onclick=e=>{const g=e.target.closest('g[data-id]');if(g)toggle(g.dataset.id)};
-$('send').onclick=()=>{
-  const stops=D.filter(d=>sel.has(d.id));
-  if(!stops.length){toast('Pick at least one stop first');return}
-  const t=`Hi Tharun Ceylon! I'd like a free itinerary and quote.\n• Route: ${['Airport',...stops.map(s=>s.n),'Airport'].join(' → ')}\n• Suggested length: about ${stops.length+1} days\n• Passengers: ${$('np').value}\n• Start date: ${$('dt').value||'flexible'}\n${$('nm').value?'• Name: '+$('nm').value:''}`;
-  toast('Opening WhatsApp…');window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');
-};
-sel=new Set(PRESETS[0][1]);draw(0);
+function itinText(){
+  if(!st.sel.length)return '';
+  return plan().map((day,i)=>{
+    let t='Day '+(i+1)+': ';
+    const parts=day.map(x=>(x.first?'Drive to '+x.s.n+' · ':'Explore ')+x.s.h).join(' + ');
+    if(i===0)t+='Pick-up from '+st.pick+'. ';
+    t+=parts;
+    if(i===st.days-1)t+='. Drop-off';
+    return t;
+  }).join('\n');
+}
+function render(){
+  const n=st.sel.length;
+  $('dv').textContent=st.days;$('pv').textContent=st.pax;
+  if(st.pax>4&&st.veh==='car'){st.veh='van'}
+  document.querySelectorAll('#veh button').forEach(b=>b.classList.toggle('on',b.dataset.v===st.veh));
+  const w=$('warn');
+  if(st.pax>4){w.textContent='Our cars carry up to 4 passengers, so a van is suggested for '+st.pax+' travellers.';w.classList.add('on')}
+  else if(st.veh==='van'){w.textContent='A van is a good fit for larger groups. We will confirm the best vehicle for you.';w.classList.add('on')}
+  else w.classList.remove('on');
+  document.querySelectorAll('#styles .dc').forEach(b=>b.classList.toggle('on',st.styles.has(b.dataset.s)));
+  document.querySelectorAll('#chips .dc').forEach(b=>{const i=st.sel.indexOf(b.dataset.id);b.classList.toggle('on',i>-1);b.querySelector('b').textContent=i>-1?i+1:''});
+  document.querySelectorAll('#pins .pin').forEach(p=>{const i=st.sel.indexOf(p.dataset.id);p.classList.toggle('on',i>-1);p.querySelector('.num').textContent=i>-1?i+1:''});
+  $('route').setAttribute('points',st.sel.map(id=>{const d=D.find(x=>x.id===id);return X(d.lon).toFixed(1)+','+Y(d.lat).toFixed(1)}).join(' '));
+  const veh=st.veh==='car'?'private car':'van';
+  let h=`<h3>Your draft itinerary</h3><div class="meta">${st.days} day${st.days>1?'s':''} · ${st.pax} traveller${st.pax>1?'s':''} · ${veh}${st.date?' · from '+new Date(st.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):''}</div>`;
+  if(!n)h+='<div class="empty">Tap places on the map or choose a ready route to see your itinerary here.</div>';
+  else{
+    if(st.days<n)h+=`<div class="empty" style="margin-bottom:6px">${n} stops in ${st.days} day${st.days>1?'s':''} makes a very full route. We will advise on the best pace.</div>`;
+    plan().forEach((day,i)=>{
+      const lines=day.map(x=>`${x.first?'Drive to <b style="font-family:Inter;color:#fff">'+x.s.n+'</b>':'Explore <b style="font-family:Inter;color:#fff">'+x.s.n+'</b>'}<small>${x.s.h}</small>`).join('');
+      h+=`<div class="day"><b>Day ${i+1}</b><p>${i===0?'<small>Pick-up from '+st.pick+'</small>':''}${lines||'Free day'}${i===st.days-1?'<small>Drop-off at the end of your trip</small>':''}</p></div>`;
+    });
+  }
+  $('itin').innerHTML=h;
+}
+function message(){
+  const route=st.sel.map(id=>D.find(d=>d.id===id).n).join(' → ')||'to be discussed';
+  return `Hi Tharun Ceylon! I planned a trip on your website and would like a free quote:\n• Route: ${route}\n• Days: ${st.days}\n• Travellers: ${st.pax}\n• Vehicle: ${st.veh==='car'?'Private car':'Van'}\n• Pick-up: ${st.pick}\n• Start date: ${st.date||'flexible'}\n${st.styles.size?'• Interests: '+[...st.styles].join(', ')+'\n':''}${st.sel.length?'\nDraft itinerary:\n'+itinText():''}`;
+}
+$('sendWa').onclick=()=>{toast('Opening WhatsApp…');window.open('https://wa.me/'+BIZ_WA+'?text='+encodeURIComponent(message()),'_blank')};
+$('sendMail').onclick=()=>{window.location.href='mailto:'+BIZ_MAIL+'?subject='+encodeURIComponent('Trip quote request')+'&body='+encodeURIComponent(message())};
+$('loopBtn').onclick=()=>{const p=PRESETS[0];st.sel=[...p.s];st.days=p.d;st.styles=new Set(['Tea country','Ancient cities']);render();$('planner').scrollIntoView({behavior:'smooth'})};
 
-/* gallery placeholders */
-const G=[['#2f7a55','#0f3d2a','Sigiriya'],['#6fa860','#2c6a3c','Tea country'],['#b8892f','#6b4a10','Elephants'],['#3b7fa6','#134a6b','Beaches'],['#a45d3a','#5a2c14','Ancient temples'],['#4a8f6a','#164a32','Scenic train']];
-$('gal').innerHTML=G.map(([a,b,n])=>`<div class="g rv" style="background:linear-gradient(150deg,${a},${b})"><span>${n}</span></div>`).join('');
+/* vehicle illustrations */
+$('carArt').innerHTML=`<svg viewBox="0 0 300 130"><ellipse cx="150" cy="118" rx="120" ry="7" fill="rgba(0,0,0,.14)"/><path d="M24 88 Q26 66 52 62 L92 58 Q112 32 150 32 L196 34 Q222 44 238 62 L262 68 Q280 72 280 90 L280 100 L24 100Z" fill="#fff" stroke="#c9d3cc" stroke-width="2"/><path d="M104 58 Q120 38 150 38 L170 38 L172 58Z M180 38 L198 40 Q214 48 226 60 L180 60Z" fill="#cfe3ef"/><circle cx="80" cy="102" r="16" fill="#222"/><circle cx="80" cy="102" r="7" fill="#aaa"/><circle cx="220" cy="102" r="16" fill="#222"/><circle cx="220" cy="102" r="7" fill="#aaa"/></svg>`;
+$('vanArt').innerHTML=`<svg viewBox="0 0 300 130"><ellipse cx="150" cy="118" rx="124" ry="7" fill="rgba(0,0,0,.14)"/><path d="M20 94 L20 52 Q20 40 34 38 L206 36 Q226 36 238 52 L270 74 Q284 80 284 94 L284 102 L20 102Z" fill="#fff" stroke="#c9d3cc" stroke-width="2"/><g fill="#cfe3ef"><rect x="36" y="46" width="40" height="24" rx="3"/><rect x="84" y="46" width="40" height="24" rx="3"/><rect x="132" y="46" width="40" height="24" rx="3"/><path d="M180 46 L210 46 Q224 46 232 58 L250 72 L180 72Z"/></g><circle cx="76" cy="104" r="16" fill="#222"/><circle cx="76" cy="104" r="7" fill="#aaa"/><circle cx="230" cy="104" r="16" fill="#222"/><circle cx="230" cy="104" r="7" fill="#aaa"/></svg>`;
 
 /* misc */
 $('menuBtn').onclick=()=>$('menu').classList.toggle('open');
 document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('menu').classList.remove('open'));
+document.querySelectorAll('.q button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=q.classList.contains('open');document.querySelectorAll('.q').forEach(x=>x.classList.remove('open'));if(!o)q.classList.add('open')});
 $('yr').textContent=new Date().getFullYear();
+st.sel=['anuradhapura','sigiriya','kandy'];st.days=5;render();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
